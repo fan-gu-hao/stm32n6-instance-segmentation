@@ -1,0 +1,40 @@
+# 根目錄預設不追蹤，只開放下面的專案內容。
+/*
+!/.gitignore
+!/README.md
+!/scripts/
+!/configs/
+!/docs/
+!/results/
+!/requirements/
+!/patches/
+
+# Python 暫存。
+__pycache__/
+*.py[cod]
+
+# 個人設定與憑證。
+.env
+.env.*
+*.pem
+*.key
+
+# 模型與編譯產物。
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.elf
+*.bin
+*.hex
+*.o
+*.a
+
+# 壓縮檔與原始錄影。
+*.zip
+*.mp4
+*.avi
+
+# 含有本機絕對路徑的資料集設定，先留在本機。
+/configs/*_local.yaml

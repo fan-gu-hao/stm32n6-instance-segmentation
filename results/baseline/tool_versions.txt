@@ -1,0 +1,5 @@
+===== Python =====
+Python 3.10.21
+
+===== Git =====
+git version 2.43.0
