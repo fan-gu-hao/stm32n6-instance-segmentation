@@ -1,0 +1,111 @@
+diff --git a/Application/STM32N6570-DK/Src/main.c b/Application/STM32N6570-DK/Src/main.c
+index 8004e35..9244568 100644
+--- a/Application/STM32N6570-DK/Src/main.c
++++ b/Application/STM32N6570-DK/Src/main.c
+@@ -104,6 +104,9 @@ stai_ptr nn_in;
+ BSP_LCD_LayerConfig_t LayerConfig = {0};
+ iseg_pp_out_t pp_output;
+ 
++/* PROJECT_UART_INFERENCE_RESULT */
++static uint32_t uart_frame_seq = 0;
++
+ #define ALIGN_TO_16(value) (((value) + 15) & ~15)
+ 
+ /* When NN input dimensions are not a multiple of 16, the DCMIPP output needs cropping */
+@@ -135,6 +138,7 @@ static void CONSOLE_Config(void);
+ static void NPURam_enable(void);
+ static void NPUCache_config(void);
+ static void Display_NetworkOutput(iseg_pp_out_t *p_postprocess, uint32_t inference_ms);
++static void UART_SendInferenceResult(iseg_pp_out_t *p_postprocess, uint32_t inference_ms);
+ static void LCD_init(void);
+ static void Security_Config(void);
+ static void set_clk_sleep_mode(void);
+@@ -231,6 +235,9 @@ int main(void)
+     int32_t ret = app_postprocess_run((void **) nn_out, number_output, &pp_output, &pp_params);
+     assert(ret == 0);
+ 
++    /* Send post-processed inference result to host via UART. */
++    UART_SendInferenceResult(&pp_output, ts[1] - ts[0]);
++
+     Display_NetworkOutput(&pp_output, ts[1] - ts[0]);
+     /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */
+     for (int i = 0; i < number_output; i++)
+@@ -416,6 +423,78 @@ void IAC_IRQHandler(void)
+ * @param p_postprocess pointer to postprocessing output
+ * @param inference_ms inference time in ms
+ */
++
++/*
++ * PROJECT_UART_INFERENCE_RESULT
++ *
++ * UART protocol:
++ *
++ * FRAME,<frame_id>,<inference_ms>,<detection_count>
++ * DET,<index>,<class_id>,<conf_x1000>,<xc_x10000>,<yc_x10000>,
++ *     <w_x10000>,<h_x10000>,<mask_pixels>
++ * END,<frame_id>
++ *
++ * Floating-point values are converted to fixed-point integers so that
++ * printf("%f") is not required.
++ */
++static void UART_SendInferenceResult(iseg_pp_out_t *p_postprocess,
++                                     uint32_t inference_ms)
++{
++  iseg_pp_outBuffer_t *rois = p_postprocess->pOutBuff;
++  int32_t nb_detect = p_postprocess->nb_detect;
++  uint32_t frame_id = uart_frame_seq++;
++
++  printf("FRAME,%lu,%lu,%ld\r\n",
++         (unsigned long)frame_id,
++         (unsigned long)inference_ms,
++         (long)nb_detect);
++
++  for (int32_t i = 0; i < nb_detect; i++)
++  {
++    uint32_t conf_milli =
++        (uint32_t)(rois[i].conf * 1000.0f + 0.5f);
++
++    uint32_t xc_1e4 =
++        (uint32_t)(rois[i].x_center * 10000.0f + 0.5f);
++
++    uint32_t yc_1e4 =
++        (uint32_t)(rois[i].y_center * 10000.0f + 0.5f);
++
++    uint32_t w_1e4 =
++        (uint32_t)(rois[i].width * 10000.0f + 0.5f);
++
++    uint32_t h_1e4 =
++        (uint32_t)(rois[i].height * 10000.0f + 0.5f);
++
++    uint32_t mask_pixels = 0;
++
++    for (uint32_t p = 0;
++         p < (AI_YOLOV8_SEG_PP_MASK_SIZE *
++              AI_YOLOV8_SEG_PP_MASK_SIZE);
++         p++)
++    {
++      if (rois[i].pMask[p] != 0)
++      {
++        mask_pixels++;
++      }
++    }
++
++    printf("DET,%ld,%ld,%lu,%lu,%lu,%lu,%lu,%lu\r\n",
++           (long)i,
++           (long)rois[i].class_index,
++           (unsigned long)conf_milli,
++           (unsigned long)xc_1e4,
++           (unsigned long)yc_1e4,
++           (unsigned long)w_1e4,
++           (unsigned long)h_1e4,
++           (unsigned long)mask_pixels);
++  }
++
++  printf("END,%lu\r\n",
++         (unsigned long)frame_id);
++}
++
++
+ static void Display_NetworkOutput(iseg_pp_out_t *p_postprocess, uint32_t inference_ms)
+ {
+   iseg_pp_outBuffer_t *rois = p_postprocess->pOutBuff;

@@ -1,0 +1,14 @@
+Ultralytics 8.3.157 🚀 Python-3.10.21 torch-2.7.1+cpu CPU (13th Gen Intel Core(TM) i7-13620H)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1788887012.629337    5815 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1788887012.632063    5815 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Loading models/yolov8n-seg_saved_model/yolov8n-seg_float32.tflite for TensorFlow Lite inference...
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+image 1/4 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000009.jpg: 256x256 3 bowls, 1 broccoli, 1 dining table, 18.4ms
+image 2/4 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000025.jpg: 256x256 2 giraffes, 17.6ms
+image 3/4 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000030.jpg: 256x256 1 potted plant, 1 vase, 17.6ms
+image 4/4 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000034.jpg: 256x256 1 zebra, 17.5ms
+Speed: 0.3ms preprocess, 17.8ms inference, 0.9ms postprocess per image at shape (1, 3, 256, 256)
+Results saved to [1m/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/pc_tflite_check/run_20260909_010330_KzpJuw/tflite_float[0m
+💡 Learn more at https://docs.ultralytics.com/modes/predict

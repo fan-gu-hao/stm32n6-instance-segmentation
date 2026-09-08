@@ -1,0 +1,9 @@
+{
+  "Globals": {},
+  "Profiles": {
+    "default": {
+      "memory_pool": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/my_mpools/stm32n6-app2_STM32N6570-DK.mpool",
+      "options": "-O3 --all-buffers-info --cache-maintenance --Oauto-sched --native-float --enable-virtual-mem-pools --Omax-ca-pipe 4 --Ocache-opt --Os --enable-epoch-controller"
+    }
+  }
+}

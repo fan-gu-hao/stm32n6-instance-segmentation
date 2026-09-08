@@ -1,0 +1,50 @@
+2026-09-09 00:39:43.985696: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-09 00:39:43.985985: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-09-09 00:39:43.987753: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-09-09 00:39:43.993092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1788885584.001832    4632 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1788885584.004446    4632 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-09 00:39:44.013285: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+===== ST 量化分割模型 =====
+模型： models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite
+輸入數： 1
+輸出數： 2
+
+===== 輸入[0] =====
+張量索引： 0
+名稱    ： serving_default_images:0
+形狀    ： [  1 256 256   3]
+資料型別： <class 'numpy.int8'>
+量化參數： (0.003921568859368563, -128)
+
+===== 輸出[0] =====
+張量索引： 672
+名稱    ： PartitionedCall:1
+形狀    ： [ 1 64 64 32]
+資料型別： <class 'numpy.int8'>
+量化參數： (0.017772065475583076, -112)
+
+===== 輸出[1] =====
+張量索引： 743
+名稱    ： PartitionedCall:0
+形狀    ： [   1  116 1344]
+資料型別： <class 'numpy.int8'>
+量化參數： (0.019118906930088997, 16)
+
+===== 實際輸出順序 =====
+輸出[0]：遮罩原型
+輸出[1]：候選物件與遮罩係數
+
+===== 逐通道量化尺度檢查 =====
+具有多組尺度的張量數： 152
+tfl.pseudo_qconst5 尺度數 = 80 量化維度 = 0
+tfl.pseudo_qconst6 尺度數 = 80 量化維度 = 0
+tfl.pseudo_qconst7 尺度數 = 80 量化維度 = 0
+tfl.pseudo_qconst8 尺度數 = 80 量化維度 = 0
+tfl.pseudo_qconst9 尺度數 = 80 量化維度 = 0
+
+量化模型介面檢查通過。
+尚未驗證量化後的分割準確度或 STM32N6 執行結果。

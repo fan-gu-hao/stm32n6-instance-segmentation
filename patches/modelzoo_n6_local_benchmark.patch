@@ -1,0 +1,25 @@
+diff --git a/common/benchmarking/common_benchmark.py b/common/benchmarking/common_benchmark.py
+index e61e145..8169bbd 100644
+--- a/common/benchmarking/common_benchmark.py
++++ b/common/benchmarking/common_benchmark.py
+@@ -269,7 +269,19 @@ def benchmark_model(board_name: str = None,
+ 
+         # Run generate command locally
+         if "STM32N6" in board_name:
+-            command = f"{path_to_stm32ai} generate --target stm32n6 -m {model_path} -v 0 --output {stm32ai_output} --workspace {stm32ai_output} --optimization {optimization}"
++            # N6_LOCAL_NEURALART_PROFILE
++            profile = os.environ.get("STM32N6_NEURALART_PROFILE")
++            if not profile:
++                raise RuntimeError("Missing STM32N6_NEURALART_PROFILE")
++            command = (
++                f"{shlex.quote(path_to_stm32ai)} generate --target stm32n6 "
++                f"-m {shlex.quote(model_path)} "
++                f"--st-neural-art {shlex.quote(profile)} "
++                f"--input-data-type uint8 --output-data-type int8 "
++                f"--inputs-ch-position chlast "
++                f"-v 1 --output {shlex.quote(stm32ai_output)} "
++                f"--workspace {shlex.quote(stm32ai_output)}"
++            )
+             # command = f"{path_to_stm32ai} generate --target stm32n6 -m {model_path} --st-neural-art user_neuralart.json"
+         elif "U3C5" in board_name:
+             command = f"{path_to_stm32ai} generate --target stm32u3 -m {model_path} --hsp {hsp} -v 0 --output {stm32ai_output} --workspace {stm32ai_output} --optimization {optimization}"

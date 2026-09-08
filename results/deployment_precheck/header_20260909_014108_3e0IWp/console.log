@@ -1,0 +1,26 @@
+2026-09-09 01:41:08.730058: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-09 01:41:08.737413: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1788889268.745976    6592 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1788889268.748660    6592 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-09 01:41:08.757478: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+===== 產生的分割設定 =====
+#define NB_CLASSES   (80)
+#define AI_YOLOV8_SEG_PP_TOTAL_BOXES       (1344)
+#define AI_YOLOV8_SEG_PP_NB_CLASSES        (80)
+#define AI_YOLOV8_SEG_PP_MASK_NB           (32)
+#define AI_YOLOV8_SEG_PP_MASK_SIZE         (64)
+#define AI_YOLOV8_SEG_ZERO_POINT           (16)
+#define AI_YOLOV8_SEG_SCALE                (0.019118906930088997)
+#define AI_YOLOV8_SEG_MASK_ZERO_POINT      (-112)
+#define AI_YOLOV8_SEG_MASK_SCALE           (0.017772065475583076)
+#define AI_YOLOV8_SEG_PP_CONF_THRESHOLD              (0.25)
+#define AI_YOLOV8_SEG_PP_IOU_THRESHOLD               (0.5)
+#define AI_YOLOV8_SEG_PP_MAX_BOXES_LIMIT             (10)
+
+標頭位置： /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/deployment_precheck/header_20260909_014108_3e0IWp/C_header/app_config.h
+模型 SHA-256： 312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e
+通過：官方設定標頭可正確產生，模型內容未修改。
+尚未建置或燒錄完整應用程式。

@@ -1,0 +1,1 @@
+/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/pc_tflite_check/run_20260909_010330_KzpJuw

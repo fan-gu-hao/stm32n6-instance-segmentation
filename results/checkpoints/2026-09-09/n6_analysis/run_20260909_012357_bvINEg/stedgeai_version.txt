@@ -1,0 +1,2 @@
+ST Edge AI Core v4.0.1-20581 7ed50de05
+   STM32CubeAI 12.0.1-RC2

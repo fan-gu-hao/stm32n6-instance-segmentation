@@ -1,0 +1,346 @@
+diff --git a/Application/STM32N6570-DK/Inc/app_config.h b/Application/STM32N6570-DK/Inc/app_config.h
+index 66766d8..0a2a8ac 100644
+--- a/Application/STM32N6570-DK/Inc/app_config.h
++++ b/Application/STM32N6570-DK/Inc/app_config.h
+@@ -1,21 +1,22 @@
+- /**
+- ******************************************************************************
+- * @file    app_config.h
+- * @author  GPM Application Team
+- *
+- ******************************************************************************
+- * @attention
+- *
+- * Copyright (c) 2023 STMicroelectronics.
+- * All rights reserved.
+- *
+- * This software is licensed under terms that can be found in the LICENSE file
+- * in the root directory of this software component.
+- * If no LICENSE file comes with this software, it is provided AS-IS.
+- *
+- ******************************************************************************
+- */
++/**
++******************************************************************************
++* @file    app_config.h
++* @author  GPM Application Team
++*
++******************************************************************************
++* @attention
++*
++* Copyright (c) 2023 STMicroelectronics.
++* All rights reserved.
++*
++* This software is licensed under terms that can be found in the LICENSE file
++* in the root directory of this software component.
++* If no LICENSE file comes with this software, it is provided AS-IS.
++*
++******************************************************************************
++*/
+ 
++/* ---------------    Generated code    ----------------- */
+ #ifndef APP_CONFIG
+ #define APP_CONFIG
+ 
+@@ -26,119 +27,52 @@
+ /*Defines: CMW_MIRRORFLIP_NONE; CMW_MIRRORFLIP_FLIP; CMW_MIRRORFLIP_MIRROR; CMW_MIRRORFLIP_FLIP_MIRROR;*/
+ #define CAMERA_FLIP CMW_MIRRORFLIP_NONE
+ 
+-#define ASPECT_RATIO_CROP       (1) /* Crop both pipes to nn input aspect ratio; Original aspect ratio kept */
+-#define ASPECT_RATIO_FIT        (2) /* Resize both pipe to NN input aspect ratio; Original aspect ratio not kept */
+-#define ASPECT_RATIO_FULLSCREEN (3) /* Resize camera image to NN input size and display a maximized image. See Doc/Build-Options.md#aspect-ratio-mode */
++#define ASPECT_RATIO_CROP (1) /* Crop both pipes to nn input aspect ratio; Original aspect ratio kept */
++#define ASPECT_RATIO_FIT (2) /* Resize both pipe to NN input aspect ratio; Original aspect ratio not kept */
++#define ASPECT_RATIO_FULLSCREEN (3) /* Resize camera image to NN input size and display a fullscreen image */
+ #define ASPECT_RATIO_MODE ASPECT_RATIO_CROP
+ 
+-/* Model Related Info */
+-#define POSTPROCESS_TYPE    POSTPROCESS_ISEG_YOLO_V8_UI
++/* Postprocessing type configuration */
++#define POSTPROCESS_TYPE POSTPROCESS_ISEG_YOLO_V8_UI
+ 
+ #define COLOR_BGR (0)
+ #define COLOR_RGB (1)
+-#define COLOR_MODE    COLOR_RGB
+-
+-/* Classes */
+-#define NB_CLASSES (80)
++#define COLOR_MODE COLOR_RGB
++#define NB_CLASSES   (80)
+ #define CLASSES_TABLE const char* classes_table[NB_CLASSES] = {\
+-  "person",\
+-  "bicycle",\
+-  "car",\
+-  "motorcycle",\
+-  "airplane",\
+-  "bus",\
+-  "train",\
+-  "truck",\
+-  "boat",\
+-  "traffic light",\
+-  "fire hydrant",\
+-  "stop sign",\
+-  "parking meter",\
+-  "bench",\
+-  "bird",\
+-  "cat",\
+-  "dog",\
+-  "horse",\
+-  "sheep",\
+-  "cow",\
+-  "elephant",\
+-  "bear",\
+-  "zebra",\
+-  "giraffe",\
+-  "backpack",\
+-  "umbrella",\
+-  "handbag",\
+-  "tie",\
+-  "suitcase",\
+-  "frisbee",\
+-  "skis",\
+-  "snowboard",\
+-  "sports ball",\
+-  "kite",\
+-  "baseball bat",\
+-  "baseball glove",\
+-  "skateboard",\
+-  "surfboard",\
+-  "tennis racket",\
+-  "bottle",\
+-  "wine glass",\
+-  "cup",\
+-  "fork",\
+-  "knife",\
+-  "spoon",\
+-  "bowl",\
+-  "banana",\
+-  "apple",\
+-  "sandwich",\
+-  "orange",\
+-  "broccoli",\
+-  "carrot",\
+-  "hot dog",\
+-  "pizza",\
+-  "donut",\
+-  "cake",\
+-  "chair",\
+-  "couch",\
+-  "potted plant",\
+-  "bed",\
+-  "dining table",\
+-  "toilet",\
+-  "tv",\
+-  "laptop",\
+-  "mouse",\
+-  "remote",\
+-  "keyboard",\
+-  "cell phone",\
+-  "microwave",\
+-  "oven",\
+-  "toaster",\
+-  "sink",\
+-  "refrigerator",\
+-  "book",\
+-  "clock",\
+-  "vase",\
+-  "scissors",\
+-  "teddy bear",\
+-  "hair drier",\
+-  "toothbrush"};
++   "person" ,   "bicycle" ,   "car" ,   "motorcycle" ,   "airplane" ,   "bus" ,\
++   "train" ,   "truck" ,   "boat" ,   "traffic light" ,   "fire hydrant" ,\
++   "stop sign" ,   "parking meter" ,   "bench" ,   "bird" ,   "cat" ,\
++   "dog" ,   "horse" ,   "sheep" ,   "cow" ,   "elephant" ,\
++   "bear" ,   "zebra" ,   "giraffe" ,   "backpack" ,   "umbrella" ,\
++   "handbag" ,   "tie" ,   "suitcase" ,   "frisbee" ,   "skis" ,\
++   "snowboard" ,   "sports ball" ,   "kite" ,   "baseball bat" ,   "baseball glove" ,\
++   "skateboard" ,   "surfboard" ,   "tennis racket" ,   "bottle" ,   "wine glass" ,\
++   "cup" ,   "fork" ,   "knife" ,   "spoon" ,   "bowl" ,\
++   "banana" ,   "apple" ,   "sandwich" ,   "orange" ,   "broccoli" ,\
++   "carrot" ,   "hot dog" ,   "pizza" ,   "donut" ,   "cake" ,\
++   "chair" ,   "couch" ,   "potted plant" ,   "bed" ,   "dining table" ,\
++   "toilet" ,   "tv" ,   "laptop" ,   "mouse" ,   "remote" ,\
++   "keyboard" ,   "cell phone" ,   "microwave" ,   "oven" ,   "toaster" ,\
++   "sink" ,   "refrigerator" ,   "book" ,   "clock" ,   "vase" ,\
++   "scissors" ,   "teddy bear" ,   "hair drier" ,   "toothbrush"}\
+ 
+-/* I/O configuration */
++/* Post processing values */
+ #define AI_YOLOV8_SEG_PP_TOTAL_BOXES       (1344)
+-#define AI_YOLOV8_SEG_PP_NB_CLASSES        (NB_CLASSES)
++#define AI_YOLOV8_SEG_PP_NB_CLASSES        (80)
+ #define AI_YOLOV8_SEG_PP_MASK_NB           (32)
+ #define AI_YOLOV8_SEG_PP_MASK_SIZE         (64)
+-#define AI_YOLOV8_SEG_ZERO_POINT           (25)
+-#define AI_YOLOV8_SEG_SCALE                (0.020020058378577232f)
+-#define AI_YOLOV8_SEG_MASK_ZERO_POINT      (-115)
+-#define AI_YOLOV8_SEG_MASK_SCALE           (0.0207486841827631f)
+-
++#define AI_YOLOV8_SEG_ZERO_POINT           (16)
++#define AI_YOLOV8_SEG_SCALE                (0.019118906930088997)
++#define AI_YOLOV8_SEG_MASK_ZERO_POINT      (-112)
++#define AI_YOLOV8_SEG_MASK_SCALE           (0.017772065475583076)
+ /* --------  Tuning below can be modified by the application --------- */
+-#define AI_YOLOV8_SEG_PP_CONF_THRESHOLD        (0.5f)
+-#define AI_YOLOV8_SEG_PP_IOU_THRESHOLD         (0.4f)
+-#define AI_YOLOV8_SEG_PP_MAX_BOXES_LIMIT       (10)
+-
++#define AI_YOLOV8_SEG_PP_CONF_THRESHOLD              (0.25)
++#define AI_YOLOV8_SEG_PP_IOU_THRESHOLD               (0.5)
++#define AI_YOLOV8_SEG_PP_MAX_BOXES_LIMIT             (10)
+ /* Display */
+-#define WELCOME_MSG_1         "yolov8n_256_quant_pc_uf_seg_coco-st.tflite"
+-#define WELCOME_MSG_2         "Model Running in STM32 MCU internal memory"
++#define WELCOME_MSG_0       "Single/multi pose estimation - Hand landmark"
++#define WELCOME_MSG_1       "yolov8n_256_quant_pc_ii_seg_coco-st.tflite"
++#define WELCOME_MSG_2       "Model Running in STM32 MCU internal memory"
+ 
+-#endif
++#endif      /* APP_CONFIG */
+diff --git a/Application/STM32N6570-DK/STM32CubeIDE/.cproject b/Application/STM32N6570-DK/STM32CubeIDE/.cproject
+index 5fb501f..5588efb 100644
+--- a/Application/STM32N6570-DK/STM32CubeIDE/.cproject
++++ b/Application/STM32N6570-DK/STM32CubeIDE/.cproject
+@@ -90,7 +90,7 @@
+ 									<listOptionValue builtIn="false" value="../../../../Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55"/>
+ 								</option>
+ 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.libraries.1377455477" name="Libraries (-l)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.libraries" valueType="libs">
+-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value=":NetworkRuntime1200_CM55_GCC.a"/>
++									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value=":NetworkRuntime1201_CM55_GCC.a"/>
+ 								</option>
+ 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.nostdlib.1662130014" name="No startup or default libs (-nostdlib)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.nostdlib" value="false" valueType="boolean"/>
+ 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls.1910886119" name="System calls" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls.value.minimalimplementation" valueType="enumerated"/>
+@@ -211,7 +211,7 @@
+ 									<listOptionValue builtIn="false" value="../../../../Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55"/>
+ 								</option>
+ 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.libraries.1377455477" name="Libraries (-l)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.libraries" valueType="libs">
+-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value=":NetworkRuntime1200_CM55_GCC.a"/>
++									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value=":NetworkRuntime1201_CM55_GCC.a"/>
+ 								</option>
+ 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.nostdlib.1662130014" name="No startup or default libs (-nostdlib)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.nostdlib" value="false" valueType="boolean"/>
+ 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls.1910886119" name="System calls" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.systemcalls.value.minimalimplementation" valueType="enumerated"/>
+diff --git a/Application/STM32N6570-DK/Src/main.c b/Application/STM32N6570-DK/Src/main.c
+index 8004e35..9244568 100644
+--- a/Application/STM32N6570-DK/Src/main.c
++++ b/Application/STM32N6570-DK/Src/main.c
+@@ -104,6 +104,9 @@ stai_ptr nn_in;
+ BSP_LCD_LayerConfig_t LayerConfig = {0};
+ iseg_pp_out_t pp_output;
+ 
++/* PROJECT_UART_INFERENCE_RESULT */
++static uint32_t uart_frame_seq = 0;
++
+ #define ALIGN_TO_16(value) (((value) + 15) & ~15)
+ 
+ /* When NN input dimensions are not a multiple of 16, the DCMIPP output needs cropping */
+@@ -135,6 +138,7 @@ static void CONSOLE_Config(void);
+ static void NPURam_enable(void);
+ static void NPUCache_config(void);
+ static void Display_NetworkOutput(iseg_pp_out_t *p_postprocess, uint32_t inference_ms);
++static void UART_SendInferenceResult(iseg_pp_out_t *p_postprocess, uint32_t inference_ms);
+ static void LCD_init(void);
+ static void Security_Config(void);
+ static void set_clk_sleep_mode(void);
+@@ -231,6 +235,9 @@ int main(void)
+     int32_t ret = app_postprocess_run((void **) nn_out, number_output, &pp_output, &pp_params);
+     assert(ret == 0);
+ 
++    /* Send post-processed inference result to host via UART. */
++    UART_SendInferenceResult(&pp_output, ts[1] - ts[0]);
++
+     Display_NetworkOutput(&pp_output, ts[1] - ts[0]);
+     /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */
+     for (int i = 0; i < number_output; i++)
+@@ -416,6 +423,78 @@ void IAC_IRQHandler(void)
+ * @param p_postprocess pointer to postprocessing output
+ * @param inference_ms inference time in ms
+ */
++
++/*
++ * PROJECT_UART_INFERENCE_RESULT
++ *
++ * UART protocol:
++ *
++ * FRAME,<frame_id>,<inference_ms>,<detection_count>
++ * DET,<index>,<class_id>,<conf_x1000>,<xc_x10000>,<yc_x10000>,
++ *     <w_x10000>,<h_x10000>,<mask_pixels>
++ * END,<frame_id>
++ *
++ * Floating-point values are converted to fixed-point integers so that
++ * printf("%f") is not required.
++ */
++static void UART_SendInferenceResult(iseg_pp_out_t *p_postprocess,
++                                     uint32_t inference_ms)
++{
++  iseg_pp_outBuffer_t *rois = p_postprocess->pOutBuff;
++  int32_t nb_detect = p_postprocess->nb_detect;
++  uint32_t frame_id = uart_frame_seq++;
++
++  printf("FRAME,%lu,%lu,%ld\r\n",
++         (unsigned long)frame_id,
++         (unsigned long)inference_ms,
++         (long)nb_detect);
++
++  for (int32_t i = 0; i < nb_detect; i++)
++  {
++    uint32_t conf_milli =
++        (uint32_t)(rois[i].conf * 1000.0f + 0.5f);
++
++    uint32_t xc_1e4 =
++        (uint32_t)(rois[i].x_center * 10000.0f + 0.5f);
++
++    uint32_t yc_1e4 =
++        (uint32_t)(rois[i].y_center * 10000.0f + 0.5f);
++
++    uint32_t w_1e4 =
++        (uint32_t)(rois[i].width * 10000.0f + 0.5f);
++
++    uint32_t h_1e4 =
++        (uint32_t)(rois[i].height * 10000.0f + 0.5f);
++
++    uint32_t mask_pixels = 0;
++
++    for (uint32_t p = 0;
++         p < (AI_YOLOV8_SEG_PP_MASK_SIZE *
++              AI_YOLOV8_SEG_PP_MASK_SIZE);
++         p++)
++    {
++      if (rois[i].pMask[p] != 0)
++      {
++        mask_pixels++;
++      }
++    }
++
++    printf("DET,%ld,%ld,%lu,%lu,%lu,%lu,%lu,%lu\r\n",
++           (long)i,
++           (long)rois[i].class_index,
++           (unsigned long)conf_milli,
++           (unsigned long)xc_1e4,
++           (unsigned long)yc_1e4,
++           (unsigned long)w_1e4,
++           (unsigned long)h_1e4,
++           (unsigned long)mask_pixels);
++  }
++
++  printf("END,%lu\r\n",
++         (unsigned long)frame_id);
++}
++
++
+ static void Display_NetworkOutput(iseg_pp_out_t *p_postprocess, uint32_t inference_ms)
+ {
+   iseg_pp_outBuffer_t *rois = p_postprocess->pOutBuff;
+diff --git a/stmaic_STM32N6570-DK.conf b/stmaic_STM32N6570-DK.conf
+index 1cc0b40..2a2e961 100644
+--- a/stmaic_STM32N6570-DK.conf
++++ b/stmaic_STM32N6570-DK.conf
+@@ -43,7 +43,7 @@
+       "extract_ecblob_cmd" : "${objcopy} --dump-section .flash_section=ModelZoo/ecblob.bin ModelZoo/${cproject_name}.elf",
+       "make_binary_cmd" : "${objcopy} -O binary --remove-section=.flash_section ModelZoo/${cproject_name}.elf ModelZoo/${cproject_name}_noecblob.bin",
+       "flash_fsbl_cmd"  : "${flasher} -c port=swd mode=HOTPLUG -hardRst -w ../../../FSBL/${fsbl_bin}",
+-      "sign_cmd" : "${signer} -s -bin ModelZoo/${cproject_name}_noecblob.bin -nk -t ssbl -hv 2.3 -o ModelZoo/${cproject_name}_signed.bin",
++      "sign_cmd" : "${signer} -s -bin ModelZoo/${cproject_name}_noecblob.bin -nk -of 0x80000000 -t ssbl -hv 2.3 -align -o ModelZoo/${cproject_name}_signed.bin",
+       "flash_cmd"  : "${flasher} -c port=swd mode=HOTPLUG -hardRst -w ModelZoo/${cproject_name}_signed.bin 0x70100000",
+       "flash_ecblob_cmd"  : "${flasher} -c port=swd mode=HOTPLUG -hardRst -w ModelZoo/ecblob.bin 0x71380000",
+       "flash_network_data_cmd"  : "${flasher} -c port=swd mode=HOTPLUG -hardRst -w ../../../Model/STM32N6570-DK/network_atonbuf.xSPI2.bin 0x70380000"

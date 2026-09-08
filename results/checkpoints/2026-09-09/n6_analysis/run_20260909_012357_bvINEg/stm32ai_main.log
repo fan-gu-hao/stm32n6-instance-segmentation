@@ -1,0 +1,7 @@
+operation_mode: benchmarking
+stedgeai core version : 4.0.0
+Benchmarking board : STM32N6570-DK
+RAM Activations : 2904.06 KiB
+Flash weights : 3393.42 KiB
+MACCs : 38.047 M
+operation finished: benchmarking

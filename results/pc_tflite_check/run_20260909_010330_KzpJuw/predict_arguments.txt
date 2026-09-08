@@ -1,0 +1,13 @@
+data=configs/coco8_seg_local.yaml
+source=datasets/coco8-seg/images/train
+imgsz=256
+batch=1
+rect=False
+conf=0.25
+iou=0.5
+max_det=10
+retina_masks=False
+device=cpu
+show=False
+save=True
+project=/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/pc_tflite_check/run_20260909_010330_KzpJuw

@@ -1,0 +1,75 @@
+diff --git a/common/benchmarking/common_benchmark.py b/common/benchmarking/common_benchmark.py
+index e61e145..8169bbd 100644
+--- a/common/benchmarking/common_benchmark.py
++++ b/common/benchmarking/common_benchmark.py
+@@ -269,7 +269,19 @@ def benchmark_model(board_name: str = None,
+ 
+         # Run generate command locally
+         if "STM32N6" in board_name:
+-            command = f"{path_to_stm32ai} generate --target stm32n6 -m {model_path} -v 0 --output {stm32ai_output} --workspace {stm32ai_output} --optimization {optimization}"
++            # N6_LOCAL_NEURALART_PROFILE
++            profile = os.environ.get("STM32N6_NEURALART_PROFILE")
++            if not profile:
++                raise RuntimeError("Missing STM32N6_NEURALART_PROFILE")
++            command = (
++                f"{shlex.quote(path_to_stm32ai)} generate --target stm32n6 "
++                f"-m {shlex.quote(model_path)} "
++                f"--st-neural-art {shlex.quote(profile)} "
++                f"--input-data-type uint8 --output-data-type int8 "
++                f"--inputs-ch-position chlast "
++                f"-v 1 --output {shlex.quote(stm32ai_output)} "
++                f"--workspace {shlex.quote(stm32ai_output)}"
++            )
+             # command = f"{path_to_stm32ai} generate --target stm32n6 -m {model_path} --st-neural-art user_neuralart.json"
+         elif "U3C5" in board_name:
+             command = f"{path_to_stm32ai} generate --target stm32u3 -m {model_path} --hsp {hsp} -v 0 --output {stm32ai_output} --workspace {stm32ai_output} --optimization {optimization}"
+diff --git a/instance_segmentation/tf/src/utils/gen_h_file.py b/instance_segmentation/tf/src/utils/gen_h_file.py
+index 00b7c9f..92849a7 100644
+--- a/instance_segmentation/tf/src/utils/gen_h_file.py
++++ b/instance_segmentation/tf/src/utils/gen_h_file.py
+@@ -39,6 +39,45 @@ def gen_h_user_file_n6(config: DictConfig = None, quantized_model_path: str = No
+     interpreter_quant = tf.lite.Interpreter(model_path=quantized_model_path)
+     input_details = interpreter_quant.get_input_details()[0]
+     output_details = interpreter_quant.get_output_details()
++
++    # PROJECT_SEG_OUTPUT_ORDER_BY_SHAPE
++    # 只調整產生標頭時使用的 Python 中繼資料，不修改模型輸出。
++    if config.model.model_type == "yolov8n_seg":
++        detections = [
++            x for x in output_details if len(x["shape"]) == 3
++        ]
++        prototypes = [
++            x for x in output_details if len(x["shape"]) == 4
++        ]
++
++        if (len(output_details) != 2
++                or len(detections) != 1
++                or len(prototypes) != 1):
++            raise ValueError(
++                "Expected one detection output and one mask-prototype output."
++            )
++
++        det, proto = detections[0], prototypes[0]
++
++        if det["dtype"] != np.int8 or proto["dtype"] != np.int8:
++            raise ValueError("This application expects INT8 outputs.")
++
++        expected_channels = (
++            4 + len(config.dataset.class_names) + int(proto["shape"][3])
++        )
++        if int(det["shape"][1]) != expected_channels:
++            raise ValueError("Class count and mask coefficient count do not match.")
++
++        if int(proto["shape"][1]) != int(proto["shape"][2]):
++            raise ValueError("The application expects square mask prototypes.")
++
++        # 確認仍符合官方板端轉接程式的大小排序規則。
++        if int(np.prod(det["shape"])) <= int(np.prod(proto["shape"])):
++            raise ValueError(
++                "Output sizes do not match the official wrapper's ordering rule."
++            )
++
++        output_details = [det, proto]
+     input_shape = input_details['shape']
+ 
+ 

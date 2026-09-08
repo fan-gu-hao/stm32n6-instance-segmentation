@@ -38,3 +38,10 @@ __pycache__/
 
 # 含有本機絕對路徑的資料集設定，先留在本機。
 /configs/*_local.yaml
+
+# SESSION_CHECKPOINT_20260909
+/results/n6_analysis/
+/results/n6_deployment/
+!/configs/coco8_seg_local.yaml
+!/configs/benchmark_n6_seg_local.yaml
+!/configs/deployment_n6_seg_local.yaml

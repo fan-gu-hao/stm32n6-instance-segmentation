@@ -1,0 +1,32 @@
+2026-09-09 00:38:10.886527: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-09 00:38:10.886801: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-09-09 00:38:10.888550: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-09-09 00:38:10.893552: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1788885490.901868    4499 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1788885490.904246    4499 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-09 00:38:10.912613: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-09-09 00:38:12.134414: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2026-09-09 00:38:12.134429: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:137] retrieving CUDA diagnostic information for host: fan-ASUS-TUF-Gaming-F17-FX707VU-FX707VU
+2026-09-09 00:38:12.134432: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:144] hostname: fan-ASUS-TUF-Gaming-F17-FX707VU-FX707VU
+2026-09-09 00:38:12.134483: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:168] libcuda reported version is: 595.84.0
+2026-09-09 00:38:12.134492: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:172] kernel reported version is: 595.84.0
+2026-09-09 00:38:12.134493: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:259] kernel version seems to match DSO: 595.84.0
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1788885492.427705    4499 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1788885492.427725    4499 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+2026-09-09 00:38:12.428100: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model
+2026-09-09 00:38:12.431146: I tensorflow/cc/saved_model/reader.cc:52] Reading meta graph with tags { serve }
+2026-09-09 00:38:12.431160: I tensorflow/cc/saved_model/reader.cc:147] Reading SavedModel debug info (if present) from: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model
+I0000 00:00:1788885492.448982    4499 mlir_graph_optimization_pass.cc:401] MLIR V1 optimization pass is not enabled
+2026-09-09 00:38:12.450132: I tensorflow/cc/saved_model/loader.cc:236] Restoring SavedModel bundle.
+2026-09-09 00:38:12.483121: I tensorflow/cc/saved_model/loader.cc:220] Running initialization op on SavedModel bundle at path: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model
+2026-09-09 00:38:12.512182: I tensorflow/cc/saved_model/loader.cc:466] SavedModel load for tags { serve }; Status: success: OK. Took 84084 microseconds.
+2026-09-09 00:38:12.579795: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2026-09-09 00:38:12.777720: I tensorflow/compiler/mlir/lite/flatbuffer_export.cc:3893] Estimated count of arithmetic ops: 2.128 G  ops, equivalently 1.064 G  MACs
+Quantization of yolov8n_256
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  4.96it/s] 50%|█████     | 2/4 [00:00<00:00,  5.11it/s] 75%|███████▌  | 3/4 [00:00<00:00,  5.13it/s]100%|██████████| 4/4 [00:00<00:00,  5.14it/s]100%|██████████| 4/4 [00:00<00:00,  5.12it/s]
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+2026-09-09 00:38:13.849187: I tensorflow/compiler/mlir/lite/flatbuffer_export.cc:3893] Estimated count of arithmetic ops: 2.128 G  ops, equivalently 1.064 G  MACs
+Quantized model generated: yolov8n_256_quant_pc_ii_seg_coco-st.tflite

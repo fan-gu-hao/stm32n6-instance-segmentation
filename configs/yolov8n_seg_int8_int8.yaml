@@ -1,0 +1,22 @@
+model:
+  name: yolov8n_256
+  uc: seg_coco-st
+  model_path: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model
+  input_shape: [256, 256, 3]
+
+quantization:
+  fake: False
+  quantization_type: per_channel
+  quantization_input_type: int8
+  quantization_output_type: int8
+  calib_dataset_path: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/val
+  export_path: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized
+
+pre_processing:
+  rescaling:
+    scale: 255
+    offset: 0
+
+hydra:
+  run:
+    dir: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/experiments/st_quantization_${now:%Y%m%d_%H%M%S}

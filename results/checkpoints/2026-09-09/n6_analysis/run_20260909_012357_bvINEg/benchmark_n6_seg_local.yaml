@@ -1,0 +1,21 @@
+general:
+  project_name: yolov8n_seg_n6_local_analysis
+
+operation_mode: benchmarking
+
+model:
+  model_path: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite
+  model_type: yolov8n_seg
+
+tools:
+  stedgeai:
+    optimization: balanced
+    on_cloud: False
+    path_to_stedgeai: /home/fan/ST/STEdgeAI/4.0/Utilities/linux/stedgeai
+  path_to_cubeIDE: /opt/st/stm32cubeide_2.2.0/stm32cubeide
+
+benchmarking:
+  board: STM32N6570-DK
+
+mlflow:
+  uri: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/experiments/mlruns

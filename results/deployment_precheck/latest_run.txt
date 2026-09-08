@@ -1,0 +1,1 @@
+/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/deployment_precheck/header_20260909_014108_3e0IWp

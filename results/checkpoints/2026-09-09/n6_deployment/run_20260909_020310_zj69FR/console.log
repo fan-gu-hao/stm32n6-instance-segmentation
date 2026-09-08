@@ -1,0 +1,59 @@
+2026-09-09 02:03:11.830478: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-09 02:03:11.837604: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1788890591.846131    6840 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1788890591.848627    6840 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-09-09 02:03:11.857272: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[WARNING] The usable GPU memory is unlimited.
+Please consider setting the 'gpu_memory_limit' attribute in the 'general' section of your configuration file.
+[INFO] : Running `deployment` operation mode
+[INFO] : Found 80 classes in label file /home/fan/STM32N6ai/course14_yolov8n_seg_n6/configs/coco80_classes.txt
+2026/09/09 02:03:16 INFO mlflow.tracking.fluent: Experiment with name 'yolov8n_seg_n6_baseline' does not exist. Creating a new experiment.
+[INFO] : ClearML config check
+[INFO] : The random seed for this simulation is 123
+Loading model from /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[INFO] : Generating C header file for Getting Started...
+application_code/audio/STM32N6
+application_code/face_detection/STM32N6
+application_code/hand_posture/STM32F4
+application_code/image_classification/STM32N6
+application_code/image_classification/STM32H7
+application_code/instance_segmentation/STM32N6
+[0m[1;33m[WARNING]:[0m Submodule 'application_code/instance_segmentation/STM32N6' has uncommitted changes. Please commit or stash them.
+loading model.. model_path="/home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite"
+loading conf file.. "../application_code/instance_segmentation/STM32N6/stmaic_STM32N6570-DK.conf" config="None"
+"ModelZoo" configuration is used
+[INFO] : Selected board :  "STM32N6570-DK Getting Started Instance Segmentation (STM32CubeIDE)" (stm32_cube_ide/ModelZoo/stm32n6)
+[INFO] : Compiling the model and generating optimized C code + Lib/Inc files:  /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite
+setting STM.AI tools.. root_dir="", req_version=""
+ Cube AI Path: "/home/fan/ST/STEdgeAI/4.0/Utilities/linux/stedgeai".
+[INFO] : Offline CubeAI used; Selected tools:  12.0.1 (x-cube-ai pack)
+loading conf file.. "../application_code/instance_segmentation/STM32N6/stmaic_STM32N6570-DK.conf" config="None"
+"ModelZoo" configuration is used
+compiling... "yolov8n_256_quant_pc_ii_seg_coco-st_tflite" session
+ model_path  : /home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite
+ tools       : 12.0.1 (x-cube-ai pack)
+ target      : "STM32N6570-DK Getting Started Instance Segmentation (STM32CubeIDE)" (stm32_cube_ide/ModelZoo/stm32n6)
+ options     : --st-neural-art default@../application_code/instance_segmentation/STM32N6/Model/user_neuralart_STM32N6570-DK.json --input-data-type uint8 --inputs-ch-position chlast
+"series" value is not coherent.. stm32n6 != stm32n6npu
+ results -> RAM=2,973,760 IO=0:0 WEIGHTS=3,474,865 MACC=38,046,976 RT_RAM=1,933 RT_FLASH=804,959 LATENCY=0.000
+[INFO] : Optimized C code + Lib/Inc files generation done.
+[INFO] : Building the STM32 c-project..
+deploying the c-project.. "STM32N6570-DK Getting Started Instance Segmentation (STM32CubeIDE)" (stm32_cube_ide/ModelZoo/stm32n6)
+updating.. ModelZoo
+ -> s:copying file.. "network.c" to ../application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network.c
+ -> s:copying file.. "network_ecblobs.h" to ../application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network_ecblobs.h
+ -> u:copying file.. "stai_network.c" to ../application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/stai_network.c
+ -> u:copying file.. "stai_network.h" to ../application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/stai_network.h
+ -> u:copying file.. "network_atonbuf.xSPI2.raw" to ../application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network_atonbuf.xSPI2.raw
+ -> u:copying file.. "app_config.h" to ../application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/app_config.h
+ -> searching for pre-existing stedgeai-lib from "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE"
+ -> updating stedgeai-lib at "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Middlewares/stedgeai-lib" from "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/n6_deployment/run_20260909_020310_zj69FR/generated/stedgeai-lib"
+ -> updating cproject file with "NetworkRuntime1201_CM55_GCC.a"
+building.. ModelZoo
+flashing.. ModelZoo STM32N6570-DK
+using the supplied stlink_serial_number: 0051002A3234510137333934
+[INFO] : Deployment complete.
+[INFO] : Please on STM32N6570-DK toggle the boot switches to the left and power cycle the board.
