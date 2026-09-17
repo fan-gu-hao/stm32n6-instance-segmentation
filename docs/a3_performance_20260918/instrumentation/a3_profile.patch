@@ -1,0 +1,160 @@
+--- a/Application/STM32N6570-DK/Src/main.c
++++ b/Application/STM32N6570-DK/Src/main.c
+@@ -100,6 +100,8 @@
+ 
+ UART_HandleTypeDef huart1;
+ volatile int32_t cameraFrameReceived;
++volatile uint32_t cameraFrameTick = 0;
++volatile uint32_t cameraFrameSeq = 0;
+ stai_ptr nn_in;
+ BSP_LCD_LayerConfig_t LayerConfig = {0};
+ iseg_pp_out_t pp_output;
+@@ -198,53 +200,105 @@
+   printf("NN model: %s\n", STAI_NETWORK_ORIGIN_MODEL_NAME);
+   printf("========================================\n");
+ 
+-  /*** App Loop ***************************************************************/
++  /*** App Loop: PROJECT_A3_PROFILE_V1 ***************************************/
++  uint32_t prev_start = 0, prev_log_ms = 0, have_prev = 0;
++  uint32_t first_display_end = 0, have_display = 0;
++
++  printf("PROFILE_HEADER,frame,capture_seq,det,isp_ms,capture_ms,input_ms,"
++         "inference_ms,post_ms,uart_ms,display_ms,cache_ms,result_ms,"
++         "work_ms,prev_cycle_ms,prev_log_ms,warmup\r\n");
++  fflush(stdout);
++
+   while (1)
+   {
++    const uint32_t loop_start = HAL_GetTick();
++    const uint32_t prev_cycle_ms = have_prev ? loop_start - prev_start : 0;
++    prev_start = loop_start;
++    have_prev = 1;
++
+     CameraPipeline_IspUpdate();
++    const uint32_t capture_start = HAL_GetTick();
+ 
+ #if DCMIPP_NN_NEEDS_CROP
+-    /* Start NN camera single capture Snapshot into intermediate buffer */
+     CameraPipeline_NNPipe_Start(dcmipp_out_nn, CMW_MODE_SNAPSHOT);
+ #else
+-    /* Start NN camera single capture Snapshot directly into NN input */
+     CameraPipeline_NNPipe_Start(nn_in, CMW_MODE_SNAPSHOT);
+ #endif
+ 
+     while (cameraFrameReceived == 0) {};
++    const uint32_t capture_done = cameraFrameTick;
++    const uint32_t capture_seq = cameraFrameSeq;
+     cameraFrameReceived = 0;
+ 
+     uint32_t ts[2] = { 0 };
+ 
+ #if DCMIPP_NN_NEEDS_CROP
+-    /*
+-     * Crop the image: the DCMIPP hardware requires output dimensions to be
+-     * multiples of 16, so we crop the padded buffer into the NN input buffer.
+-     */
+     SCB_InvalidateDCache_by_Addr(dcmipp_out_nn, sizeof(dcmipp_out_nn));
+-    img_crop(dcmipp_out_nn, nn_in, pitch_nn, STAI_NETWORK_IN_1_WIDTH, STAI_NETWORK_IN_1_HEIGHT, STAI_NETWORK_IN_1_CHANNEL);
++    img_crop(dcmipp_out_nn, nn_in, pitch_nn, STAI_NETWORK_IN_1_WIDTH,
++             STAI_NETWORK_IN_1_HEIGHT, STAI_NETWORK_IN_1_CHANNEL);
+     SCB_CleanInvalidateDCache_by_Addr(nn_in, nn_in_len);
+ #endif
+ 
+     ts[0] = HAL_GetTick();
+-    /* run ATON inference */
+     ret = stai_network_run(network_context, STAI_MODE_SYNC);
+     assert(ret == 0);
+     ts[1] = HAL_GetTick();
+ 
+-    int32_t ret = app_postprocess_run((void **) nn_out, number_output, &pp_output, &pp_params);
++    ret = app_postprocess_run((void **)nn_out, number_output,
++                             &pp_output, &pp_params);
+     assert(ret == 0);
+-
+-    /* Send post-processed inference result to host via UART. */
++    const uint32_t post_end = HAL_GetTick();
++
++    /* 與既有 FRAME、DET、END 使用相同的影格編號。 */
++    const uint32_t frame_id = uart_frame_seq;
+     UART_SendInferenceResult(&pp_output, ts[1] - ts[0]);
++    fflush(stdout);
++    const uint32_t uart_end = HAL_GetTick();
+ 
+     Display_NetworkOutput(&pp_output, ts[1] - ts[0]);
+-    /* Discard nn_out region (used by pp_input and pp_outputs variables) to avoid Dcache evictions during nn inference */
++    const uint32_t display_end = HAL_GetTick();
++
++    if (!have_display)
++    {
++      first_display_end = display_end;
++      have_display = 1;
++    }
++
++    /* 保留既有模型輸出緩衝區的快取維護。 */
+     for (int i = 0; i < number_output; i++)
+     {
+       void *tmp = nn_out[i];
+       SCB_InvalidateDCache_by_Addr(tmp, nn_out_len[i]);
+     }
++    const uint32_t work_end = HAL_GetTick();
++
++    /* 排除開場畫面影響，且至少將前 30 幀標記為暖機。 */
++    const uint32_t warmup =
++        (work_end - first_display_end < 5000U) || (frame_id < 30U);
++
++    const uint32_t log_start = HAL_GetTick();
++    printf("PROFILE,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,"
++           "%lu,%lu,%lu,%lu\r\n",
++           (unsigned long)frame_id,
++           (unsigned long)capture_seq,
++           (long)pp_output.nb_detect,
++           (unsigned long)(capture_start - loop_start),
++           (unsigned long)(capture_done - capture_start),
++           (unsigned long)(ts[0] - capture_done),
++           (unsigned long)(ts[1] - ts[0]),
++           (unsigned long)(post_end - ts[1]),
++           (unsigned long)(uart_end - post_end),
++           (unsigned long)(display_end - uart_end),
++           (unsigned long)(work_end - display_end),
++           (unsigned long)(post_end - capture_done),
++           (unsigned long)(work_end - loop_start),
++           (unsigned long)prev_cycle_ms,
++           (unsigned long)prev_log_ms,
++           (unsigned long)warmup);
++    fflush(stdout);
++
++    /* 本列輸出完成後才能知道耗時，因此留到下一列回報。 */
++    prev_log_ms = HAL_GetTick() - log_start;
+   }
+ }
+ 
+--- a/Application/STM32N6570-DK/Src/app_camerapipeline.c
++++ b/Application/STM32N6570-DK/Src/app_camerapipeline.c
+@@ -18,6 +18,7 @@
+ 
+ #include <assert.h>
+ #include "cmw_camera.h"
++#include "stm32n6xx_hal.h"
+ #include "app_camerapipeline.h"
+ #include "app_config.h"
+ #include "crop_img.h"
+@@ -29,7 +30,9 @@
+ #define CAMERA_HEIGHT 0
+ #define CAMERA_FPS 30
+ 
+-extern int32_t cameraFrameReceived;
++extern volatile int32_t cameraFrameReceived;
++extern volatile uint32_t cameraFrameTick;
++extern volatile uint32_t cameraFrameSeq;
+ 
+ static void DCMIPP_PipeInitDisplay(CMW_CameraInit_t *camConf, uint32_t *bg_width, uint32_t *bg_height)
+ {
+@@ -174,6 +177,8 @@
+   switch (pipe)
+   {
+     case DCMIPP_PIPE2 :
++      cameraFrameTick = HAL_GetTick();
++      cameraFrameSeq++;
+       cameraFrameReceived++;
+       break;
+   }

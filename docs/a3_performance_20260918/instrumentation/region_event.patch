@@ -1,0 +1,244 @@
+--- a/Application/STM32N6570-DK/Src/main.c
++++ b/Application/STM32N6570-DK/Src/main.c
+@@ -155,6 +155,8 @@
+   * @param  None
+   * @retval None
+   */
++#include "project_region_event.h"
++
+ int main(void)
+ {
+   Hardware_init();
+@@ -204,9 +206,10 @@
+   uint32_t prev_start = 0, prev_log_ms = 0, have_prev = 0;
+   uint32_t first_display_end = 0, have_display = 0;
+ 
+-  printf("PROFILE_HEADER,frame,capture_seq,det,isp_ms,capture_ms,input_ms,"
+-         "inference_ms,post_ms,uart_ms,display_ms,cache_ms,result_ms,"
+-         "work_ms,prev_cycle_ms,prev_log_ms,warmup\r\n");
++  printf("REGION_CONFIG,%u,%u,%u,%u,%u,%u\r\n",
++      REGION_X_MIN, REGION_X_MAX, REGION_Y_MIN, REGION_Y_MAX,
++      REGION_ENTER_FRAMES, REGION_EXIT_FRAMES);
++  printf("PROFILE_HEADER,frame,capture_seq,det,isp_ms,capture_ms,input_ms,inference_ms,post_ms,region_ms,uart_ms,display_ms,cache_ms,result_ms,region_result_ms,work_ms,prev_cycle_ms,prev_log_ms,warmup\r\n");
+   fflush(stdout);
+ 
+   while (1)
+@@ -225,7 +228,11 @@
+     CameraPipeline_NNPipe_Start(nn_in, CMW_MODE_SNAPSHOT);
+ #endif
+ 
+-    while (cameraFrameReceived == 0) {};
++    while (cameraFrameReceived == 0)
++    {
++      if ((uint32_t)(HAL_GetTick() - capture_start) >= REGION_CAPTURE_TIMEOUT_MS)
++        Region_Fault("CAPTURE_TIMEOUT");
++    }
+     const uint32_t capture_done = cameraFrameTick;
+     const uint32_t capture_seq = cameraFrameSeq;
+     cameraFrameReceived = 0;
+@@ -241,17 +248,25 @@
+ 
+     ts[0] = HAL_GetTick();
+     ret = stai_network_run(network_context, STAI_MODE_SYNC);
++    if (ret != 0) Region_Fault("NETWORK_ERROR");
+     assert(ret == 0);
+     ts[1] = HAL_GetTick();
+ 
+     ret = app_postprocess_run((void **)nn_out, number_output,
+                              &pp_output, &pp_params);
++    if (ret != 0) Region_Fault("POSTPROCESS_ERROR");
+     assert(ret == 0);
+     const uint32_t post_end = HAL_GetTick();
++    const char *region_event = Region_Update(&pp_output);
++    if (!project_region.valid) Region_Fault("POSTPROCESS_DATA");
++    const uint32_t region_end = HAL_GetTick();
+ 
+     /* 與既有 FRAME、DET、END 使用相同的影格編號。 */
+     const uint32_t frame_id = uart_frame_seq;
+     UART_SendInferenceResult(&pp_output, ts[1] - ts[0]);
++    if (region_event)
++      printf("EVENT,%lu,%s,%lu\r\n", (unsigned long)frame_id, region_event,
++             (unsigned long)project_region.people);
+     fflush(stdout);
+     const uint32_t uart_end = HAL_GetTick();
+ 
+@@ -277,24 +292,25 @@
+         (work_end - first_display_end < 5000U) || (frame_id < 30U);
+ 
+     const uint32_t log_start = HAL_GetTick();
+-    printf("PROFILE,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,"
+-           "%lu,%lu,%lu,%lu\r\n",
+-           (unsigned long)frame_id,
+-           (unsigned long)capture_seq,
+-           (long)pp_output.nb_detect,
++    printf("PROFILE,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu\r\n",
++           (unsigned long)(frame_id),
++           (unsigned long)(capture_seq),
++           (long)(pp_output.nb_detect),
+            (unsigned long)(capture_start - loop_start),
+            (unsigned long)(capture_done - capture_start),
+            (unsigned long)(ts[0] - capture_done),
+            (unsigned long)(ts[1] - ts[0]),
+            (unsigned long)(post_end - ts[1]),
+-           (unsigned long)(uart_end - post_end),
++           (unsigned long)(region_end - post_end),
++           (unsigned long)(uart_end - region_end),
+            (unsigned long)(display_end - uart_end),
+            (unsigned long)(work_end - display_end),
+            (unsigned long)(post_end - capture_done),
++           (unsigned long)(region_end - capture_done),
+            (unsigned long)(work_end - loop_start),
+-           (unsigned long)prev_cycle_ms,
+-           (unsigned long)prev_log_ms,
+-           (unsigned long)warmup);
++           (unsigned long)(prev_cycle_ms),
++           (unsigned long)(prev_log_ms),
++           (unsigned long)(warmup));
+     fflush(stdout);
+ 
+     /* 本列輸出完成後才能知道耗時，因此留到下一列回報。 */
+@@ -604,6 +620,7 @@
+   UTIL_LCD_SetBackColor(0);
+ 
+   Display_WelcomeScreen();
++  Region_Draw();
+ 
+   SCB_CleanDCache_by_Addr(lcd_fg_buffer[lcd_fg_buffer_rd_idx], LCD_FG_FRAMEBUFFER_SIZE);
+   ret = HAL_LTDC_ReloadLayer(&hlcd_ltdc, LTDC_RELOAD_VERTICAL_BLANKING, LTDC_LAYER_2);
+--- /dev/null
++++ b/Application/STM32N6570-DK/Inc/project_region_event.h
+@@ -0,0 +1,134 @@
++#ifndef PROJECT_REGION_EVENT_V1
++#define PROJECT_REGION_EVENT_V1
++#include <math.h>
++
++/* 座標以 10000 表示影像全寬或全高；區域邊界包含在內。 */
++#define REGION_X_MIN 2000U
++#define REGION_X_MAX 8000U
++#define REGION_Y_MIN 2000U
++#define REGION_Y_MAX 10000U
++#define REGION_ENTER_FRAMES 3U
++#define REGION_EXIT_FRAMES 5U
++#define REGION_CAPTURE_TIMEOUT_MS 2000U
++
++#if REGION_X_MIN >= REGION_X_MAX || REGION_X_MAX > 10000U || \
++    REGION_Y_MIN >= REGION_Y_MAX || REGION_Y_MAX > 10000U || \
++    REGION_ENTER_FRAMES == 0 || REGION_EXIT_FRAMES == 0
++#error "Invalid region configuration"
++#endif
++
++static struct {
++  uint32_t occupied, valid, hits, misses, people;
++} project_region;
++
++static void Region_Invalidate(void)
++{
++  project_region.valid = 0;
++  project_region.hits = project_region.misses = project_region.people = 0;
++  /* 保留最後的占用狀態；資料失效不等於離開。 */
++}
++
++static const char *Region_Update(const iseg_pp_out_t *p)
++{
++  if (!p || (int32_t)p->nb_detect < 0 ||
++      p->nb_detect > AI_YOLOV8_SEG_PP_MAX_BOXES_LIMIT ||
++      (p->nb_detect && !p->pOutBuff))
++  {
++    Region_Invalidate();
++    return NULL;
++  }
++
++  uint32_t people = 0;
++  const iseg_pp_outBuffer_t *boxes = p->pOutBuff;
++  for (int32_t i = 0; i < (int32_t)p->nb_detect; ++i)
++  {
++    const iseg_pp_outBuffer_t *b = &boxes[i];
++    if (b->class_index != 0) continue;
++    if (!isfinite(b->conf)) { Region_Invalidate(); return NULL; }
++    if (b->conf < AI_YOLOV8_SEG_PP_CONF_THRESHOLD) continue;
++    if (!isfinite(b->x_center) || !isfinite(b->y_center) ||
++        !isfinite(b->width) || !isfinite(b->height) ||
++        b->width <= 0 || b->height <= 0)
++    {
++      Region_Invalidate();
++      return NULL;
++    }
++
++    /* 使用原始預測框的底邊中心，超出影像時不夾回區域。 */
++    const float x = b->x_center * 10000.0f;
++    const float y = (b->y_center + b->height * 0.5f) * 10000.0f;
++    if (x >= REGION_X_MIN && x <= REGION_X_MAX &&
++        y >= REGION_Y_MIN && y <= REGION_Y_MAX) ++people;
++  }
++
++  project_region.valid = 1;
++  project_region.people = people;
++  if (people)
++  {
++    project_region.misses = 0;
++    if (project_region.hits < REGION_ENTER_FRAMES) ++project_region.hits;
++    if (!project_region.occupied && project_region.hits == REGION_ENTER_FRAMES)
++    {
++      project_region.occupied = 1;
++      return "ENTER";
++    }
++  }
++  else
++  {
++    project_region.hits = 0;
++    if (project_region.misses < REGION_EXIT_FRAMES) ++project_region.misses;
++    if (project_region.occupied && project_region.misses == REGION_EXIT_FRAMES)
++    {
++      project_region.occupied = 0;
++      return "EXIT";
++    }
++  }
++  return NULL;
++}
++
++static void Region_Draw(void)
++{
++  if (lcd_bg_area.XSize < 2 || lcd_bg_area.YSize < 2) return;
++  uint32_t x0 = lcd_bg_area.X0 + REGION_X_MIN * lcd_bg_area.XSize / 10000U;
++  uint32_t x1 = lcd_bg_area.X0 + REGION_X_MAX * lcd_bg_area.XSize / 10000U;
++  uint32_t y0 = lcd_bg_area.Y0 + REGION_Y_MIN * lcd_bg_area.YSize / 10000U;
++  uint32_t y1 = lcd_bg_area.Y0 + REGION_Y_MAX * lcd_bg_area.YSize / 10000U;
++  if (x1 >= lcd_bg_area.X0 + lcd_bg_area.XSize)
++    x1 = lcd_bg_area.X0 + lcd_bg_area.XSize - 1;
++  if (y1 >= lcd_bg_area.Y0 + lcd_bg_area.YSize)
++    y1 = lcd_bg_area.Y0 + lcd_bg_area.YSize - 1;
++
++  const uint32_t pending = project_region.occupied ?
++      project_region.misses : project_region.hits;
++  const uint32_t color = !project_region.valid ? UTIL_LCD_COLOR_RED :
++      pending ? UTIL_LCD_COLOR_YELLOW :
++      project_region.occupied ? UTIL_LCD_COLOR_RED : UTIL_LCD_COLOR_GREEN;
++
++  UTIL_LCD_DrawRect(x0, y0, x1 - x0, y1 - y0, color);
++  UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_WHITE);
++  UTIL_LCD_SetBackColor(0xA0000000);
++  if (!project_region.valid)
++    UTIL_LCDEx_PrintfAt(0, LINE(3), CENTER_MODE, "ROI: INVALID - reset required");
++  else if (pending)
++    UTIL_LCDEx_PrintfAt(0, LINE(3), CENTER_MODE, "ROI: %s %lu/%lu",
++        project_region.occupied ? "EXIT" : "ENTER", (unsigned long)pending,
++        (unsigned long)(project_region.occupied ? REGION_EXIT_FRAMES : REGION_ENTER_FRAMES));
++  else
++    UTIL_LCDEx_PrintfAt(0, LINE(3), CENTER_MODE, "ROI: %s",
++        project_region.occupied ? "OCCUPIED" : "CLEAR");
++  UTIL_LCD_SetBackColor(0);
++}
++
++static void Region_Fault(const char *reason)
++{
++  Region_Invalidate();
++  printf("EVENT,%lu,INVALID,0\r\nERROR,%lu,%s\r\n",
++      (unsigned long)uart_frame_seq, (unsigned long)uart_frame_seq, reason);
++  fflush(stdout);
++  iseg_pp_out_t empty = {0};
++  Display_NetworkOutput(&empty, 0);
++
++  /* 故障時停止處理，等待人工重設；不對未知硬體狀態直接重試。 */
++  for (;;) { __WFI(); }
++}
++#endif

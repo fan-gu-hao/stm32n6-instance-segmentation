@@ -1,0 +1,8 @@
+{
+  "scope": "single-sample NPU_Validation profiling probe",
+  "serial_device": "/dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_0051002A3234510137333934-if01",
+  "baudrate": 921600,
+  "input_tensor_sha256": "280d5d41e55b9b5f93e27a0fb94d8e6c4c0bd86bfda3614d82bde66cedecb67e",
+  "ai_runner_source": "/home/fan/ST/STEdgeAI/4.0/scripts/ai_runner/stm_ai_runner/ai_runner.py",
+  "ai_runner_source_sha256": "2e4cfe1b7ab39fea159a5e2b4ba2c31dc5960a0843ebf718303299208074fffe"
+}

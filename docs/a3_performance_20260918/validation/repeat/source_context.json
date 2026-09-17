@@ -1,0 +1,670 @@
+[
+  {
+    "file": "/home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation/Core/Inc/app_config.h",
+    "sha256": "aa2643ed89d65bec71c108b4d6b19a256bee81ad95292c80643c8d05cb1c9923",
+    "matches": [
+      {
+        "line": 25,
+        "text": ""
+      },
+      {
+        "line": 26,
+        "text": "#define USE_MCU_DCACHE                  1"
+      },
+      {
+        "line": 27,
+        "text": "#define USE_MCU_ICACHE                  1"
+      },
+      {
+        "line": 28,
+        "text": "#define USE_EXTERNAL_MEMORY_DEVICES     1"
+      },
+      {
+        "line": 29,
+        "text": "#define USE_OVERDRIVE                   1       /* Using overdrive, clocks:CPU@800/NPU@1GHz, no overdrive: clocks:CPU@600/NPU@800 */"
+      },
+      {
+        "line": 30,
+        "text": "#define NO_OVD_CLK400                           // When no overdrive: use clocks all @ 400MHz (CPU/NIC/NOC/NPU)"
+      },
+      {
+        "line": 31,
+        "text": ""
+      },
+      {
+        "line": 32,
+        "text": "/* UART usage/configuration */"
+      },
+      {
+        "line": 33,
+        "text": "#define USE_UART_BAUDRATE               921600 // 5529600 // 3686400  // 921600          /* 921600 115200 */"
+      },
+      {
+        "line": 34,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "file": "/home/fan/ST/STEdgeAI/4.0/Middlewares/ST/AI/Validation/Src/aiValidation_ATON.c",
+    "sha256": "31b4792cc2871b2a30567e766728da77e5fa653325635a69120dd707d8bbc814",
+    "matches": [
+      {
+        "line": 31,
+        "text": " *  - v0.3 - fix reported IO shape"
+      },
+      {
+        "line": 32,
+        "text": " *  - v0.4 - add the dummp of profiling metrics (based on NPU counters) to the host from s-msg + dynamic configuration."
+      },
+      {
+        "line": 33,
+        "text": " *  - v0.5 - add log to show the installation/init times"
+      },
+      {
+        "line": 73,
+        "text": "#define USE_CORE_CLOCK_ONLY  1  /* 1: remove usage of the HAL_GetTick() to evaluate the number of CPU clock. Only the Core"
+      },
+      {
+        "line": 74,
+        "text": "                                 *    DWT IP is used. HAL_Tick() is requested to avoid an overflow with the DWT clock counter"
+      },
+      {
+        "line": 75,
+        "text": "                                 *    (32b register) - USE_SYSTICK_ONLY should be set to 0."
+      },
+      {
+        "line": 662,
+        "text": "  LC_PRINT(\" \\r\\n\");"
+      },
+      {
+        "line": 663,
+        "text": "  LC_PRINT(\" Model installation %d MCU cycles (%f ms)\\r\\n\", ctx->instance.install_cycles,"
+      },
+      {
+        "line": 664,
+        "text": "           dwtCyclesToFloatMs(ctx->instance.install_cycles));"
+      },
+      {
+        "line": 665,
+        "text": "  LC_PRINT(\" Model init         %d MCU cycles (%f ms)\\r\\n\", ctx->instance.init_cycles,"
+      },
+      {
+        "line": 666,
+        "text": "           dwtCyclesToFloatMs(ctx->instance.init_cycles));"
+      },
+      {
+        "line": 667,
+        "text": ""
+      },
+      {
+        "line": 728,
+        "text": ""
+      },
+      {
+        "line": 729,
+        "text": "void _log_counters(struct aton_context *ctx, const LL_ATON_RT_EpochBlockItem_t *epoch_block,"
+      },
+      {
+        "line": 730,
+        "text": "                   struct npu_epoch_counters *counters)"
+      },
+      {
+        "line": 731,
+        "text": "{"
+      },
+      {
+        "line": 732,
+        "text": "  PB_LC_STAT(\"node\", \"mcu_cycles\", \"%d:%d:%d\", counters->cpu_start,"
+      },
+      {
+        "line": 733,
+        "text": "             counters->cpu_core, counters->cpu_end);"
+      },
+      {
+        "line": 734,
+        "text": ""
+      },
+      {
+        "line": 735,
+        "text": "  if (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_EPOCH_LEN)) {"
+      },
+      {
+        "line": 736,
+        "text": "    PB_LC_STAT(\"node\", \"npu_cycles\", \"%d:%d:%d\", counters->npu_start,"
+      },
+      {
+        "line": 737,
+        "text": "               counters->npu_core, counters->npu_end);"
+      },
+      {
+        "line": 738,
+        "text": "  }"
+      },
+      {
+        "line": 739,
+        "text": ""
+      },
+      {
+        "line": 740,
+        "text": "  if (counters->counter_fmt & (COUNTER_FMT_OPT(COUNTER_OPT_STRG_I_ACTIVE | COUNTER_OPT_STRG_O_ACTIVE))) {"
+      },
+      {
+        "line": 741,
+        "text": "    const int counter_n = COUNTER_FMT_NUMBER(counters->counter_fmt);"
+      },
+      {
+        "line": 742,
+        "text": "    int argmax = -1;"
+      },
+      {
+        "line": 744,
+        "text": "    uint32_t count = 0;"
+      },
+      {
+        "line": 745,
+        "text": "    char type = (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_STRG_I_ACTIVE))?'i':'o';"
+      },
+      {
+        "line": 746,
+        "text": "    for (int i = 0; i < ATON_STRENG_NUM && count < counter_n; i++) {"
+      },
+      {
+        "line": 747,
+        "text": "      if (counters->counters[count] > 20) {"
+      },
+      {
+        "line": 748,
+        "text": "        int diff = (int)counters->npu_core - (int)counters->counters[count];"
+      },
+      {
+        "line": 749,
+        "text": "        if (counters->counters[count] > maxcount) {"
+      },
+      {
+        "line": 750,
+        "text": "          maxcount = counters->counters[count];"
+      },
+      {
+        "line": 751,
+        "text": "          argmax = i;"
+      },
+      {
+        "line": 752,
+        "text": "        }"
+      },
+      {
+        "line": 753,
+        "text": "        PB_LC_STAT(\"node\", \"streng_active\", \"%c:%u:%u:%d\", type, i, counters->counters[count], diff);"
+      },
+      {
+        "line": 754,
+        "text": "      }"
+      },
+      {
+        "line": 759,
+        "text": ""
+      },
+      {
+        "line": 760,
+        "text": "  if (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_STRG_ACTIVE)) {"
+      },
+      {
+        "line": 761,
+        "text": "    const int counter_n = COUNTER_FMT_NUMBER(counters->counter_fmt);"
+      },
+      {
+        "line": 762,
+        "text": "    uint32_t maxcount = 0;"
+      },
+      {
+        "line": 765,
+        "text": "    uint32_t count = 0;"
+      },
+      {
+        "line": 766,
+        "text": "    for (int i = 0; i < ATON_STRENG_NUM && count < counter_n; i++) {"
+      },
+      {
+        "line": 767,
+        "text": "      if (epoch_block->in_streng_mask & (1 << i)) {"
+      },
+      {
+        "line": 768,
+        "text": "        int diff = (int)counters->npu_core - (int)counters->counters[count];"
+      },
+      {
+        "line": 769,
+        "text": "        if (counters->counters[count] > maxcount) {"
+      },
+      {
+        "line": 770,
+        "text": "          maxcount = counters->counters[count];"
+      },
+      {
+        "line": 771,
+        "text": "          argmax = i;"
+      },
+      {
+        "line": 773,
+        "text": "        }"
+      },
+      {
+        "line": 774,
+        "text": "        PB_LC_STAT(\"node\", \"streng_active\", \"i:%u:%u:%d\", i, counters->counters[count], diff);"
+      },
+      {
+        "line": 775,
+        "text": "        count++;"
+      },
+      {
+        "line": 777,
+        "text": "      if (epoch_block->out_streng_mask & (1 << i)) {"
+      },
+      {
+        "line": 778,
+        "text": "        int diff = (int)counters->npu_core - (int)counters->counters[count];"
+      },
+      {
+        "line": 779,
+        "text": "        if (counters->counters[count] > maxcount) {"
+      },
+      {
+        "line": 780,
+        "text": "          maxcount = counters->counters[count];"
+      },
+      {
+        "line": 781,
+        "text": "          argmax = i;"
+      },
+      {
+        "line": 783,
+        "text": "        }"
+      },
+      {
+        "line": 784,
+        "text": "        PB_LC_STAT(\"node\", \"streng_active\", \"o:%u:%u:%d\", i, counters->counters[count], diff);"
+      },
+      {
+        "line": 785,
+        "text": "        count++;"
+      },
+      {
+        "line": 790,
+        "text": ""
+      },
+      {
+        "line": 791,
+        "text": "  if (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_STRG_HENV)) {"
+      },
+      {
+        "line": 792,
+        "text": "    const int counter_n = COUNTER_FMT_NUMBER(counters->counter_fmt);"
+      },
+      {
+        "line": 793,
+        "text": "    uint32_t count = 0;"
+      },
+      {
+        "line": 794,
+        "text": "    for (int i = 0; i < ATON_STRENG_NUM && count < counter_n; i++) {"
+      },
+      {
+        "line": 795,
+        "text": "      if (epoch_block->in_streng_mask & (1 << i)) {"
+      },
+      {
+        "line": 796,
+        "text": "        PB_LC_STAT(\"node\", \"streng_henv\", \"i:%u:%u:%d\", i, counters->counters[count],"
+      },
+      {
+        "line": 797,
+        "text": "                   (int)(counters->npu_core - counters->counters[count] ));"
+      },
+      {
+        "line": 798,
+        "text": "        count++;"
+      },
+      {
+        "line": 802,
+        "text": ""
+      },
+      {
+        "line": 803,
+        "text": "  if (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_BUSIF_RW_DATA)) {"
+      },
+      {
+        "line": 804,
+        "text": "    const int counter_n = COUNTER_FMT_NUMBER(counters->counter_fmt);"
+      },
+      {
+        "line": 805,
+        "text": "    int count_idx = 0;"
+      },
+      {
+        "line": 809,
+        "text": "        PB_LC_STAT(\"node\", \"port0\", \"burst:w:%d:%d:%d:%d\","
+      },
+      {
+        "line": 810,
+        "text": "                   counters->counters[count_idx + 0],"
+      },
+      {
+        "line": 811,
+        "text": "                   counters->counters[count_idx + 1],"
+      },
+      {
+        "line": 812,
+        "text": "                   counters->counters[count_idx + 2],"
+      },
+      {
+        "line": 813,
+        "text": "                   counters->counters[count_idx + 3]);"
+      },
+      {
+        "line": 814,
+        "text": "      }"
+      },
+      {
+        "line": 816,
+        "text": "        PB_LC_STAT(\"node\", \"port0\", \"burst:r:%d:%d:%d:%d\","
+      },
+      {
+        "line": 817,
+        "text": "                   counters->counters[count_idx + 0],"
+      },
+      {
+        "line": 818,
+        "text": "                   counters->counters[count_idx + 1],"
+      },
+      {
+        "line": 819,
+        "text": "                   counters->counters[count_idx + 2],"
+      },
+      {
+        "line": 820,
+        "text": "                   counters->counters[count_idx + 3]);"
+      },
+      {
+        "line": 821,
+        "text": "      }"
+      },
+      {
+        "line": 823,
+        "text": "        PB_LC_STAT(\"node\", \"port1\", \"burst:w:%d:%d:%d:%d\","
+      },
+      {
+        "line": 824,
+        "text": "                   counters->counters[count_idx + 0],"
+      },
+      {
+        "line": 825,
+        "text": "                   counters->counters[count_idx + 1],"
+      },
+      {
+        "line": 826,
+        "text": "                   counters->counters[count_idx + 2],"
+      },
+      {
+        "line": 827,
+        "text": "                   counters->counters[count_idx + 3]);"
+      },
+      {
+        "line": 828,
+        "text": "      }"
+      },
+      {
+        "line": 830,
+        "text": "        PB_LC_STAT(\"node\", \"port1\", \"burst:r:%d:%d:%d:%d\","
+      },
+      {
+        "line": 831,
+        "text": "                   counters->counters[count_idx + 0],"
+      },
+      {
+        "line": 832,
+        "text": "                   counters->counters[count_idx + 1],"
+      },
+      {
+        "line": 833,
+        "text": "                   counters->counters[count_idx + 2],"
+      },
+      {
+        "line": 834,
+        "text": "                   counters->counters[count_idx + 3]);"
+      },
+      {
+        "line": 835,
+        "text": "      }"
+      },
+      {
+        "line": 837,
+        "text": "    }"
+      },
+      {
+        "line": 838,
+        "text": "    while (count_idx < counter_n);"
+      },
+      {
+        "line": 839,
+        "text": ""
+      },
+      {
+        "line": 845,
+        "text": ""
+      },
+      {
+        "line": 846,
+        "text": "  if (counters->counter_fmt & COUNTER_FMT_OPT(COUNTER_OPT_NPU_CACHE)) {"
+      },
+      {
+        "line": 847,
+        "text": "    // r-hit, r-miss, r-alloc-miss, evict"
+      },
+      {
+        "line": 848,
+        "text": "    PB_LC_STAT(\"node\", \"npu_cache\", \"r:%d:%d:%d:%d\","
+      },
+      {
+        "line": 849,
+        "text": "               counters->cache_counters[0],"
+      },
+      {
+        "line": 850,
+        "text": "               counters->cache_counters[1],"
+      },
+      {
+        "line": 851,
+        "text": "               counters->cache_counters[2],"
+      },
+      {
+        "line": 852,
+        "text": "               counters->cache_counters[3]);"
+      },
+      {
+        "line": 853,
+        "text": "    // w-hit, w-miss, w-alloc-miss, w-through"
+      },
+      {
+        "line": 854,
+        "text": "    PB_LC_STAT(\"node\", \"npu_cache\", \"w:%d:%d:%d:%d\","
+      },
+      {
+        "line": 855,
+        "text": "               counters->cache_counters[4],"
+      },
+      {
+        "line": 856,
+        "text": "               counters->cache_counters[5],"
+      },
+      {
+        "line": 857,
+        "text": "               counters->cache_counters[6],"
+      },
+      {
+        "line": 858,
+        "text": "               counters->cache_counters[7]);"
+      },
+      {
+        "line": 859,
+        "text": "  }"
+      },
+      {
+        "line": 922,
+        "text": "                         const LL_ATON_RT_EpochBlockItem_t *epoch_block,"
+      },
+      {
+        "line": 923,
+        "text": "                         struct npu_epoch_counters *counters)"
+      },
+      {
+        "line": 924,
+        "text": "{"
+      },
+      {
+        "line": 951,
+        "text": ""
+      },
+      {
+        "line": 952,
+        "text": "  if (ctype != LL_ATON_RT_Callbacktype_POST_END) {"
+      },
+      {
+        "line": 953,
+        "text": "    return;"
+      },
+      {
+        "line": 955,
+        "text": ""
+      },
+      {
+        "line": 956,
+        "text": "  uint64_t cycles = counters->cpu_start + counters->cpu_core + counters->cpu_end;"
+      },
+      {
+        "line": 957,
+        "text": ""
+      },
+      {
+        "line": 959,
+        "text": "  aiOpPerf perf = {"
+      },
+      {
+        "line": 960,
+        "text": "    dwtCyclesToFloatMs(cycles),"
+      },
+      {
+        "line": 961,
+        "text": "    EnumCounterFormat_COUNTER_FMT_32B << EnumCounterFormat_COUNTER_FMT_POS | EnumCounterType_COUNTER_TYPE_CPU,"
+      },
+      {
+        "line": 962,
+        "text": "    3,  // 2 * 3,"
+      },
+      {
+        "line": 963,
+        "text": "    (uint32_t *)&counters->cpu_start, -1, -1"
+      },
+      {
+        "line": 964,
+        "text": "  };"
+      },
+      {
+        "line": 974,
+        "text": ""
+      },
+      {
+        "line": 975,
+        "text": "  PB_LC_STAT(\"node\", \"evt_post_end\", \"%d:%d:%d:%d:%d\", cidx,"
+      },
+      {
+        "line": 976,
+        "text": "               ctx->cur_epoch_num, epoch_block->epoch_num,"
+      },
+      {
+        "line": 978,
+        "text": ""
+      },
+      {
+        "line": 979,
+        "text": "  _log_counters(ctx, epoch_block, counters);"
+      },
+      {
+        "line": 980,
+        "text": ""
+      },
+      {
+        "line": 1204,
+        "text": ""
+      },
+      {
+        "line": 1205,
+        "text": "  struct npu_counters counters;"
+      },
+      {
+        "line": 1206,
+        "text": "  struct aton_context *ctx;"
+      },
+      {
+        "line": 1274,
+        "text": "  tick = port_hal_get_tick();"
+      },
+      {
+        "line": 1275,
+        "text": "  npu_run(&ctx->instance, &counters);"
+      },
+      {
+        "line": 1276,
+        "text": "  tick = port_hal_get_tick() - tick;"
+      },
+      {
+        "line": 1286,
+        "text": ""
+      },
+      {
+        "line": 1287,
+        "text": "  tend = counters.cpu_all;"
+      },
+      {
+        "line": 1288,
+        "text": ""
+      },
+      {
+        "line": 1290,
+        "text": "  aiOpPerf perf = {"
+      },
+      {
+        "line": 1291,
+        "text": "    dwtCyclesToFloatMs(tend),"
+      },
+      {
+        "line": 1292,
+        "text": "    EnumCounterFormat_COUNTER_FMT_64B << EnumCounterFormat_COUNTER_FMT_POS | EnumCounterType_COUNTER_TYPE_CPU,"
+      },
+      {
+        "line": 1293,
+        "text": "    2 * 5,"
+      },
+      {
+        "line": 1294,
+        "text": "    (uint32_t *)&counters.cpu_start, -1, -1"
+      },
+      {
+        "line": 1295,
+        "text": "  };"
+      },
+      {
+        "line": 1351,
+        "text": ""
+      },
+      {
+        "line": 1352,
+        "text": "  cyclesCounterInit();"
+      },
+      {
+        "line": 1353,
+        "text": ""
+      }
+    ]
+  }
+]

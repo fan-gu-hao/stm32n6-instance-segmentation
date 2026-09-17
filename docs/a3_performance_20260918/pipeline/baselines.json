@@ -1,0 +1,228 @@
+{
+  "scope": "existing camera-application measurements, including UART logging",
+  "p95_method": "numpy.percentile(method='linear')",
+  "runs": {
+    "no_person": {
+      "source": "results/a3_baseline/no_person_20260914_212314_835679/samples.csv",
+      "source_sha256": "6edcf6fc5635a25c291b36d9a6388fc69013fd7099a528df4456aabb9e335945",
+      "samples": 1000,
+      "metrics": {
+        "isp_ms": {
+          "mean_ms": 0.824,
+          "median_ms": 1.0,
+          "p95_ms": 2.0,
+          "max_ms": 2.0
+        },
+        "capture_ms": {
+          "mean_ms": 39.0,
+          "median_ms": 39.0,
+          "p95_ms": 40.0,
+          "max_ms": 41.0
+        },
+        "input_ms": {
+          "mean_ms": 0.001,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 1.0
+        },
+        "inference_ms": {
+          "mean_ms": 49.055,
+          "median_ms": 49.0,
+          "p95_ms": 50.0,
+          "max_ms": 50.0
+        },
+        "post_ms": {
+          "mean_ms": 0.456,
+          "median_ms": 0.0,
+          "p95_ms": 1.0,
+          "max_ms": 2.0
+        },
+        "region_ms": {
+          "mean_ms": 0.001,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 1.0
+        },
+        "uart_ms": {
+          "mean_ms": 2.238,
+          "median_ms": 2.0,
+          "p95_ms": 3.0,
+          "max_ms": 6.0
+        },
+        "display_ms": {
+          "mean_ms": 3.027,
+          "median_ms": 3.0,
+          "p95_ms": 3.0,
+          "max_ms": 7.0
+        },
+        "cache_ms": {
+          "mean_ms": 0.084,
+          "median_ms": 0.0,
+          "p95_ms": 1.0,
+          "max_ms": 1.0
+        },
+        "result_ms": {
+          "mean_ms": 49.512,
+          "median_ms": 50.0,
+          "p95_ms": 50.0,
+          "max_ms": 51.0
+        },
+        "region_result_ms": {
+          "mean_ms": 49.513,
+          "median_ms": 50.0,
+          "p95_ms": 50.0,
+          "max_ms": 51.0
+        },
+        "work_ms": {
+          "mean_ms": 94.686,
+          "median_ms": 95.0,
+          "p95_ms": 95.0,
+          "max_ms": 103.0
+        },
+        "prev_cycle_ms": {
+          "mean_ms": 99.539,
+          "median_ms": 100.0,
+          "p95_ms": 100.0,
+          "max_ms": 108.0
+        },
+        "prev_log_ms": {
+          "mean_ms": 4.852,
+          "median_ms": 5.0,
+          "p95_ms": 5.0,
+          "max_ms": 6.0
+        },
+        "cycle_ms": {
+          "mean_ms": 99.539,
+          "median_ms": 100.0,
+          "p95_ms": 100.0,
+          "max_ms": 108.0
+        },
+        "profile_log_ms": {
+          "mean_ms": 4.853,
+          "median_ms": 5.0,
+          "p95_ms": 5.0,
+          "max_ms": 6.0
+        },
+        "other_ms": {
+          "mean_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        }
+      },
+      "fps_including_logs": 10.046313505259246,
+      "uart_and_profile_share_percent": 7.12384090657933
+    },
+    "one_person": {
+      "source": "results/a3_baseline/one_person_20260914_235454_012857/samples.csv",
+      "source_sha256": "5864a2f4547c995a296204e097e57ecdb8519a2566096a2fcfdcb34bb3248d62",
+      "samples": 1000,
+      "metrics": {
+        "isp_ms": {
+          "mean_ms": 1.18,
+          "median_ms": 1.0,
+          "p95_ms": 2.0,
+          "max_ms": 2.0
+        },
+        "capture_ms": {
+          "mean_ms": 50.636,
+          "median_ms": 54.0,
+          "p95_ms": 62.0,
+          "max_ms": 63.0
+        },
+        "input_ms": {
+          "mean_ms": 0.001,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 1.0
+        },
+        "inference_ms": {
+          "mean_ms": 49.056,
+          "median_ms": 49.0,
+          "p95_ms": 50.0,
+          "max_ms": 50.0
+        },
+        "post_ms": {
+          "mean_ms": 2.813,
+          "median_ms": 3.0,
+          "p95_ms": 4.0,
+          "max_ms": 6.0
+        },
+        "region_ms": {
+          "mean_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        },
+        "uart_ms": {
+          "mean_ms": 8.972,
+          "median_ms": 9.0,
+          "p95_ms": 12.0,
+          "max_ms": 16.0
+        },
+        "display_ms": {
+          "mean_ms": 6.26,
+          "median_ms": 6.0,
+          "p95_ms": 9.0,
+          "max_ms": 12.0
+        },
+        "cache_ms": {
+          "mean_ms": 0.083,
+          "median_ms": 0.0,
+          "p95_ms": 1.0,
+          "max_ms": 1.0
+        },
+        "result_ms": {
+          "mean_ms": 51.87,
+          "median_ms": 52.0,
+          "p95_ms": 53.0,
+          "max_ms": 55.0
+        },
+        "region_result_ms": {
+          "mean_ms": 51.87,
+          "median_ms": 52.0,
+          "p95_ms": 53.0,
+          "max_ms": 55.0
+        },
+        "work_ms": {
+          "mean_ms": 119.001,
+          "median_ms": 125.0,
+          "p95_ms": 133.0,
+          "max_ms": 140.0
+        },
+        "prev_cycle_ms": {
+          "mean_ms": 123.974,
+          "median_ms": 130.0,
+          "p95_ms": 138.0,
+          "max_ms": 145.0
+        },
+        "prev_log_ms": {
+          "mean_ms": 4.97,
+          "median_ms": 5.0,
+          "p95_ms": 5.0,
+          "max_ms": 6.0
+        },
+        "cycle_ms": {
+          "mean_ms": 123.971,
+          "median_ms": 130.0,
+          "p95_ms": 138.0,
+          "max_ms": 145.0
+        },
+        "profile_log_ms": {
+          "mean_ms": 4.97,
+          "median_ms": 5.0,
+          "p95_ms": 5.0,
+          "max_ms": 6.0
+        },
+        "other_ms": {
+          "mean_ms": 0.0,
+          "median_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        }
+      },
+      "fps_including_logs": 8.066402626420695,
+      "uart_and_profile_share_percent": 11.246178541755732
+    }
+  }
+}

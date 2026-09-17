@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "tool_version": "a3-baseline-1",
+    "tool_sha256": "358cd7b5e4f52db02ee06ccf4d8ce9970c2b06882757427170ca3517415d4daf",
+    "scene": "one_person",
+    "operator_note": "與無人基準相同的攝影機位置及照明；固定一人在區域內",
+    "started_utc": "2026-09-14T15:54:54.012997+00:00",
+    "port": "/dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_0051002A3234510137333934-if01",
+    "serial_settings": "115200 8N1, no flow control",
+    "logging": "FRAME + DET + END + EVENT + PROFILE; restored synchronous UART",
+    "source_context": {
+      "source_files": {
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/main.c": {
+          "bytes": 30698,
+          "sha256": "ff1b96fbdd1cb4504d5653fc49ff11264ee29f7787a813f5611030a0ca0e659a"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/app_camerapipeline.c": {
+          "bytes": 5195,
+          "sha256": "dd51feecd4e83e11bad6261bb3232237532e5a9541ed7c8089466948f77b7d9a"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/project_region_event.h": {
+          "bytes": 4589,
+          "sha256": "09ebd6c7f43003be7f0ce36ba72a88d9b3829aaff2b463bc3d984912097c68a2"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/app_config.h": {
+          "bytes": 3604,
+          "sha256": "8397283c4bf52a2cbbb61a892c09f5842085ee73391e32604ebcebbf6e142ed0"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project": {
+          "bytes": 17069,
+          "sha256": "c9d8babbd0de289e432d3f842b08521adbb8a3689938ba6db8ade22c3be104ea"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.cproject": {
+          "bytes": 37735,
+          "sha256": "68094e268bf65a33891dadb3bb260fd5ad092e023b1c9495305f17576cbff33d"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/STM32N657xx.ld": {
+          "bytes": 4116,
+          "sha256": "dc0959d50b4d06164ad7dafd1dadf6923e60d508eeee00f24612457e3744a1df"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/stai_network.h": {
+          "bytes": 1196770,
+          "sha256": "9158c62b742175c39161cda323f2baecb126305c2a30d9e88266baca09dece70"
+        },
+        "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network.c": {
+          "bytes": 1273079,
+          "sha256": "b867f6720a3dbadd0af9fc59c2fbf815097e84d393493fa9f17704e91f58b0f7"
+        },
+        "models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite": {
+          "bytes": 3709176,
+          "sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e"
+        }
+      },
+      "root_git_status": {
+        "returncode": 0,
+        "stdout": "?? patches/a3_profile_v1_20260913_173738_700077.patch\n?? patches/region_event_v1_20260913_183514_174242.patch\n?? patches/uart_it_v1_20260914_054405_207092.patch\n?? patches/uart_it_v1_20260914_055728_067784.patch\n?? results/a3_baseline/\n?? results/a3_profile/\n?? results/region_event/\n?? results/uart_it/\n",
+        "stderr": ""
+      },
+      "root_git_log": {
+        "returncode": 0,
+        "stdout": "cf1e168 保存 N6 分割部署、UART 結果輸出與本次驗證紀錄\n3c50995 建立電腦端分割驗證與模型匯出基準\n",
+        "stderr": ""
+      },
+      "modelzoo_git_status": {
+        "returncode": 0,
+        "stdout": " m application_code/instance_segmentation/STM32N6\n M common/benchmarking/common_benchmark.py\n M instance_segmentation/tf/src/utils/gen_h_file.py\n?? api/__pycache__/\n?? arc_fault_detection/__pycache__/\n?? arc_fault_detection/tf/__pycache__/\n?? arc_fault_detection/tf/src/__pycache__/\n?? arc_fault_detection/tf/src/datasets/__pycache__/\n?? arc_fault_detection/tf/src/evaluation/__pycache__/\n?? arc_fault_detection/tf/src/models/__pycache__/\n?? arc_fault_detection/tf/src/prediction/__pycache__/\n?? arc_fault_detection/tf/src/preprocessing/__pycache__/\n?? arc_fault_detection/tf/src/quantization/__pycache__/\n?? arc_fault_detection/tf/src/training/__pycache__/\n?? arc_fault_detection/tf/wrappers/__pycache__/\n?? arc_fault_detection/tf/wrappers/datasets/__pycache__/\n?? arc_fault_detection/tf/wrappers/evaluation/__pycache__/\n?? arc_fault_detection/tf/wrappers/models/__pycache__/\n?? arc_fault_detection/tf/wrappers/models/custom_models/__pycache__/\n?? arc_fault_detection/tf/wrappers/prediction/__pycache__/\n?? arc_fault_detection/tf/wrappers/quantization/__pycache__/\n?? arc_fault_detection/tf/wrappers/training/__pycache__/\n?? audio_event_detection/__pycache__/\n?? audio_event_detection/tf/__pycache__/\n?? audio_event_detection/tf/src/__pycache__/\n?? audio_event_detection/tf/src/data_augmentation/__pycache__/\n?? audio_event_detection/tf/src/datasets/__pycache__/\n?? audio_event_detection/tf/src/evaluation/__pycache__/\n?? audio_event_detection/tf/src/models/__pycache__/\n?? audio_event_detection/tf/src/models/miniresnetv1/__pycache__/\n?? audio_event_detection/tf/src/models/miniresnetv2/__pycache__/\n?? audio_event_detection/tf/src/models/yamnet/__pycache__/\n?? audio_event_detection/tf/src/prediction/__pycache__/\n?? audio_event_detection/tf/src/preprocessing/__pycache__/\n?? audio_event_detection/tf/src/quantization/__pycache__/\n?? audio_event_detection/tf/src/training/__pycache__/\n?? audio_event_detection/tf/src/utils/__pycache__/\n?? audio_event_detection/tf/wrappers/__pycache__/\n?? audio_event_detection/tf/wrappers/datasets/__pycache__/\n?? audio_event_detection/tf/wrappers/evaluation/__pycache__/\n?? audio_event_detection/tf/wrappers/models/__pycache__/\n?? audio_event_detection/tf/wrappers/models/standard_models/__pycache__/\n?? audio_event_detection/tf/wrappers/prediction/__pycache__/\n?? audio_event_detection/tf/wrappers/quantization/__pycache__/\n?? audio_event_detection/tf/wrappers/training/__pycache__/\n?? common/__pycache__/\n?? common/benchmarking/__pycache__/\n?? common/data_augmentation/__pycache__/\n?? common/deployment/__pycache__/\n?? common/evaluation/__pycache__/\n?? common/model_utils/__pycache__/\n?? common/model_utils/dnn_blocks/__pycache__/\n?? common/model_utils/dnn_blocks/pytorchcv/__pycache__/\n?? common/onnx_utils/__pycache__/\n?? common/optimization/__pycache__/\n?? common/quantization/__pycache__/\n?? common/registries/__pycache__/\n?? common/stm32ai_dc/__pycache__/\n?? common/stm32ai_dc/backend/cloud/__pycache__/\n?? common/stm32ai_local/__pycache__/\n?? common/training/__pycache__/\n?? common/utils/__pycache__/\n?? depth_estimation/__pycache__/\n?? depth_estimation/tf/__pycache__/\n?? depth_estimation/tf/src/__pycache__/\n?? depth_estimation/tf/src/datasets/__pycache__/\n?? depth_estimation/tf/src/prediction/__pycache__/\n?? depth_estimation/tf/src/preprocessing/__pycache__/\n?? depth_estimation/tf/src/utils/__pycache__/\n?? depth_estimation/tf/wrappers/__pycache__/\n?? depth_estimation/tf/wrappers/datasets/__pycache__/\n?? depth_estimation/tf/wrappers/prediction/__pycache__/\n?? hand_posture/__pycache__/\n?? hand_posture/tf/__pycache__/\n?? hand_posture/tf/src/__pycache__/\n?? hand_posture/tf/src/data_augmentation/__pycache__/\n?? hand_posture/tf/src/datasets/__pycache__/\n?? hand_posture/tf/src/evaluation/__pycache__/\n?? hand_posture/tf/src/models/__pycache__/\n?? hand_posture/tf/src/preprocessing/__pycache__/\n?? hand_posture/tf/src/training/__pycache__/\n?? hand_posture/tf/src/utils/__pycache__/\n?? hand_posture/tf/wrappers/__pycache__/\n?? hand_posture/tf/wrappers/datasets/__pycache__/\n?? hand_posture/tf/wrappers/evaluation/__pycache__/\n?? hand_posture/tf/wrappers/models/__pycache__/\n?? hand_posture/tf/wrappers/models/custom_models/__pycache__/\n?? hand_posture/tf/wrappers/training/__pycache__/\n?? human_activity_recognition/__pycache__/\n?? human_activity_recognition/tf/__pycache__/\n?? human_activity_recognition/tf/src/__pycache__/\n?? human_activity_recognition/tf/src/datasets/__pycache__/\n?? human_activity_recognition/tf/src/evaluation/__pycache__/\n?? human_activity_recognition/tf/src/models/__pycache__/\n?? human_activity_recognition/tf/src/preprocessing/__pycache__/\n?? human_activity_recognition/tf/src/training/__pycache__/\n?? human_activity_recognition/tf/src/utils/__pycache__/\n?? human_activity_recognition/tf/wrappers/__pycache__/\n?? human_activity_recognition/tf/wrappers/datasets/__pycache__/\n?? human_activity_recognition/tf/wrappers/evaluation/__pycache__/\n?? human_activity_recognition/tf/wrappers/models/__pycache__/\n?? human_activity_recognition/tf/wrappers/models/custom_models/__pycache__/\n?? human_activity_recognition/tf/wrappers/training/__pycache__/\n?? image_classification/__pycache__/\n?? image_classification/pt/__pycache__/\n?? image_classification/pt/src/__pycache__/\n?? image_classification/pt/src/datasets/__pycache__/\n?? image_classification/pt/src/datasets/augmentations/__pycache__/\n?? image_classification/pt/src/datasets/augmentations/augs/__pycache__/\n?? image_classification/pt/src/models/__pycache__/\n?? image_classification/pt/src/models/edgevit/__pycache__/\n?? image_classification/pt/src/models/fasternet/__pycache__/\n?? image_classification/pt/src/models/mobilenetv1/__pycache__/\n?? image_classification/pt/src/models/stresnet/__pycache__/\n?? image_classification/pt/src/training/__pycache__/\n?? image_classification/pt/wrappers/__pycache__/\n?? image_classification/pt/wrappers/datasets/__pycache__/\n?? image_classification/pt/wrappers/evaluation/__pycache__/\n?? image_classification/pt/wrappers/models/__pycache__/\n?? image_classification/pt/wrappers/models/custom_models/__pycache__/\n?? image_classification/pt/wrappers/models/standard_models/__pycache__/\n?? image_classification/pt/wrappers/prediction/__pycache__/\n?? image_classification/pt/wrappers/quantization/__pycache__/\n?? image_classification/pt/wrappers/training/__pycache__/\n?? image_classification/tf/__pycache__/\n?? image_classification/tf/src/__pycache__/\n?? image_classification/tf/src/data_augmentation/__pycache__/\n?? image_classification/tf/src/datasets/__pycache__/\n?? image_classification/tf/src/evaluation/__pycache__/\n?? image_classification/tf/src/models/__pycache__/\n?? image_classification/tf/src/prediction/__pycache__/\n?? image_classification/tf/src/preprocessing/__pycache__/\n?? image_classification/tf/src/quantization/__pycache__/\n?? image_classification/tf/src/training/__pycache__/\n?? image_classification/tf/src/utils/__pycache__/\n?? image_classification/tf/wrappers/datasets/__pycache__/\n?? image_classification/tf/wrappers/evaluation/__pycache__/\n?? image_classification/tf/wrappers/models/__pycache__/\n?? image_classification/tf/wrappers/models/custom_models/__pycache__/\n?? image_classification/tf/wrappers/models/standard_models/__pycache__/\n?? image_classification/tf/wrappers/prediction/__pycache__/\n?? image_classification/tf/wrappers/quantization/__pycache__/\n?? image_classification/tf/wrappers/training/__pycache__/\n?? instance_segmentation/__pycache__/\n?? instance_segmentation/tf/__pycache__/\n?? instance_segmentation/tf/src/__pycache__/\n?? instance_segmentation/tf/src/datasets/__pycache__/\n?? instance_segmentation/tf/src/deployment/__pycache__/\n?? instance_segmentation/tf/src/postprocessing/__pycache__/\n?? instance_segmentation/tf/src/prediction/__pycache__/\n?? instance_segmentation/tf/src/preprocessing/__pycache__/\n?? instance_segmentation/tf/src/utils/__pycache__/\n?? instance_segmentation/tf/src/utils/gen_h_file.py.bak_before_output_mapping\n?? instance_segmentation/tf/wrappers/datasets/__pycache__/\n?? instance_segmentation/tf/wrappers/prediction/__pycache__/\n?? neural_style_transfer/__pycache__/\n?? neural_style_transfer/tf/__pycache__/\n?? neural_style_transfer/tf/src/__pycache__/\n?? neural_style_transfer/tf/src/datasets/__pycache__/\n?? neural_style_transfer/tf/src/postprocessing/__pycache__/\n?? neural_style_transfer/tf/src/prediction/__pycache__/\n?? neural_style_transfer/tf/src/preprocessing/__pycache__/\n?? neural_style_transfer/tf/src/utils/__pycache__/\n?? neural_style_transfer/tf/wrappers/datasets/__pycache__/\n?? neural_style_transfer/tf/wrappers/prediction/__pycache__/\n?? object_detection/__pycache__/\n?? object_detection/pt/__pycache__/\n?? object_detection/pt/src/__pycache__/\n?? object_detection/pt/src/data/ssd/__pycache__/\n?? object_detection/pt/src/data/ssd/datasets/__pycache__/\n?? object_detection/pt/src/data/ssd/transforms/__pycache__/\n?? object_detection/pt/src/data/yolod/__pycache__/\n?? object_detection/pt/src/data/yolod/augmentations/__pycache__/\n?? object_detection/pt/src/data/yolod/datasets/__pycache__/\n?? object_detection/pt/src/evaluation/ssd/__pycache__/\n?? object_detection/pt/src/evaluation/yolod/evaluators/__pycache__/\n?? object_detection/pt/src/models/__pycache__/\n?? object_detection/pt/src/models/ssd/__pycache__/\n?? object_detection/pt/src/models/ssd/backbones/__pycache__/\n?? object_detection/pt/src/models/ssd/detectors/__pycache__/\n?? object_detection/pt/src/models/ssd/detectors/config/__pycache__/\n?? object_detection/pt/src/models/ssd/losses/__pycache__/\n?? object_detection/pt/src/models/yolod/__pycache__/\n?? object_detection/pt/src/models/yolod/blocks/__pycache__/\n?? object_detection/pt/src/models/yolod/build_config/__pycache__/\n?? object_detection/pt/src/models/yolod/detection/backbones/__pycache__/\n?? object_detection/pt/src/models/yolod/detection/detectors/__pycache__/\n?? object_detection/pt/src/models/yolod/detection/heads/__pycache__/\n?? object_detection/pt/src/models/yolod/detection/necks/__pycache__/\n?? object_detection/pt/src/models/yolod/losses/__pycache__/\n?? object_detection/pt/src/training/__pycache__/\n?? object_detection/pt/src/training/ssd/__pycache__/\n?? object_detection/pt/src/training/yolod/__pycache__/\n?? object_detection/pt/src/utils/config/__pycache__/\n?? object_detection/pt/src/utils/ssd/__pycache__/\n?? object_detection/pt/src/utils/yolod/__pycache__/\n?? object_detection/pt/wrappers/datasets/__pycache__/\n?? object_detection/pt/wrappers/evaluation/__pycache__/\n?? object_detection/pt/wrappers/models/__pycache__/\n?? object_detection/pt/wrappers/prediction/__pycache__/\n?? object_detection/pt/wrappers/training/__pycache__/\n?? object_detection/tf/__pycache__/\n?? object_detection/tf/src/__pycache__/\n?? object_detection/tf/src/data_augmentation/__pycache__/\n?? object_detection/tf/src/datasets/__pycache__/\n?? object_detection/tf/src/datasets/utils/__pycache__/\n?? object_detection/tf/src/evaluation/__pycache__/\n?? object_detection/tf/src/models/__pycache__/\n?? object_detection/tf/src/postprocessing/__pycache__/\n?? object_detection/tf/src/prediction/__pycache__/\n?? object_detection/tf/src/quantization/__pycache__/\n?? object_detection/tf/src/training/__pycache__/\n?? object_detection/tf/src/training/utils/__pycache__/\n?? object_detection/tf/src/training/utils/yolo/__pycache__/\n?? object_detection/tf/src/utils/__pycache__/\n?? object_detection/tf/wrappers/__pycache__/\n?? object_detection/tf/wrappers/datasets/__pycache__/\n?? object_detection/tf/wrappers/evaluation/__pycache__/\n?? object_detection/tf/wrappers/models/__pycache__/\n?? object_detection/tf/wrappers/models/custom_models/__pycache__/\n?? object_detection/tf/wrappers/models/standard_models/__pycache__/\n?? object_detection/tf/wrappers/prediction/__pycache__/\n?? object_detection/tf/wrappers/quantization/__pycache__/\n?? object_detection/tf/wrappers/training/__pycache__/\n?? pose_estimation/__pycache__/\n?? pose_estimation/tf/__pycache__/\n?? pose_estimation/tf/src/__pycache__/\n?? pose_estimation/tf/src/data_augmentation/__pycache__/\n?? pose_estimation/tf/src/datasets/__pycache__/\n?? pose_estimation/tf/src/evaluation/__pycache__/\n?? pose_estimation/tf/src/models/__pycache__/\n?? pose_estimation/tf/src/postprocessing/__pycache__/\n?? pose_estimation/tf/src/prediction/__pycache__/\n?? pose_estimation/tf/src/quantization/__pycache__/\n?? pose_estimation/tf/src/training/__pycache__/\n?? pose_estimation/tf/src/utils/__pycache__/\n?? pose_estimation/tf/wrappers/__pycache__/\n?? pose_estimation/tf/wrappers/datasets/__pycache__/\n?? pose_estimation/tf/wrappers/evaluation/__pycache__/\n?? pose_estimation/tf/wrappers/models/__pycache__/\n?? pose_estimation/tf/wrappers/models/custom_models/__pycache__/\n?? pose_estimation/tf/wrappers/prediction/__pycache__/\n?? pose_estimation/tf/wrappers/quantization/__pycache__/\n?? pose_estimation/tf/wrappers/training/__pycache__/\n?? re_identification/__pycache__/\n?? re_identification/tf/__pycache__/\n?? re_identification/tf/src/__pycache__/\n?? re_identification/tf/src/models/__pycache__/\n?? re_identification/tf/wrappers/__pycache__/\n?? re_identification/tf/wrappers/models/__pycache__/\n?? re_identification/tf/wrappers/models/standard_models/__pycache__/\n?? semantic_segmentation/__pycache__/\n?? semantic_segmentation/tf/__pycache__/\n?? semantic_segmentation/tf/src/__pycache__/\n?? semantic_segmentation/tf/src/data_augmentation/__pycache__/\n?? semantic_segmentation/tf/src/datasets/__pycache__/\n?? semantic_segmentation/tf/src/evaluation/__pycache__/\n?? semantic_segmentation/tf/src/models/__pycache__/\n?? semantic_segmentation/tf/src/prediction/__pycache__/\n?? semantic_segmentation/tf/src/preprocessing/__pycache__/\n?? semantic_segmentation/tf/src/quantization/__pycache__/\n?? semantic_segmentation/tf/src/training/__pycache__/\n?? semantic_segmentation/tf/src/utils/__pycache__/\n?? semantic_segmentation/tf/wrappers/__pycache__/\n?? semantic_segmentation/tf/wrappers/datasets/__pycache__/\n?? semantic_segmentation/tf/wrappers/evaluation/__pycache__/\n?? semantic_segmentation/tf/wrappers/models/__pycache__/\n?? semantic_segmentation/tf/wrappers/models/custom_models/__pycache__/\n?? semantic_segmentation/tf/wrappers/models/standard_models/__pycache__/\n?? semantic_segmentation/tf/wrappers/prediction/__pycache__/\n?? semantic_segmentation/tf/wrappers/quantization/__pycache__/\n?? semantic_segmentation/tf/wrappers/training/__pycache__/\n?? speech_enhancement/__pycache__/\n?? speech_enhancement/pt/__pycache__/\n?? speech_enhancement/pt/src/__pycache__/\n?? speech_enhancement/pt/src/dataset_utils/__pycache__/\n?? speech_enhancement/pt/src/evaluators/__pycache__/\n?? speech_enhancement/pt/src/metrics/__pycache__/\n?? speech_enhancement/pt/src/models/__pycache__/\n?? speech_enhancement/pt/src/preprocessing/__pycache__/\n?? speech_enhancement/pt/src/quantization/__pycache__/\n?? speech_enhancement/pt/src/trainers/__pycache__/\n?? speech_enhancement/pt/src/utils/__pycache__/\n?? speech_enhancement/pt/wrappers/datasets/__pycache__/\n?? speech_enhancement/pt/wrappers/evaluation/__pycache__/\n?? speech_enhancement/pt/wrappers/models/__pycache__/\n?? speech_enhancement/pt/wrappers/models/custom_models/__pycache__/\n?? speech_enhancement/pt/wrappers/quantization/__pycache__/\n?? speech_enhancement/pt/wrappers/training/__pycache__/\n",
+        "stderr": ""
+      },
+      "app_git_status": {
+        "returncode": 0,
+        "stdout": " M Application/STM32N6570-DK/Inc/app_config.h\n M Application/STM32N6570-DK/STM32CubeIDE/.cproject\n M Application/STM32N6570-DK/Src/app_camerapipeline.c\n M Application/STM32N6570-DK/Src/main.c\n M Middlewares/stedgeai-lib/Inc/core_datatypes.h\n M Middlewares/stedgeai-lib/Inc/stai.h\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM0+/NetworkRuntime1200_CM0+_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM0/NetworkRuntime1200_CM0_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM33/NetworkRuntime1200_CM33_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM4/NetworkRuntime1200_CM4_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM55/NetworkRuntime1200_CM55_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM7/NetworkRuntime1200_CM7_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM85/NetworkRuntime1200_CM85_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/STM32H7/NetworkRuntime1200_CM7_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/STM32MP1/NetworkRuntime1200_CM4_IAR.a\n D Middlewares/stedgeai-lib/Lib/ABI2.1/STM32WL/NetworkRuntime1200_CM4_IAR.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM0+/NetworkRuntime1200_CM0+_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM0/NetworkRuntime1200_CM0_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM33/NetworkRuntime1200_CM33_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM33/NetworkRuntime1200_CM33_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM4/NetworkRuntime1200_CM4_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM4/NetworkRuntime1200_CM4_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1200_CM55_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1200_CM55_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM7/NetworkRuntime1200_CM7_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM7/NetworkRuntime1200_CM7_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM85/NetworkRuntime1200_CM85_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM85/NetworkRuntime1200_CM85_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32H7/NetworkRuntime1200_CM7_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32H7/NetworkRuntime1200_CM7_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32MP1/NetworkRuntime1200_CM4_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32MP1/NetworkRuntime1200_CM4_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32WL/NetworkRuntime1200_CM4_GCC.a\n D Middlewares/stedgeai-lib/Lib/GCC/STM32WL/NetworkRuntime1200_CM4_GCC_PIC.a\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM0+/NetworkRuntime1200_CM0+_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM0/NetworkRuntime1200_CM0_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM33/NetworkRuntime1200_CM33_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM4/NetworkRuntime1200_CM4_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM55/NetworkRuntime1200_CM55_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM55/NetworkRuntime1200_CM55_Keil_COMPATIBLE.a\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM7/NetworkRuntime1200_CM7_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM85/NetworkRuntime1200_CM85_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM85/NetworkRuntime1200_CM85_Keil_COMPATIBLE.a\n D Middlewares/stedgeai-lib/Lib/MDK/STM32H7/NetworkRuntime1200_CM7_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/STM32MP1/NetworkRuntime1200_CM4_Keil.lib\n D Middlewares/stedgeai-lib/Lib/MDK/STM32WL/NetworkRuntime1200_CM4_Keil.lib\n M Middlewares/stedgeai-lib/Misc/Src/aiTestHelper_ST_AI.c\n M Middlewares/stedgeai-lib/Misc/Src/aiTestUtility.c\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/ATON-idxs.h\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/ATON.h\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/mcu_cache.c\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/mcu_cache.h\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/npu_cache.c\n M Middlewares/stedgeai-lib/Npu/Devices/STM32N6xx/npu_cache.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ec.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ecloader.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ecloader.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_NN_interface.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_attributes.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_caches_interface.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_cipher.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_cipher.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_config.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_dbgtrc.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_dbgtrc.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_debug.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_debug.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_ec_trace.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_lib.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_lib.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_lib_sw_operators.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_lib_sw_operators.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_freertos.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_freertos.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_rtos_template.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_threadx.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_threadx.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_zephyr.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_osal_zephyr.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_platform.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_profiler.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_profiler.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_rcompat.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_reloc_callbacks.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_reloc_network.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_reloc_network.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_rt_main.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_rt_user_api.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_runtime.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_runtime.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_stai_internal.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_stai_internal.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_util.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_util.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_aton_version.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_sw.h\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_sw_float.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/ll_sw_integer.c\n M Middlewares/stedgeai-lib/Npu/ll_aton/stai_aton_common.h\n M Middlewares/stedgeai-lib/SystemPerformance/Src/aiSystemPerformance.c\n M Model/STM32N6570-DK/network.c\n M Model/STM32N6570-DK/stai_network.h\n M stmaic_STM32N6570-DK.conf\n?? Application/STM32N6570-DK/Inc/project_region_event.h\n?? Application/STM32N6570-DK/STM32CubeIDE/.settings/\n?? Application/STM32N6570-DK/STM32CubeIDE/Debug/\n?? Application/STM32N6570-DK/STM32CubeIDE/ModelZoo/\n?? Application/STM32N6570-DK/Src/main.c.bak_before_uart_result\n?? Middlewares/stedgeai-lib/APACHE-2.0.txt\n?? Middlewares/stedgeai-lib/LICENSE.txt\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM0+/NetworkRuntime1201_CM0+_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM0/NetworkRuntime1201_CM0_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM33/NetworkRuntime1201_CM33_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM4/NetworkRuntime1201_CM4_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM55/NetworkRuntime1201_CM55_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM7/NetworkRuntime1201_CM7_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/ARMCortexM85/NetworkRuntime1201_CM85_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/STM32H7/NetworkRuntime1201_CM7_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/STM32MP1/NetworkRuntime1201_CM4_IAR.a\n?? Middlewares/stedgeai-lib/Lib/ABI2.1/STM32WL/NetworkRuntime1201_CM4_IAR.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM0+/NetworkRuntime1201_CM0+_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM0/NetworkRuntime1201_CM0_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM33/NetworkRuntime1201_CM33_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM33/NetworkRuntime1201_CM33_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM4/NetworkRuntime1201_CM4_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM4/NetworkRuntime1201_CM4_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1201_CM55_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1201_CM55_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM7/NetworkRuntime1201_CM7_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM7/NetworkRuntime1201_CM7_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM85/NetworkRuntime1201_CM85_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM85/NetworkRuntime1201_CM85_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32H7/NetworkRuntime1201_CM7_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32H7/NetworkRuntime1201_CM7_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32MP1/NetworkRuntime1201_CM4_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32MP1/NetworkRuntime1201_CM4_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32WL/NetworkRuntime1201_CM4_GCC.a\n?? Middlewares/stedgeai-lib/Lib/GCC/STM32WL/NetworkRuntime1201_CM4_GCC_PIC.a\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM0+/NetworkRuntime1201_CM0+_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM0/NetworkRuntime1201_CM0_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM33/NetworkRuntime1201_CM33_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM4/NetworkRuntime1201_CM4_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM55/NetworkRuntime1201_CM55_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM55/NetworkRuntime1201_CM55_Keil_COMPATIBLE.a\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM7/NetworkRuntime1201_CM7_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM85/NetworkRuntime1201_CM85_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/ARMCortexM85/NetworkRuntime1201_CM85_Keil_COMPATIBLE.a\n?? Middlewares/stedgeai-lib/Lib/MDK/STM32H7/NetworkRuntime1201_CM7_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/STM32MP1/NetworkRuntime1201_CM4_Keil.lib\n?? Middlewares/stedgeai-lib/Lib/MDK/STM32WL/NetworkRuntime1201_CM4_Keil.lib\n?? Middlewares/stedgeai-lib/Validation/\n?? Model/STM32N6570-DK/network_atonbuf.xSPI2.bin\n?? Model/STM32N6570-DK/network_ecblobs.h\n?? Model/STM32N6570-DK/stai_network.c\n?? stmaic_STM32N6570-DK.conf.bak_before_align_fix\n",
+        "stderr": ""
+      },
+      "app_git_head": {
+        "returncode": 0,
+        "stdout": "b99b83fe4fcd66c9fa11b6f6528bf9215dc55ab2\n",
+        "stderr": ""
+      },
+      "build_configuration": "ModelZoo (previous confirmed build; no build performed)",
+      "firmware_identity_note": "本機原始碼雜湊不等於板上映像驗證；本次未燒錄或讀回 Flash。",
+      "clock_note": "時脈設定保留於 main.c 指紋；本次未讀取板端時脈暫存器。"
+    },
+    "raw_log_sha256": "d7dfef30ce90b57635ae13e39e4294cd87710b98699673d268500c41361b7ca8",
+    "finished_utc": "2026-09-14T15:57:14.161073+00:00"
+  },
+  "stop_reason": "target_reached",
+  "sampling_status": "complete",
+  "review_notes": [],
+  "target_cycles": 1000,
+  "sample_cycles": 1000,
+  "profile_rows": 1040,
+  "warmup_rows_excluded": 39,
+  "pre_header_rows_ignored": 90,
+  "headers": 1,
+  "resets_or_new_headers": 0,
+  "invalid_rows": 0,
+  "frame_sequence_gaps": 0,
+  "capture_sequence_gaps": 0,
+  "region_config": "REGION_CONFIG,2000,8000,2000,10000,3,5",
+  "events": [
+    "EVENT,22,ENTER,1",
+    "EVENT,37,EXIT,0",
+    "EVENT,47,ENTER,1",
+    "EVENT,186,EXIT,0",
+    "EVENT,190,ENTER,1",
+    "EVENT,309,EXIT,0",
+    "EVENT,312,ENTER,1",
+    "EVENT,330,EXIT,0",
+    "EVENT,337,ENTER,1",
+    "EVENT,360,EXIT,0",
+    "EVENT,364,ENTER,1",
+    "EVENT,423,EXIT,0",
+    "EVENT,426,ENTER,1",
+    "EVENT,433,EXIT,0",
+    "EVENT,450,ENTER,1",
+    "EVENT,535,EXIT,0",
+    "EVENT,543,ENTER,1",
+    "EVENT,750,EXIT,0",
+    "EVENT,756,ENTER,1",
+    "EVENT,769,EXIT,0",
+    "EVENT,773,ENTER,1",
+    "EVENT,800,EXIT,0",
+    "EVENT,806,ENTER,1",
+    "EVENT,847,EXIT,0",
+    "EVENT,850,ENTER,1",
+    "EVENT,866,EXIT,0",
+    "EVENT,870,ENTER,1",
+    "EVENT,875,EXIT,0",
+    "EVENT,883,ENTER,1",
+    "EVENT,917,EXIT,0",
+    "EVENT,942,ENTER,1",
+    "EVENT,956,EXIT,0",
+    "EVENT,1013,ENTER,1"
+  ],
+  "errors": [],
+  "first_frame": 39,
+  "last_frame": 1038,
+  "detection_count_range": [
+    0,
+    4
+  ],
+  "board_loop_duration_ms": 123971,
+  "processed_frames_per_second": 8.066402626420695,
+  "p95_method": "nearest rank: sorted_values[ceil(0.95*N)-1]",
+  "selection": "第一段達到目標長度、排除暖機且 frame/capture_seq 連續的區間；多讀一列配對 prev_*。不足時報告末段。",
+  "metrics": {
+    "isp_ms": {
+      "mean_ms": 1.18,
+      "p95_ms": 2,
+      "max_ms": 2
+    },
+    "capture_ms": {
+      "mean_ms": 50.636,
+      "p95_ms": 62,
+      "max_ms": 63
+    },
+    "input_ms": {
+      "mean_ms": 0.001,
+      "p95_ms": 0,
+      "max_ms": 1
+    },
+    "inference_ms": {
+      "mean_ms": 49.056,
+      "p95_ms": 50,
+      "max_ms": 50
+    },
+    "post_ms": {
+      "mean_ms": 2.813,
+      "p95_ms": 4,
+      "max_ms": 6
+    },
+    "region_ms": {
+      "mean_ms": 0.0,
+      "p95_ms": 0,
+      "max_ms": 0
+    },
+    "uart_ms": {
+      "mean_ms": 8.972,
+      "p95_ms": 12,
+      "max_ms": 16
+    },
+    "display_ms": {
+      "mean_ms": 6.26,
+      "p95_ms": 9,
+      "max_ms": 12
+    },
+    "cache_ms": {
+      "mean_ms": 0.083,
+      "p95_ms": 1,
+      "max_ms": 1
+    },
+    "profile_log_ms": {
+      "mean_ms": 4.97,
+      "p95_ms": 5,
+      "max_ms": 6
+    },
+    "other_ms": {
+      "mean_ms": 0.0,
+      "p95_ms": 0,
+      "max_ms": 0
+    },
+    "work_ms": {
+      "mean_ms": 119.001,
+      "p95_ms": 133,
+      "max_ms": 140
+    },
+    "result_ms": {
+      "mean_ms": 51.87,
+      "p95_ms": 53,
+      "max_ms": 55
+    },
+    "region_result_ms": {
+      "mean_ms": 51.87,
+      "p95_ms": 53,
+      "max_ms": 55
+    },
+    "cycle_ms": {
+      "mean_ms": 123.971,
+      "p95_ms": 138,
+      "max_ms": 145
+    }
+  },
+  "limitations": [
+    "這是全部既有日誌開啟時的基準，包含同步 UART 的影響。",
+    "inference_ms 是完整 stai_network_run 呼叫，包含 MCU、NPU 與執行期工作。",
+    "display_ms 到 LCD 更新提交返回為止，不是螢幕完成掃描顯示的時間。",
+    "capture_ms 包含啟動及等待影格通知，不是單獨的曝光時間。",
+    "uart_ms 也含格式化、遮罩像素計數和事件輸出，不是只有線路傳輸。",
+    "capture_seq 是 NN snapshot 完成序號；尚無感測器實際丟幀數。",
+    "HAL_GetTick 為毫秒級；0 ms 不代表沒有成本。",
+    "採樣完成不等於 A2 正確性、A3 epoch／頻寬分析或 A5 穩定性驗收完成。"
+  ]
+}

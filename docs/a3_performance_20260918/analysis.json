@@ -1,0 +1,6 @@
+{
+  "per_layer_total_mean_ms": 48.63885080697946,
+  "top_two_share_percent": 56.70899496381987,
+  "software_block_mean_ms": 4.067696253458659,
+  "software_block_share_percent": 8.363059953042645
+}
