@@ -1,0 +1,409 @@
+{
+  "scope": "output agreement, not ground-truth accuracy",
+  "matching": "same class, box IoU >= 0.5; maximize valid pair count then IoU",
+  "empty_mask_union": "undefined",
+  "comparisons": [
+    {
+      "image_id": 9,
+      "reference": "pc_default",
+      "test": "n6",
+      "reference_count": 5,
+      "test_count": 5,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 45,
+          "box_iou": 0.9351089596748352,
+          "mask_iou": 0.9850074962518741,
+          "reference_confidence": 0.7073995471000671,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.038237810134887695
+        },
+        {
+          "reference_index": 1,
+          "test_index": 2,
+          "class_id": 45,
+          "box_iou": 0.943270206451416,
+          "mask_iou": 0.8474331164135936,
+          "reference_confidence": 0.6118050217628479,
+          "test_confidence": 0.6118050217628479,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 2,
+          "test_index": 1,
+          "class_id": 50,
+          "box_iou": 0.9466267824172974,
+          "mask_iou": 0.9800221975582686,
+          "reference_confidence": 0.6118050217628479,
+          "test_confidence": 0.6118050217628479,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 3,
+          "test_index": 3,
+          "class_id": 50,
+          "box_iou": 1.0,
+          "mask_iou": 1.0,
+          "reference_confidence": 0.3250214159488678,
+          "test_confidence": 0.34414032101631165,
+          "confidence_abs_difference": 0.019118905067443848
+        },
+        {
+          "reference_index": 4,
+          "test_index": 4,
+          "class_id": 60,
+          "box_iou": 0.9806965589523315,
+          "mask_iou": 0.7214854111405835,
+          "reference_confidence": 0.2867836058139801,
+          "test_confidence": 0.2867836058139801,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 25,
+      "reference": "pc_default",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 23,
+          "box_iou": 0.9473683834075928,
+          "mask_iou": 0.9575471698113207,
+          "reference_confidence": 0.8603507876396179,
+          "test_confidence": 0.8603507876396179,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 30,
+      "reference": "pc_default",
+      "test": "n6",
+      "reference_count": 2,
+      "test_count": 2,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 75,
+          "box_iou": 1.0,
+          "mask_iou": 0.975,
+          "reference_confidence": 0.7838751673698425,
+          "test_confidence": 0.8412318825721741,
+          "confidence_abs_difference": 0.05735671520233154
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 58,
+          "box_iou": 0.9736840724945068,
+          "mask_iou": 0.9719887955182073,
+          "reference_confidence": 0.6691617369651794,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 34,
+      "reference": "pc_default",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 22,
+          "box_iou": 0.9787235260009766,
+          "mask_iou": 0.9942129629629629,
+          "reference_confidence": 0.9368264675140381,
+          "test_confidence": 0.9177075624465942,
+          "confidence_abs_difference": 0.019118905067443848
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 9,
+      "reference": "pc_builtin",
+      "test": "n6",
+      "reference_count": 5,
+      "test_count": 5,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 45,
+          "box_iou": 0.9351089596748352,
+          "mask_iou": 0.9732540861812778,
+          "reference_confidence": 0.6691617369651794,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 1,
+          "test_index": 2,
+          "class_id": 45,
+          "box_iou": 0.943270206451416,
+          "mask_iou": 0.9407051282051282,
+          "reference_confidence": 0.6691617369651794,
+          "test_confidence": 0.6118050217628479,
+          "confidence_abs_difference": 0.05735671520233154
+        },
+        {
+          "reference_index": 2,
+          "test_index": 1,
+          "class_id": 50,
+          "box_iou": 1.0,
+          "mask_iou": 0.9922566371681416,
+          "reference_confidence": 0.6118050217628479,
+          "test_confidence": 0.6118050217628479,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 3,
+          "test_index": 3,
+          "class_id": 50,
+          "box_iou": 1.0,
+          "mask_iou": 1.0,
+          "reference_confidence": 0.34414032101631165,
+          "test_confidence": 0.34414032101631165,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 4,
+          "test_index": 4,
+          "class_id": 60,
+          "box_iou": 0.9655047655105591,
+          "mask_iou": 0.68717277486911,
+          "reference_confidence": 0.2485457956790924,
+          "test_confidence": 0.2867836058139801,
+          "confidence_abs_difference": 0.038237810134887695
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 25,
+      "reference": "pc_builtin",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 23,
+          "box_iou": 0.9736841917037964,
+          "mask_iou": 0.9759615384615384,
+          "reference_confidence": 0.8603507876396179,
+          "test_confidence": 0.8603507876396179,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 30,
+      "reference": "pc_builtin",
+      "test": "n6",
+      "reference_count": 2,
+      "test_count": 2,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 75,
+          "box_iou": 1.0,
+          "mask_iou": 0.9748858447488584,
+          "reference_confidence": 0.8412318825721741,
+          "test_confidence": 0.8412318825721741,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 58,
+          "box_iou": 0.9422750473022461,
+          "mask_iou": 0.9788732394366197,
+          "reference_confidence": 0.7073995471000671,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.038237810134887695
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 34,
+      "reference": "pc_builtin",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 22,
+          "box_iou": 0.9553479552268982,
+          "mask_iou": 0.9780092592592593,
+          "reference_confidence": 0.9368264675140381,
+          "test_confidence": 0.9177075624465942,
+          "confidence_abs_difference": 0.019118905067443848
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 9,
+      "reference": "pc_default",
+      "test": "pc_builtin",
+      "reference_count": 5,
+      "test_count": 5,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 45,
+          "box_iou": 1.0,
+          "mask_iou": 0.987987987987988,
+          "reference_confidence": 0.7073995471000671,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.038237810134887695
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 45,
+          "box_iou": 1.0,
+          "mask_iou": 0.8695965417867435,
+          "reference_confidence": 0.6118050217628479,
+          "test_confidence": 0.6691617369651794,
+          "confidence_abs_difference": 0.05735671520233154
+        },
+        {
+          "reference_index": 2,
+          "test_index": 2,
+          "class_id": 50,
+          "box_iou": 0.9466267824172974,
+          "mask_iou": 0.9724061810154525,
+          "reference_confidence": 0.6118050217628479,
+          "test_confidence": 0.6118050217628479,
+          "confidence_abs_difference": 0.0
+        },
+        {
+          "reference_index": 3,
+          "test_index": 3,
+          "class_id": 50,
+          "box_iou": 1.0,
+          "mask_iou": 1.0,
+          "reference_confidence": 0.3250214159488678,
+          "test_confidence": 0.34414032101631165,
+          "confidence_abs_difference": 0.019118905067443848
+        },
+        {
+          "reference_index": 4,
+          "test_index": 4,
+          "class_id": 60,
+          "box_iou": 0.9846237301826477,
+          "mask_iou": 0.7489361702127659,
+          "reference_confidence": 0.2867836058139801,
+          "test_confidence": 0.2485457956790924,
+          "confidence_abs_difference": 0.038237810134887695
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 25,
+      "reference": "pc_default",
+      "test": "pc_builtin",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 23,
+          "box_iou": 0.9480519890785217,
+          "mask_iou": 0.9531615925058547,
+          "reference_confidence": 0.8603507876396179,
+          "test_confidence": 0.8603507876396179,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 30,
+      "reference": "pc_default",
+      "test": "pc_builtin",
+      "reference_count": 2,
+      "test_count": 2,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 75,
+          "box_iou": 1.0,
+          "mask_iou": 0.9772727272727273,
+          "reference_confidence": 0.7838751673698425,
+          "test_confidence": 0.8412318825721741,
+          "confidence_abs_difference": 0.05735671520233154
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 58,
+          "box_iou": 0.9677422046661377,
+          "mask_iou": 0.9817158931082982,
+          "reference_confidence": 0.6691617369651794,
+          "test_confidence": 0.7073995471000671,
+          "confidence_abs_difference": 0.038237810134887695
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 34,
+      "reference": "pc_default",
+      "test": "pc_builtin",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 22,
+          "box_iou": 0.9756096601486206,
+          "mask_iou": 0.9814385150812065,
+          "reference_confidence": 0.9368264675140381,
+          "test_confidence": 0.9368264675140381,
+          "confidence_abs_difference": 0.0
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    }
+  ]
+}

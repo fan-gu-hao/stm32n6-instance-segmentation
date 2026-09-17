@@ -1,0 +1,106 @@
+{
+  "evaluation_sha256": "8913c51da52057c67f24851f70eef7d172e3bb2b15c6c9e1446ed29e8c40ffe2",
+  "scope": "PC INT8 versus N6 person differences on the fixed 50-image set",
+  "cases": [
+    {
+      "image_id": 74,
+      "pc_tp_fp_fn": [
+        3,
+        2,
+        3
+      ],
+      "n6_tp_fp_fn": [
+        2,
+        2,
+        4
+      ],
+      "pc_matched_n6_unmatched_label_lines": [
+        6
+      ],
+      "n6_matched_pc_unmatched_label_lines": [],
+      "pc_only_person_indices": [
+        4
+      ],
+      "n6_only_person_indices": []
+    },
+    {
+      "image_id": 387,
+      "pc_tp_fp_fn": [
+        0,
+        0,
+        0
+      ],
+      "n6_tp_fp_fn": [
+        0,
+        1,
+        0
+      ],
+      "pc_matched_n6_unmatched_label_lines": [],
+      "n6_matched_pc_unmatched_label_lines": [],
+      "pc_only_person_indices": [],
+      "n6_only_person_indices": [
+        0
+      ]
+    },
+    {
+      "image_id": 446,
+      "pc_tp_fp_fn": [
+        1,
+        1,
+        0
+      ],
+      "n6_tp_fp_fn": [
+        1,
+        0,
+        0
+      ],
+      "pc_matched_n6_unmatched_label_lines": [],
+      "n6_matched_pc_unmatched_label_lines": [],
+      "pc_only_person_indices": [
+        1
+      ],
+      "n6_only_person_indices": []
+    }
+  ],
+  "single_side_predictions": [
+    {
+      "image_id": 74,
+      "model": "pc_default",
+      "prediction_index": 6,
+      "candidate_index": 1117,
+      "confidence": 0.2485457956790924,
+      "box_xyxy": [
+        212.90814208984375,
+        66.07494354248047,
+        227.59146118164062,
+        90.5471420288086
+      ]
+    },
+    {
+      "image_id": 387,
+      "model": "n6",
+      "prediction_index": 0,
+      "candidate_index": 345,
+      "confidence": 0.2867836058139801,
+      "box_xyxy": [
+        171.30540466308594,
+        61.180503845214844,
+        230.03868103027344,
+        105.23046112060547
+      ]
+    },
+    {
+      "image_id": 446,
+      "model": "pc_default",
+      "prediction_index": 1,
+      "candidate_index": 1248,
+      "confidence": 0.2485457956790924,
+      "box_xyxy": [
+        0.0,
+        212.9081573486328,
+        48.944400787353516,
+        256.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "purpose": "deployment regression; not held-out generalization evaluation",
+  "preprocess": "center square crop; INTER_LINEAR 256x256; RGB; NHWC",
+  "selection_seed": 20260918,
+  "selection": "person-height coverage; non-person mean-gray coverage",
+  "opencv": "4.10.0",
+  "numpy": "1.26.4",
+  "excluded_coco8": [
+    {
+      "file": "datasets/coco8-seg/images/train/000000000009.jpg",
+      "sha256": "be0ecc9cacc0150f0a84f6dc098f3e5c526ac85f8a14c1a0d16c2a4eb3d305a6"
+    },
+    {
+      "file": "datasets/coco8-seg/images/train/000000000025.jpg",
+      "sha256": "f7ddff65077bd4e362a890ed13b1cd931fd38882d49bae9e7e53e369e4b4d028"
+    },
+    {
+      "file": "datasets/coco8-seg/images/train/000000000030.jpg",
+      "sha256": "52a12b6af76049a23192320610a316b6c1ea8e7d12e083f15c18e1690c506e66"
+    },
+    {
+      "file": "datasets/coco8-seg/images/train/000000000034.jpg",
+      "sha256": "8d5334f6c8d3e8b77d50726625eecc6896597f063d3801f1993ffcb9e6b05acb"
+    },
+    {
+      "file": "datasets/coco8-seg/images/val/000000000036.jpg",
+      "sha256": "4c28394898302bef227834d63498a0fc54e4295f11c590c8a8ebcba51347bc03"
+    },
+    {
+      "file": "datasets/coco8-seg/images/val/000000000042.jpg",
+      "sha256": "c87afb6dfe55db1cada52479ed939a231e030d64f5e3c3eaf7eb1544591f853a"
+    },
+    {
+      "file": "datasets/coco8-seg/images/val/000000000049.jpg",
+      "sha256": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3"
+    },
+    {
+      "file": "datasets/coco8-seg/images/val/000000000061.jpg",
+      "sha256": "6460e4a7cc80e34815aba8910a23152a16a24a416fa598138bd9231cccd413e2"
+    }
+  ],
+  "images": [
+    {
+      "image_id": 71,
+      "image": "source/coco128-seg/images/train2017/000000000071.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000071.txt",
+      "image_sha256": "5393bf6575c435daa599c1272d9e61e99c099994ae4d3755311684663fed0917",
+      "label_sha256": "718bf969d113dbd440fecbc98aa86124b350fca1c0ad006ee8bf9de763e0003d",
+      "crop_xywh": [
+        107,
+        0,
+        426,
+        426
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 109.34260559082031
+    },
+    {
+      "image_id": 72,
+      "image": "source/coco128-seg/images/train2017/000000000072.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000072.txt",
+      "image_sha256": "93d0d304967360bed3bfe2aafc701817e83f494c687e625fb8b765d2be54c9b2",
+      "label_sha256": "8631c51bcfcf6ffe89a21ad456aba132c4a0b7109000d52fa784d1b5f8abc84d",
+      "crop_xywh": [
+        0,
+        106,
+        427,
+        427
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 81.60287475585938
+    },
+    {
+      "image_id": 74,
+      "image": "source/coco128-seg/images/train2017/000000000074.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000074.txt",
+      "image_sha256": "99d864809a7355862032b54283bd4808971da5a2b976b20467203e6c192e755d",
+      "label_sha256": "20a419571b3942dc82fe6e679ff79c1a3e18885a8c34f48a05fa18daca2e1df8",
+      "crop_xywh": [
+        107,
+        0,
+        426,
+        426
+      ],
+      "person_count": 6,
+      "max_person_height_px": 36.056338028169016,
+      "mean_gray": 178.1187744140625
+    },
+    {
+      "image_id": 77,
+      "image": "source/coco128-seg/images/train2017/000000000077.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000077.txt",
+      "image_sha256": "e07c725d9941691ac87386f0f4edd44f62a232696288bf95fb5ddef9384347b1",
+      "label_sha256": "28c5b704e09b9b53678337c3acf66e9939de36dd1e303a57cafccb036830837e",
+      "crop_xywh": [
+        62,
+        0,
+        375,
+        375
+      ],
+      "person_count": 5,
+      "max_person_height_px": 113.32266666666666,
+      "mean_gray": 120.4561767578125
+    },
+    {
+      "image_id": 81,
+      "image": "source/coco128-seg/images/train2017/000000000081.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000081.txt",
+      "image_sha256": "9f9dd4dcc774b81fcbb64531eb717859562ff162cf058e12f80c7b4630cbaa6b",
+      "label_sha256": "26090600d2523575a3f5c68d0103dfd91e49b48b271b7dd316d18a025a1fa881",
+      "crop_xywh": [
+        107,
+        0,
+        425,
+        425
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 158.796142578125
+    },
+    {
+      "image_id": 86,
+      "image": "source/coco128-seg/images/train2017/000000000086.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000086.txt",
+      "image_sha256": "f58a99916783cdf4a7619286dc46adedd4ea1143bcc2cd773c6504aa5280915a",
+      "label_sha256": "46dfbc32d17ccf0e210fcfac789d8f57c55fde0d93d5ef0076a95c9c1953e964",
+      "crop_xywh": [
+        0,
+        64,
+        512,
+        512
+      ],
+      "person_count": 1,
+      "max_person_height_px": 188.5,
+      "mean_gray": 103.60966491699219
+    },
+    {
+      "image_id": 109,
+      "image": "source/coco128-seg/images/train2017/000000000109.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000109.txt",
+      "image_sha256": "69edeeca53763fb2a4ee51739e4f9a4f053584b4f3ca4ff9911c49fa52ed2762",
+      "label_sha256": "76ca89c92f14df5ef2a65273fef433ab367c9a23d18206e038e3dd9f95f16a85",
+      "crop_xywh": [
+        112,
+        0,
+        416,
+        416
+      ],
+      "person_count": 1,
+      "max_person_height_px": 20.307692307692307,
+      "mean_gray": 133.6304931640625
+    },
+    {
+      "image_id": 113,
+      "image": "source/coco128-seg/images/train2017/000000000113.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000113.txt",
+      "image_sha256": "51d5f657eacbc0f37f0d847f903abc90bb33479fa0459fdc64ebbeb5cac34d99",
+      "label_sha256": "d91b11a7f689c99e1e572f44ebe0531508a2eeba326820ebceccdc09daba786b",
+      "crop_xywh": [
+        0,
+        112,
+        416,
+        416
+      ],
+      "person_count": 3,
+      "max_person_height_px": 230.76923076923077,
+      "mean_gray": 156.027587890625
+    },
+    {
+      "image_id": 133,
+      "image": "source/coco128-seg/images/train2017/000000000133.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000133.txt",
+      "image_sha256": "d8d2ea5e94c83ba74bef9dc52d58e0526e08d03355381683fb953db71ec529e6",
+      "label_sha256": "40dbeddabc9b747d3554b4e3821855f9471d6a08b4a7c849d311ceb9d8752b17",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 136.5294647216797
+    },
+    {
+      "image_id": 138,
+      "image": "source/coco128-seg/images/train2017/000000000138.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000138.txt",
+      "image_sha256": "0255bce78addf8d82e9f5d434ad2a98fccd5542cbb041980ce7ad00054a3227e",
+      "label_sha256": "a58e465e613bc91dc246a454fb35dcbbe888ad2c322a02321e3a25dc558fd73b",
+      "crop_xywh": [
+        33,
+        0,
+        573,
+        573
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 100.72755432128906
+    },
+    {
+      "image_id": 143,
+      "image": "source/coco128-seg/images/train2017/000000000143.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000143.txt",
+      "image_sha256": "03d4d20019d5abdf6f9314a166f8f8cf582f1d0d2167beef7ec2400d0f1b629e",
+      "label_sha256": "f3f935281cda75342ef8b0a8e4bc2c7db69126a0da61de1f2f40cf5138b92b12",
+      "crop_xywh": [
+        50,
+        0,
+        500,
+        500
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 191.78907775878906
+    },
+    {
+      "image_id": 144,
+      "image": "source/coco128-seg/images/train2017/000000000144.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000144.txt",
+      "image_sha256": "6740b5472043073062f46b253399a6bc2fe68ca77d429f652ad956c03d51b0fa",
+      "label_sha256": "50936a3fc8a0596340c6ad1cd149a5fcfafe879c33189ce7716004a8917a11d3",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 120.861328125
+    },
+    {
+      "image_id": 151,
+      "image": "source/coco128-seg/images/train2017/000000000151.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000151.txt",
+      "image_sha256": "b92d7d249e574fbd4ad8ba2fbc2c1879ca281b779f1276ac3daa0304b80039e4",
+      "label_sha256": "da166c6e7ed547160870743b5f842fc6f8237d27c7a0dd8a74b3a08f1db49a47",
+      "crop_xywh": [
+        0,
+        80,
+        480,
+        480
+      ],
+      "person_count": 1,
+      "max_person_height_px": 18.666666666666668,
+      "mean_gray": 117.36625671386719
+    },
+    {
+      "image_id": 164,
+      "image": "source/coco128-seg/images/train2017/000000000164.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000164.txt",
+      "image_sha256": "186a1427f32ce7e5cf17052f66d5ee7cd57d7f83762001891e16195a6bda586d",
+      "label_sha256": "4dd92276fbc324736b8341d9ae8d14592092de34b8c2b47a10bedd734d14b466",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 132.45582580566406
+    },
+    {
+      "image_id": 165,
+      "image": "source/coco128-seg/images/train2017/000000000165.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000165.txt",
+      "image_sha256": "2d3d9e0b4b165c0f783b97cd963097b13effa1af851c9576617fb7c910d63cd8",
+      "label_sha256": "dcd40c34ed46e0ba205036045687381622be9ac3c6ec1249ffaa3c20f46b59de",
+      "crop_xywh": [
+        52,
+        0,
+        536,
+        536
+      ],
+      "person_count": 2,
+      "max_person_height_px": 241.19402985074626,
+      "mean_gray": 96.99093627929688
+    },
+    {
+      "image_id": 241,
+      "image": "source/coco128-seg/images/train2017/000000000241.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000241.txt",
+      "image_sha256": "14007b87745069ed85c6412dffc8ad11a22de98d5f5c9ae896523e12622961c5",
+      "label_sha256": "e318cc33278b35fce1d67275ea43ac04b471023c7686b6ea9ca1c8f87cc14865",
+      "crop_xywh": [
+        0,
+        80,
+        480,
+        480
+      ],
+      "person_count": 5,
+      "max_person_height_px": 256.0,
+      "mean_gray": 85.13055419921875
+    },
+    {
+      "image_id": 260,
+      "image": "source/coco128-seg/images/train2017/000000000260.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000260.txt",
+      "image_sha256": "f70992bbd14794773e27801c4cf4ba34ca4f453eb2efded62c2a558c40e3885b",
+      "label_sha256": "b6384e9fd652854c0b639ded59b6740d47c8d3c84994bf98df2eb404dac57c26",
+      "crop_xywh": [
+        83,
+        0,
+        333,
+        333
+      ],
+      "person_count": 1,
+      "max_person_height_px": 131.45945945945945,
+      "mean_gray": 67.12527465820312
+    },
+    {
+      "image_id": 312,
+      "image": "source/coco128-seg/images/train2017/000000000312.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000312.txt",
+      "image_sha256": "cd2fac2dfdc17fb1af0d12228e344d2e828fbe28a7c1e32396a95cb0b129d096",
+      "label_sha256": "c366befdf4e5cda46bd750c5cd46976b7194336a4eab232b6f58d3e79944695b",
+      "crop_xywh": [
+        106,
+        0,
+        427,
+        427
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 105.46475219726562
+    },
+    {
+      "image_id": 321,
+      "image": "source/coco128-seg/images/train2017/000000000321.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000321.txt",
+      "image_sha256": "60f0acad099ad5cf55f44968cea66e125e0beb7eb20a1d78888ee9db34e28cd8",
+      "label_sha256": "1f136c2af2685bf250ece0293646e8dcb23647766213e3100bd3a1b33604e522",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 124.12428283691406
+    },
+    {
+      "image_id": 322,
+      "image": "source/coco128-seg/images/train2017/000000000322.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000322.txt",
+      "image_sha256": "4dddb450ab0a84a458c3da0cfa868a42b9b146de1cda3dd13c34b3599c7b80d3",
+      "label_sha256": "609944acef97bcf1f329c78f0315abeaa20d1413b3072e9cb75df1a7c7262313",
+      "crop_xywh": [
+        79,
+        0,
+        481,
+        481
+      ],
+      "person_count": 1,
+      "max_person_height_px": 147.42619542619542,
+      "mean_gray": 26.043304443359375
+    },
+    {
+      "image_id": 338,
+      "image": "source/coco128-seg/images/train2017/000000000338.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000338.txt",
+      "image_sha256": "fdf5b5b2f8227082a5542fbc33b5f8740b040d345653c33bec6158d835542d6b",
+      "label_sha256": "dae3f852ecfd740a656c6399e1f683c25698c0cc1196c6651b4c1a98c2f1ef59",
+      "crop_xywh": [
+        156,
+        0,
+        327,
+        327
+      ],
+      "person_count": 2,
+      "max_person_height_px": 144.04892966360856,
+      "mean_gray": 106.24154663085938
+    },
+    {
+      "image_id": 359,
+      "image": "source/coco128-seg/images/train2017/000000000359.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000359.txt",
+      "image_sha256": "8da8a8320518a8adadbbd79615e066fd60b31c6025919665264ff9d0f746a5dd",
+      "label_sha256": "9a3b28d4a1707e1ee5019212121a72b3bf4a1202decfd72127a24b1a62546418",
+      "crop_xywh": [
+        84,
+        0,
+        332,
+        332
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 139.68069458007812
+    },
+    {
+      "image_id": 382,
+      "image": "source/coco128-seg/images/train2017/000000000382.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000382.txt",
+      "image_sha256": "9455b8af106ef7a2a3b6c4c7ceeda5f4e81b5e364a2aef8e6cf68abc1396f8bd",
+      "label_sha256": "1169cc30cdd87a1d6c3731319325fb1e10ce56c9dd2c842c1ad3e13a09346ea0",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 1,
+      "max_person_height_px": 43.733333333333334,
+      "mean_gray": 155.54263305664062
+    },
+    {
+      "image_id": 387,
+      "image": "source/coco128-seg/images/train2017/000000000387.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000387.txt",
+      "image_sha256": "079af237aafcdddfe5a528ef5e40f38ca449fce9ad5a49fbdaaeef068fac7c76",
+      "label_sha256": "a56d4de60d956f9747af4abb1646d2d4d41f8458cbae02d82cd79a62a8f4fe3a",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 118.58404541015625
+    },
+    {
+      "image_id": 389,
+      "image": "source/coco128-seg/images/train2017/000000000389.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000389.txt",
+      "image_sha256": "f6d313afba47fe0747d1d78cd342f420eb305de8faadb5cb164de428522b40d6",
+      "label_sha256": "392918c2e1facf3be99e398d7a4b858fe1db04b543a4c92bc5ef5633cfb967ad",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 9,
+      "max_person_height_px": 208.0,
+      "mean_gray": 90.16213989257812
+    },
+    {
+      "image_id": 400,
+      "image": "source/coco128-seg/images/train2017/000000000400.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000400.txt",
+      "image_sha256": "7b78338d4c7a30f7c38eb3bf11a7623a195e10926359adfd7281d6ce99e42dcb",
+      "label_sha256": "c7efae72de1ea5bbc6cebb291ec7dce47859bccbb3f0b2e0e291bb428a239044",
+      "crop_xywh": [
+        0,
+        1,
+        638,
+        638
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 128.34120178222656
+    },
+    {
+      "image_id": 404,
+      "image": "source/coco128-seg/images/train2017/000000000404.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000404.txt",
+      "image_sha256": "c46b3242d195c8c81b6776f4bfa385ef886ff1e7cb814e2c29e03303b85403b2",
+      "label_sha256": "45cc911a6dbbbaeb774b8741770902d9f3086f17b2c646d20f552068bb3cbec0",
+      "crop_xywh": [
+        0,
+        107,
+        426,
+        426
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 116.15525817871094
+    },
+    {
+      "image_id": 415,
+      "image": "source/coco128-seg/images/train2017/000000000415.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000415.txt",
+      "image_sha256": "cc75d90eac7419395e81ddd7e33c81dbec387892e086b40cbf12dc3fe09f8bb1",
+      "label_sha256": "a35d4ea81a66419eb4244e31b62fb021f5edd26c6a113c5ab3849730c47f7175",
+      "crop_xywh": [
+        0,
+        140,
+        359,
+        359
+      ],
+      "person_count": 1,
+      "max_person_height_px": 172.5682451253482,
+      "mean_gray": 97.44099426269531
+    },
+    {
+      "image_id": 419,
+      "image": "source/coco128-seg/images/train2017/000000000419.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000419.txt",
+      "image_sha256": "4b4e5c24a3aafa6d591ab385cc3756f90a804212a8e060ba374d1658b69b308e",
+      "label_sha256": "8e1ea536414a5a478318e4635992fb8b0dcda03a09a19d481faad6b7e35a78ac",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 2,
+      "max_person_height_px": 93.86666666666666,
+      "mean_gray": 96.97724914550781
+    },
+    {
+      "image_id": 446,
+      "image": "source/coco128-seg/images/train2017/000000000446.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000446.txt",
+      "image_sha256": "41f3d2ce74148a9628d29ac8ddb5eeed3a07394a55b72e75df5d418d5887ef50",
+      "label_sha256": "dc83455178a30afeeb6a35317933dd4a7950103c3ceb1be897741e4c5740cd98",
+      "crop_xywh": [
+        0,
+        80,
+        480,
+        480
+      ],
+      "person_count": 1,
+      "max_person_height_px": 232.53333333333333,
+      "mean_gray": 49.3629150390625
+    },
+    {
+      "image_id": 450,
+      "image": "source/coco128-seg/images/train2017/000000000450.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000450.txt",
+      "image_sha256": "3b1fe58cb414f373c61990a5fed4f1a6418a02b2e8a3ed3ecef613f4e7198068",
+      "label_sha256": "3932876345f4f8f6ede0998e5344afdb60c2ab9420dc6ddb27a09269e4783463",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 94.12989807128906
+    },
+    {
+      "image_id": 459,
+      "image": "source/coco128-seg/images/train2017/000000000459.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000459.txt",
+      "image_sha256": "9dac859e6bc3eaf091e94593a005735f9c3c3e71c1c40a708b4c24da99b2e06c",
+      "label_sha256": "d16a293bb697d02b61734a93e0da11ea5f2993fbef8498dd469c50a071fc0919",
+      "crop_xywh": [
+        0,
+        62,
+        516,
+        516
+      ],
+      "person_count": 1,
+      "max_person_height_px": 245.08527131782947,
+      "mean_gray": 84.52079772949219
+    },
+    {
+      "image_id": 474,
+      "image": "source/coco128-seg/images/train2017/000000000474.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000474.txt",
+      "image_sha256": "e5a6b72ea2fda1cd1ea969018036e6da16fa491f9a2ac974a7361b539b00a155",
+      "label_sha256": "5e2176aba16db5accc2149eb8053199abeb52c9f632bb2838289f7f744edf2b6",
+      "crop_xywh": [
+        0,
+        83,
+        333,
+        333
+      ],
+      "person_count": 1,
+      "max_person_height_px": 256.0,
+      "mean_gray": 127.39486694335938
+    },
+    {
+      "image_id": 488,
+      "image": "source/coco128-seg/images/train2017/000000000488.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000488.txt",
+      "image_sha256": "9e1c9d4c88d38e6a2cd2f775bea82c137c14dc3b13f8430bcdadcb89ab0b7022",
+      "label_sha256": "7a3cbfa92c423331b971e013275a3c6559bcfdc7725deda444bd1bcb3b184c38",
+      "crop_xywh": [
+        117,
+        0,
+        406,
+        406
+      ],
+      "person_count": 5,
+      "max_person_height_px": 92.05911330049261,
+      "mean_gray": 159.2232208251953
+    },
+    {
+      "image_id": 502,
+      "image": "source/coco128-seg/images/train2017/000000000502.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000502.txt",
+      "image_sha256": "f7ce0feeb7699cd56886c64ac4ea923c76be97b34ee3a2ea0909c45e08411ec0",
+      "label_sha256": "4a4e07fbb666409a4800825e7ee9d861741b4bc2d7c8fc12ddddb44e5ac18038",
+      "crop_xywh": [
+        106,
+        0,
+        427,
+        427
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 131.26295471191406
+    },
+    {
+      "image_id": 510,
+      "image": "source/coco128-seg/images/train2017/000000000510.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000510.txt",
+      "image_sha256": "c2fcc1d44e81016f4c53e7e610c44dc28a2ca1bc5e73f73623129d261bff15e2",
+      "label_sha256": "0d09744f2dbf2b2387b6e79014c16fe4ad9b9fe8cb2c3488930e149e05f36420",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 1,
+      "max_person_height_px": 159.46666666666667,
+      "mean_gray": 132.44754028320312
+    },
+    {
+      "image_id": 529,
+      "image": "source/coco128-seg/images/train2017/000000000529.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000529.txt",
+      "image_sha256": "5d9958bdec3062b05090258293a19af01d231de69b943d1ff0bb4a7b943e6db3",
+      "label_sha256": "6fd862e44ab29f3e5f5c643d831e986517fc420049bfc2b5aeb5da5d305a69e1",
+      "crop_xywh": [
+        0,
+        106,
+        427,
+        427
+      ],
+      "person_count": 2,
+      "max_person_height_px": 229.02107728337236,
+      "mean_gray": 125.03086853027344
+    },
+    {
+      "image_id": 536,
+      "image": "source/coco128-seg/images/train2017/000000000536.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000536.txt",
+      "image_sha256": "745e538b3979ffa93f63bb294163e173d9a99413bce6cf3289215b541c9f1eb1",
+      "label_sha256": "9973a82efebad97a4c69f081a4f667a47dc0c0b97cfbbf00188c41a3f15fbf26",
+      "crop_xywh": [
+        56,
+        0,
+        336,
+        336
+      ],
+      "person_count": 3,
+      "max_person_height_px": 201.9047619047619,
+      "mean_gray": 85.3616943359375
+    },
+    {
+      "image_id": 562,
+      "image": "source/coco128-seg/images/train2017/000000000562.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000562.txt",
+      "image_sha256": "e31320272d768add7113d41a9c65407fd4868da1229f8658fc877e9b07c4c794",
+      "label_sha256": "dd11ce5b4b03f12adab1f1c38c14c82f58429955e13f13f8ddcda2bd09907942",
+      "crop_xywh": [
+        0,
+        108,
+        423,
+        423
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 120.37948608398438
+    },
+    {
+      "image_id": 564,
+      "image": "source/coco128-seg/images/train2017/000000000564.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000564.txt",
+      "image_sha256": "1f67bf49851ff43dba866f0cd6cc1b6f1d35ee75255a6092483550548584f477",
+      "label_sha256": "b036e095b2ffc1066bf7d1d36b6cdbbc2f61efe5909b7584d5f9ef533748bd91",
+      "crop_xywh": [
+        0,
+        60,
+        520,
+        520
+      ],
+      "person_count": 2,
+      "max_person_height_px": 120.61538461538461,
+      "mean_gray": 41.73301696777344
+    },
+    {
+      "image_id": 569,
+      "image": "source/coco128-seg/images/train2017/000000000569.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000569.txt",
+      "image_sha256": "07655c58e2286ec5e8b74eee71a03841ccf732cbc502d6c380d894a14041ad5f",
+      "label_sha256": "7b55c98f938997bfa304a8775bf69a3b98b3e4eb828cc8148e3842290e748802",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 1,
+      "max_person_height_px": 77.86666666666666,
+      "mean_gray": 123.50993347167969
+    },
+    {
+      "image_id": 575,
+      "image": "source/coco128-seg/images/train2017/000000000575.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000575.txt",
+      "image_sha256": "839789fe6192bbd5776761d675aa76017b67810b556f3e25e2f3a31acffd86f3",
+      "label_sha256": "223556a31a7103def65f3617710c2f5508961ec2688cef01f84c8d4c559d6b5a",
+      "crop_xywh": [
+        63,
+        0,
+        513,
+        513
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 105.56535339355469
+    },
+    {
+      "image_id": 581,
+      "image": "source/coco128-seg/images/train2017/000000000581.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000581.txt",
+      "image_sha256": "60ad7a794ae3032c302c4e1d5111099921ce7e8df23df4401f60bdc74dc83bf1",
+      "label_sha256": "141a360c8140521f6f660df325dca2ae778cd162321f5df0eeb04c7bbafb9753",
+      "crop_xywh": [
+        0,
+        13,
+        473,
+        473
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 126.5875244140625
+    },
+    {
+      "image_id": 597,
+      "image": "source/coco128-seg/images/train2017/000000000597.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000597.txt",
+      "image_sha256": "f611f233ff6657baa61f32f573a213ef1b1af031e892f8b4e287c21a856497e7",
+      "label_sha256": "628b26d78fa44b1465b3246ae0fbb6196773c88e4d37a74491fd7650f3702309",
+      "crop_xywh": [
+        196,
+        0,
+        248,
+        248
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 132.97161865234375
+    },
+    {
+      "image_id": 599,
+      "image": "source/coco128-seg/images/train2017/000000000599.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000599.txt",
+      "image_sha256": "9d924b4353cca7295c149e3659866a18e78234f0dc701df119191152f4a31fec",
+      "label_sha256": "af678f4b5c14b2b6b9d0547b2917278eb549dce6386d256b18557390714828cd",
+      "crop_xywh": [
+        116,
+        0,
+        407,
+        407
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 64.10209655761719
+    },
+    {
+      "image_id": 605,
+      "image": "source/coco128-seg/images/train2017/000000000605.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000605.txt",
+      "image_sha256": "9135dd0723240d2d4f64ce2173901a0f23a222dea98b72e1259c28f28fa2aab6",
+      "label_sha256": "359a4ae1bc843d181385c9b201c2479b8e9601f53519a76a7928b33ec0902c0f",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 133.9968719482422
+    },
+    {
+      "image_id": 623,
+      "image": "source/coco128-seg/images/train2017/000000000623.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000623.txt",
+      "image_sha256": "c11d16bc49acabc2a52b990174110753dbe3a9a71eb7aa37af8f5fc4c616fb20",
+      "label_sha256": "44284c69ab32a77d4836f50b9a06c55f123a5c8ec1b49be605229f44bfddf58c",
+      "crop_xywh": [
+        0,
+        62,
+        375,
+        375
+      ],
+      "person_count": 1,
+      "max_person_height_px": 256.0,
+      "mean_gray": 113.60871887207031
+    },
+    {
+      "image_id": 626,
+      "image": "source/coco128-seg/images/train2017/000000000626.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000626.txt",
+      "image_sha256": "47b4a3b3fe24c6b1f77a9d89aa2e5d1a3b410b7ba611f54c252c2e13e975afc8",
+      "label_sha256": "5feffee82e10c3a33df87499471d25a6b275990dd4aed3020882e14c39e58fa3",
+      "crop_xywh": [
+        80,
+        0,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 87.51017761230469
+    },
+    {
+      "image_id": 636,
+      "image": "source/coco128-seg/images/train2017/000000000636.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000636.txt",
+      "image_sha256": "8e948d6888e7bf449e91883d3a2b0d61804308aada31fbf289add4da4dd978e8",
+      "label_sha256": "143632b69ddbbe4cd63efe96c3091ca7b052ecf651eccad62222c605749a3f60",
+      "crop_xywh": [
+        0,
+        80,
+        480,
+        480
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 114.52235412597656
+    },
+    {
+      "image_id": 650,
+      "image": "source/coco128-seg/images/train2017/000000000650.jpg",
+      "label": "source/coco128-seg/labels/train2017/000000000650.txt",
+      "image_sha256": "9bb45795336c1d05189fe51a77e04270cd1da8929d62060926798f3dd2d25204",
+      "label_sha256": "654ed05c5e3cafa760f6dfd2ff99b1a4d028e50aecd010f78c45491527413028",
+      "crop_xywh": [
+        106,
+        0,
+        427,
+        427
+      ],
+      "person_count": 0,
+      "max_person_height_px": 0.0,
+      "mean_gray": 111.00311279296875
+    }
+  ],
+  "arrays": {
+    "uint8": {
+      "shape": [
+        50,
+        256,
+        256,
+        3
+      ],
+      "dtype": "uint8",
+      "file_sha256": "9ea3563f0160f812faa0500e8684fe0c2730c7a838919705849fb4473a160668",
+      "tensor_sha256": "d00ff58446566ec70d958a0ae0ac88a4d0ea205aa42142806af9d3e7b3a54879"
+    },
+    "int8": {
+      "shape": [
+        50,
+        256,
+        256,
+        3
+      ],
+      "dtype": "int8",
+      "file_sha256": "3f16a7d20c8c6eec83d9f49912fcfa3ca9266beefb843c97faac1e675dcb2f67",
+      "tensor_sha256": "ab59d05ee4f3bfc8dc539f0713a3514dfd13d1184de0194f747bcf78219c9b73"
+    },
+    "float32": {
+      "shape": [
+        50,
+        256,
+        256,
+        3
+      ],
+      "dtype": "float32",
+      "file_sha256": "2c5a1e495adbbbd29d0c4c78604ba91257c801748e32e4e4613587a90cd0a3f7",
+      "tensor_sha256": "d886355b2f8e66191d2e74357a2867a41efb67797b216e52adc551826dc3751e"
+    }
+  }
+}

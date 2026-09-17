@@ -1,0 +1,6 @@
+{
+  "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco128-seg.zip",
+  "archive_sha256": "8219f78b7d5ec2a164b2f8bca873918c34d275bc94e3bd87cf01b15d97fe1cad",
+  "image_count": 128,
+  "label_file_count": 128
+}

@@ -1,0 +1,150 @@
+{
+  "inputs_manifest_sha256": "f4df680af52d42c15bbc96bf761ec2551f36be6a7a3239753f322206faceb78b",
+  "image_ids": [
+    71,
+    72,
+    74,
+    77,
+    81,
+    86,
+    109,
+    113,
+    133,
+    138,
+    143,
+    144,
+    151,
+    164,
+    165,
+    241,
+    260,
+    312,
+    321,
+    322,
+    338,
+    359,
+    382,
+    387,
+    389,
+    400,
+    404,
+    415,
+    419,
+    446,
+    450,
+    459,
+    474,
+    488,
+    502,
+    510,
+    529,
+    536,
+    562,
+    564,
+    569,
+    575,
+    581,
+    597,
+    599,
+    605,
+    623,
+    626,
+    636,
+    650
+  ],
+  "tensorflow": "2.18.0",
+  "num_threads": 1,
+  "resolver": "AUTO; default delegates allowed",
+  "models": {
+    "fp32": {
+      "model": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model/yolov8n-seg_float32.tflite",
+      "model_sha256": "e6f1de4fc80853eb3265e5fbe54f23eac7c9568d966720aa249dd6859f467ac9",
+      "input": {
+        "name": "images",
+        "shape": [
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "float32",
+        "scale": 0.0,
+        "zero_point": 0
+      },
+      "outputs": {
+        "detections": {
+          "name": "Identity",
+          "shape": [
+            1,
+            116,
+            1344
+          ],
+          "dtype": "float32",
+          "scale": 0.0,
+          "zero_point": 0,
+          "file": "fp32_detections.npy",
+          "file_sha256": "e6432d0ac35f39865b25d59168c0ddaf39513accc2601b3b8afdc8673caf4b5d"
+        },
+        "mask": {
+          "name": "Identity_1",
+          "shape": [
+            1,
+            64,
+            64,
+            32
+          ],
+          "dtype": "float32",
+          "scale": 0.0,
+          "zero_point": 0,
+          "file": "fp32_mask.npy",
+          "file_sha256": "ab824845efbd48a99f7d1b864d4dc101faf7448f7e180977b0d655ec5675e1be"
+        }
+      }
+    },
+    "pc_default": {
+      "model": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite",
+      "model_sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+      "input": {
+        "name": "serving_default_images:0",
+        "shape": [
+          1,
+          256,
+          256,
+          3
+        ],
+        "dtype": "int8",
+        "scale": 0.003921568859368563,
+        "zero_point": -128
+      },
+      "outputs": {
+        "mask": {
+          "name": "PartitionedCall:1",
+          "shape": [
+            1,
+            64,
+            64,
+            32
+          ],
+          "dtype": "int8",
+          "scale": 0.017772065475583076,
+          "zero_point": -112,
+          "file": "pc_default_mask.npy",
+          "file_sha256": "a7b3cbe15a35d9deca895f79d232649ad1f5a7de7026c52aee197ec93135dd5e"
+        },
+        "detections": {
+          "name": "PartitionedCall:0",
+          "shape": [
+            1,
+            116,
+            1344
+          ],
+          "dtype": "int8",
+          "scale": 0.019118906930088997,
+          "zero_point": 16,
+          "file": "pc_default_detections.npy",
+          "file_sha256": "c2018a76c59df815fb0ac1b2df7defc87415c9172ae92b896c8920f07703c1ca"
+        }
+      }
+    }
+  }
+}

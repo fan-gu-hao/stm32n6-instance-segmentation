@@ -1,0 +1,82 @@
+[
+  {
+    "image_id": 9,
+    "output": "mask",
+    "exact_percent": 26.56707763671875,
+    "mae_lsb": 2.9815444946289062,
+    "max_lsb": 45,
+    "rmse_dequantized": 0.08262751665928607,
+    "cos": 0.9963149025775849,
+    "l2r": 0.08613194423271688
+  },
+  {
+    "image_id": 25,
+    "output": "mask",
+    "exact_percent": 26.107025146484375,
+    "mae_lsb": 2.6001663208007812,
+    "max_lsb": 36,
+    "rmse_dequantized": 0.06922871159508151,
+    "cos": 0.9944300458974893,
+    "l2r": 0.10575562439657894
+  },
+  {
+    "image_id": 30,
+    "output": "mask",
+    "exact_percent": 27.25067138671875,
+    "mae_lsb": 2.6708526611328125,
+    "max_lsb": 32,
+    "rmse_dequantized": 0.07187588048257629,
+    "cos": 0.9951851704992392,
+    "l2r": 0.09838025013154551
+  },
+  {
+    "image_id": 34,
+    "output": "mask",
+    "exact_percent": 30.625152587890625,
+    "mae_lsb": 2.1895751953125,
+    "max_lsb": 34,
+    "rmse_dequantized": 0.06165388774371487,
+    "cos": 0.9965254353848526,
+    "l2r": 0.08329466159949865
+  },
+  {
+    "image_id": 9,
+    "output": "detections",
+    "exact_percent": 78.73883928571429,
+    "mae_lsb": 0.4044027093596059,
+    "max_lsb": 17,
+    "rmse_dequantized": 0.0204580046131457,
+    "cos": 0.9985058847403585,
+    "l2r": 0.055236084098182724
+  },
+  {
+    "image_id": 25,
+    "output": "detections",
+    "exact_percent": 79.28917795566502,
+    "mae_lsb": 0.37830331486042695,
+    "max_lsb": 25,
+    "rmse_dequantized": 0.019871114974385148,
+    "cos": 0.9977995111264216,
+    "l2r": 0.06666417469650425
+  },
+  {
+    "image_id": 30,
+    "output": "detections",
+    "exact_percent": 79.33728448275862,
+    "mae_lsb": 0.3498050082101806,
+    "max_lsb": 14,
+    "rmse_dequantized": 0.01750955897465997,
+    "cos": 0.9981668599349595,
+    "l2r": 0.06064801216213926
+  },
+  {
+    "image_id": 34,
+    "output": "detections",
+    "exact_percent": 80.67464593596058,
+    "mae_lsb": 0.29992174671592775,
+    "max_lsb": 11,
+    "rmse_dequantized": 0.01525648119201233,
+    "cos": 0.9983459577726784,
+    "l2r": 0.05782273957488244
+  }
+]

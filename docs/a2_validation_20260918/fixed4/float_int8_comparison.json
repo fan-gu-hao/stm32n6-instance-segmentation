@@ -1,0 +1,263 @@
+{
+  "scope": "prediction agreement, not ground-truth accuracy",
+  "model": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/yolov8n-seg_saved_model/yolov8n-seg_float32.tflite",
+  "model_sha256": "e6f1de4fc80853eb3265e5fbe54f23eac7c9568d966720aa249dd6859f467ac9",
+  "input_tensor_sha256": "b1d27f7b732e379710ee85c637a3c302bc7feffb7a6ede6e687d70b3ae73ace4",
+  "tensorflow": "2.18.0",
+  "torch": "2.7.1+cpu",
+  "ultralytics": "8.3.157",
+  "common_postprocess_config_sha256": "529b35f28d35dca6205280f651cc7050a26baabd7f4200ed2c316d024f50b4fb",
+  "matching": "same class, box IoU >= 0.5; maximize pair count then IoU",
+  "comparisons": [
+    {
+      "image_id": 9,
+      "reference": "fp32",
+      "test": "pc_default",
+      "reference_count": 5,
+      "test_count": 5,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 45,
+          "box_iou": 0.944815993309021,
+          "mask_iou": 0.9894736842105263,
+          "reference_confidence": 0.8205298185348511,
+          "test_confidence": 0.7073995471000671
+        },
+        {
+          "reference_index": 1,
+          "test_index": 2,
+          "class_id": 50,
+          "box_iou": 0.9401168823242188,
+          "mask_iou": 0.9789356984478935,
+          "reference_confidence": 0.7213274240493774,
+          "test_confidence": 0.6118050217628479
+        },
+        {
+          "reference_index": 2,
+          "test_index": 1,
+          "class_id": 45,
+          "box_iou": 0.9660545587539673,
+          "mask_iou": 0.7989949748743719,
+          "reference_confidence": 0.7149883508682251,
+          "test_confidence": 0.6118050217628479
+        },
+        {
+          "reference_index": 3,
+          "test_index": 3,
+          "class_id": 50,
+          "box_iou": 0.8843075633049011,
+          "mask_iou": 0.9310344827586207,
+          "reference_confidence": 0.33593177795410156,
+          "test_confidence": 0.3250214159488678
+        },
+        {
+          "reference_index": 4,
+          "test_index": 4,
+          "class_id": 60,
+          "box_iou": 0.9851623773574829,
+          "mask_iou": 0.41223832528180354,
+          "reference_confidence": 0.2715696394443512,
+          "test_confidence": 0.2867836058139801
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 25,
+      "reference": "fp32",
+      "test": "pc_default",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 23,
+          "box_iou": 0.947650671005249,
+          "mask_iou": 0.9508196721311475,
+          "reference_confidence": 0.90833580493927,
+          "test_confidence": 0.8603507876396179
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 30,
+      "reference": "fp32",
+      "test": "pc_default",
+      "reference_count": 2,
+      "test_count": 2,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 75,
+          "box_iou": 0.9708701372146606,
+          "mask_iou": 0.9772727272727273,
+          "reference_confidence": 0.8163770437240601,
+          "test_confidence": 0.7838751673698425
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 58,
+          "box_iou": 0.9736067056655884,
+          "mask_iou": 0.976123595505618,
+          "reference_confidence": 0.7053298950195312,
+          "test_confidence": 0.6691617369651794
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 34,
+      "reference": "fp32",
+      "test": "pc_default",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 22,
+          "box_iou": 0.9709185361862183,
+          "mask_iou": 0.993637941006362,
+          "reference_confidence": 0.9492466449737549,
+          "test_confidence": 0.9368264675140381
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 9,
+      "reference": "fp32",
+      "test": "n6",
+      "reference_count": 5,
+      "test_count": 5,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 45,
+          "box_iou": 0.9193011522293091,
+          "mask_iou": 0.9895052473763118,
+          "reference_confidence": 0.8205298185348511,
+          "test_confidence": 0.6691617369651794
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 50,
+          "box_iou": 0.961435079574585,
+          "mask_iou": 0.9856512141280354,
+          "reference_confidence": 0.7213274240493774,
+          "test_confidence": 0.6118050217628479
+        },
+        {
+          "reference_index": 2,
+          "test_index": 2,
+          "class_id": 45,
+          "box_iou": 0.9658553600311279,
+          "mask_iou": 0.9029363784665579,
+          "reference_confidence": 0.7149883508682251,
+          "test_confidence": 0.6118050217628479
+        },
+        {
+          "reference_index": 3,
+          "test_index": 3,
+          "class_id": 50,
+          "box_iou": 0.8843075633049011,
+          "mask_iou": 0.9310344827586207,
+          "reference_confidence": 0.33593177795410156,
+          "test_confidence": 0.34414032101631165
+        },
+        {
+          "reference_index": 4,
+          "test_index": 4,
+          "class_id": 60,
+          "box_iou": 0.9661319255828857,
+          "mask_iou": 0.33285714285714285,
+          "reference_confidence": 0.2715696394443512,
+          "test_confidence": 0.2867836058139801
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 25,
+      "reference": "fp32",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 23,
+          "box_iou": 0.9271155595779419,
+          "mask_iou": 0.9454976303317536,
+          "reference_confidence": 0.90833580493927,
+          "test_confidence": 0.8603507876396179
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 30,
+      "reference": "fp32",
+      "test": "n6",
+      "reference_count": 2,
+      "test_count": 2,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 75,
+          "box_iou": 0.9708701372146606,
+          "mask_iou": 0.9748858447488584,
+          "reference_confidence": 0.8163770437240601,
+          "test_confidence": 0.8412318825721741
+        },
+        {
+          "reference_index": 1,
+          "test_index": 1,
+          "class_id": 58,
+          "box_iou": 0.9878522753715515,
+          "mask_iou": 0.9732770745428974,
+          "reference_confidence": 0.7053298950195312,
+          "test_confidence": 0.6691617369651794
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    },
+    {
+      "image_id": 34,
+      "reference": "fp32",
+      "test": "n6",
+      "reference_count": 1,
+      "test_count": 1,
+      "pairs": [
+        {
+          "reference_index": 0,
+          "test_index": 0,
+          "class_id": 22,
+          "box_iou": 0.9647610783576965,
+          "mask_iou": 0.9924898902368573,
+          "reference_confidence": 0.9492466449737549,
+          "test_confidence": 0.9177075624465942
+        }
+      ],
+      "unmatched_reference": [],
+      "unmatched_test": []
+    }
+  ]
+}

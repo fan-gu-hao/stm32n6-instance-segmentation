@@ -1,0 +1,29 @@
+{
+  "model_sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+  "tensorflow": "2.18.0",
+  "num_threads": 1,
+  "input_file_sha256": "a89280f22c7f8c7357ecf8897077b6b561c4c5e41a09af9c3c6d8a4025cec244",
+  "outputs": {
+    "mask": {
+      "tensor_name": "PartitionedCall:1",
+      "shape": [
+        4,
+        64,
+        64,
+        32
+      ],
+      "scale": 0.017772065475583076,
+      "zero_point": -112
+    },
+    "detections": {
+      "tensor_name": "PartitionedCall:0",
+      "shape": [
+        4,
+        116,
+        1344
+      ],
+      "scale": 0.019118906930088997,
+      "zero_point": 16
+    }
+  }
+}

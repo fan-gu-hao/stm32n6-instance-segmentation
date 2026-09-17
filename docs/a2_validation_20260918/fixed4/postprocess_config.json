@@ -1,0 +1,49 @@
+{
+  "ultralytics": "8.3.157",
+  "torch": "2.7.1+cpu",
+  "scope": "common PC postprocessing; not ST application postprocessing",
+  "confidence_requested": 0.25,
+  "confidence_int8": 29,
+  "nms_float_gate": 0.2485457807779312,
+  "nms_iou": 0.5,
+  "max_det": 10,
+  "class_agnostic": false,
+  "multi_label": false,
+  "box_units": "pixels in 256x256; clipped after NMS",
+  "mask_shape": [
+    64,
+    64
+  ],
+  "sources": {
+    "pc_default": {
+      "detections": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/pc_detections_int8.npy",
+        "sha256": "a59dddc03bcfb6216256d68877367e73f1c3ea03d8cb1dc922c728dbcd434c30"
+      },
+      "mask": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/pc_mask_int8.npy",
+        "sha256": "dc2092fcabe261976059a1750c9d7aaed6e76812ebfe8e8f6ccd2844b93601fc"
+      }
+    },
+    "pc_builtin": {
+      "detections": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/detail_20260918_013219/pc_nodelegate_detections_int8.npy",
+        "sha256": "4ec85d261daddef54ecc56d614eb636861c08e09e5d6ea4ce60fdade5accba2f"
+      },
+      "mask": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/detail_20260918_013219/pc_nodelegate_mask_int8.npy",
+        "sha256": "657beef3eee94fd1938204030f8fef0151ae6473bbe0cc97f901343fb6f123be"
+      }
+    },
+    "n6": {
+      "detections": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/n6_detections_int8.npy",
+        "sha256": "b3bbd595b5bac62c1913d060b5afa3ef3dc00161a817602c1cb3075a24471dde"
+      },
+      "mask": {
+        "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/n6_mask_int8.npy",
+        "sha256": "222d30aca9e87a8a8d1345b1d72a04ef22f9279080fc147de4b0c5196bc9fb13"
+      }
+    }
+  }
+}

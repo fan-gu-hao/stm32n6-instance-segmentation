@@ -1,0 +1,117 @@
+{
+  "inputs_manifest_sha256": "f4df680af52d42c15bbc96bf761ec2551f36be6a7a3239753f322206faceb78b",
+  "image_ids": [
+    71,
+    72,
+    74,
+    77,
+    81,
+    86,
+    109,
+    113,
+    133,
+    138,
+    143,
+    144,
+    151,
+    164,
+    165,
+    241,
+    260,
+    312,
+    321,
+    322,
+    338,
+    359,
+    382,
+    387,
+    389,
+    400,
+    404,
+    415,
+    419,
+    446,
+    450,
+    459,
+    474,
+    488,
+    502,
+    510,
+    529,
+    536,
+    562,
+    564,
+    569,
+    575,
+    581,
+    597,
+    599,
+    605,
+    623,
+    626,
+    636,
+    650
+  ],
+  "serial_device": "/dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_0051002A3234510137333934-if01",
+  "baudrate": 921600,
+  "mode": "IO_ONLY",
+  "input": {
+    "shape": [
+      1,
+      256,
+      256,
+      3
+    ],
+    "dtype": "uint8",
+    "scale": 0.003921568859368563,
+    "zero_point": 0
+  },
+  "runtime_outputs": [
+    {
+      "shape": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "dtype": "int8",
+      "scale": 0.017772065475583076,
+      "zero_point": -112
+    },
+    {
+      "shape": [
+        1,
+        116,
+        1344
+      ],
+      "dtype": "int8",
+      "scale": 0.019118906930088997,
+      "zero_point": 16
+    }
+  ],
+  "previous_sample_exact_match": true,
+  "reused_samples": 0,
+  "outputs": {
+    "mask": {
+      "file": "n6_mask.npy",
+      "shape": [
+        50,
+        64,
+        64,
+        32
+      ],
+      "dtype": "int8",
+      "file_sha256": "d280dd7d2e0642850e820f89aabe7df5bd3237ce159e2a93c1a22e4cd129d803"
+    },
+    "detections": {
+      "file": "n6_detections.npy",
+      "shape": [
+        50,
+        116,
+        1344
+      ],
+      "dtype": "int8",
+      "file_sha256": "67873de919c0fab9257dba9639655dc45cc4c3015bebdf32dc26dfb19d9c4187"
+    }
+  }
+}

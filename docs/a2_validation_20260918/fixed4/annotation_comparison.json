@@ -1,0 +1,366 @@
+{
+  "scope": "four-image fixed-threshold regression; not COCO mAP",
+  "matching": "same class, box IoU >= 0.5; maximize pair count then IoU",
+  "gt_boxes": "bounding boxes of visible rasterized polygons after center crop",
+  "gt_masks": "rasterize at original resolution; center crop; nearest resize to 64x64",
+  "mask_statistics": "box-matched objects only; empty union is undefined",
+  "numpy": "1.26.4",
+  "opencv": "4.10.0",
+  "source_sha256": {
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000009.jpg": "be0ecc9cacc0150f0a84f6dc098f3e5c526ac85f8a14c1a0d16c2a4eb3d305a6",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/labels/train/000000000009.txt": "34d84b5eee7f13ed3dd3c0582b8a48e6a72ece930e78e0c1939e830d661e2b1a",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000025.jpg": "f7ddff65077bd4e362a890ed13b1cd931fd38882d49bae9e7e53e369e4b4d028",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/labels/train/000000000025.txt": "9753852f49b21b85f90544037e0ec6c0b636a0ebaba351a9eb0585be496edb5d",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000030.jpg": "52a12b6af76049a23192320610a316b6c1ea8e7d12e083f15c18e1690c506e66",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/labels/train/000000000030.txt": "cc24fe600a22665adf18c1a09817df5f5617ea70c8e63489aead88d454013d77",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/images/train/000000000034.jpg": "8d5334f6c8d3e8b77d50726625eecc6896597f063d3801f1993ffcb9e6b05acb",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/datasets/coco8-seg/labels/train/000000000034.txt": "3c1a4dac37b73951445337fc69b6232ac960c4c394d256836a475ce90d784d4a",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/float_comparison_20260918_014458/fp32_0009.npz": "07114de0c4426653725515830a9ac8def3a050ab619f17170022b9dcee19c4f1",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/float_comparison_20260918_014458/fp32_0025.npz": "9198fadf486690e00f112ffdea581167e2c7b79bc45a9f3dacb136abc095caef",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/float_comparison_20260918_014458/fp32_0030.npz": "e168e5b1dcc6922bb4059147c7752c8b70e525fdce647d39a317e42b6fa2b65c",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/float_comparison_20260918_014458/fp32_0034.npz": "f60a99593f999584f10925f94f408882f2eff26342cb1f4ffc261ba98935d620",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/pc_default_0009.npz": "e9a0faf65df77b055b64ea1f1613c599a26b0924664c4f6d1f231cd2b3a70655",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/pc_default_0025.npz": "a33896553e09bcec3878a4ab9d0fc7bd7208a91e8d22a908e9de205793dafab2",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/pc_default_0030.npz": "982d93710bb7ea3dec70593c6ccb607ac2176f4b82444db52f64cd4db54856a4",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/pc_default_0034.npz": "c9ec68b160b461aea3a0b8768c83a38def26849bed9344d72a30bb1df3e4b236",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/n6_0009.npz": "43f2a7d8169d3f3e5feac26219a87aa542398f4f63c88158b8178d0f33951533",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/n6_0025.npz": "17f459a250015300e9715fdf352460a099542354740a866b6920befaded0288c",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/n6_0030.npz": "9feb4dd50f5aca3e0a0a7ac6781391f6150f23cd1503eb1e88d967879cd50bd1",
+    "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a2_fixed_input/run_20260918_004919/npu_validation_20260918_011028/check_20260918_012100/postprocess_20260918_013805/n6_0034.npz": "ba7886ae46c0af6bdc4709d43f28f440c290bf6e6b974101cd4e56362c4cffad"
+  },
+  "results": [
+    {
+      "model": "fp32",
+      "image_id": 9,
+      "tp": 3,
+      "fp": 2,
+      "fn": 5,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 2,
+          "class_id": 45,
+          "label_line": 1,
+          "box_iou": 0.9720533490180969,
+          "mask_iou": 0.4936399217221135
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 45,
+          "label_line": 2,
+          "box_iou": 0.9546495676040649,
+          "mask_iou": 0.9265367316341829
+        },
+        {
+          "gt_index": 2,
+          "prediction_index": 1,
+          "class_id": 50,
+          "label_line": 3,
+          "box_iou": 0.9421194791793823,
+          "mask_iou": 0.938177874186551
+        }
+      ],
+      "unmatched_gt": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "unmatched_predictions": [
+        3,
+        4
+      ]
+    },
+    {
+      "model": "fp32",
+      "image_id": 25,
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 23,
+          "label_line": 1,
+          "box_iou": 0.9337120056152344,
+          "mask_iou": 0.8295964125560538
+        }
+      ],
+      "unmatched_gt": [
+        1
+      ],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "fp32",
+      "image_id": 30,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 1,
+          "class_id": 58,
+          "label_line": 1,
+          "box_iou": 0.933113157749176,
+          "mask_iou": 0.5868210151380232
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 75,
+          "label_line": 2,
+          "box_iou": 0.9225960969924927,
+          "mask_iou": 0.8103837471783296
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "fp32",
+      "image_id": 34,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 22,
+          "label_line": 1,
+          "box_iou": 0.9745076894760132,
+          "mask_iou": 0.9013774104683195
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "pc_default",
+      "image_id": 9,
+      "tp": 3,
+      "fp": 2,
+      "fn": 5,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 1,
+          "class_id": 45,
+          "label_line": 1,
+          "box_iou": 0.9854859709739685,
+          "mask_iou": 0.6061794997547818
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 45,
+          "label_line": 2,
+          "box_iou": 0.9810536503791809,
+          "mask_iou": 0.9278195488721804
+        },
+        {
+          "gt_index": 2,
+          "prediction_index": 2,
+          "class_id": 50,
+          "label_line": 3,
+          "box_iou": 0.9221938252449036,
+          "mask_iou": 0.940854326396495
+        }
+      ],
+      "unmatched_gt": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "unmatched_predictions": [
+        3,
+        4
+      ]
+    },
+    {
+      "model": "pc_default",
+      "image_id": 25,
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 23,
+          "label_line": 1,
+          "box_iou": 0.9585586190223694,
+          "mask_iou": 0.8539325842696629
+        }
+      ],
+      "unmatched_gt": [
+        1
+      ],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "pc_default",
+      "image_id": 30,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 1,
+          "class_id": 58,
+          "label_line": 1,
+          "box_iou": 0.9095199704170227,
+          "mask_iou": 0.5898576512455516
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 75,
+          "label_line": 2,
+          "box_iou": 0.9222491383552551,
+          "mask_iou": 0.7991071428571429
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "pc_default",
+      "image_id": 34,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 22,
+          "label_line": 1,
+          "box_iou": 0.9779250025749207,
+          "mask_iou": 0.9039204859193816
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "n6",
+      "image_id": 9,
+      "tp": 3,
+      "fp": 2,
+      "fn": 5,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 2,
+          "class_id": 45,
+          "label_line": 1,
+          "box_iou": 0.9389631152153015,
+          "mask_iou": 0.5205882352941177
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 45,
+          "label_line": 2,
+          "box_iou": 0.9405015707015991,
+          "mask_iou": 0.9280359820089955
+        },
+        {
+          "gt_index": 2,
+          "prediction_index": 1,
+          "class_id": 50,
+          "label_line": 3,
+          "box_iou": 0.9276490211486816,
+          "mask_iou": 0.9391965255157437
+        }
+      ],
+      "unmatched_gt": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "unmatched_predictions": [
+        3,
+        4
+      ]
+    },
+    {
+      "model": "n6",
+      "image_id": 25,
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 23,
+          "label_line": 1,
+          "box_iou": 0.9083794355392456,
+          "mask_iou": 0.8393665158371041
+        }
+      ],
+      "unmatched_gt": [
+        1
+      ],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "n6",
+      "image_id": 30,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 1,
+          "class_id": 58,
+          "label_line": 1,
+          "box_iou": 0.9339232444763184,
+          "mask_iou": 0.58348134991119
+        },
+        {
+          "gt_index": 1,
+          "prediction_index": 0,
+          "class_id": 75,
+          "label_line": 2,
+          "box_iou": 0.9222491383552551,
+          "mask_iou": 0.8122171945701357
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    },
+    {
+      "model": "n6",
+      "image_id": 34,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "pairs": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "class_id": 22,
+          "label_line": 1,
+          "box_iou": 0.9682947993278503,
+          "mask_iou": 0.9018743109151047
+        }
+      ],
+      "unmatched_gt": [],
+      "unmatched_predictions": []
+    }
+  ]
+}
