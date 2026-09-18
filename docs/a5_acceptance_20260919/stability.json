@@ -1,0 +1,26 @@
+{
+  "scope": "30-minute UART frame-packet observation and final user screen check",
+  "context_sha256": "cbb0e2ce18827516028eff93a29780d4ca467e7467fa3c638cd777d2a8574a2a",
+  "cold_boot_summary_sha256": "8b4cbc206520beb4c7c1f1a5dd6e6fea3c4c3186142256d357134681381ce7c2",
+  "started_utc": "2026-09-18T15:35:11.702399+00:00",
+  "target_seconds": 1800,
+  "observed_seconds": 1800.142142179,
+  "counts": {
+    "complete_frames": 18054,
+    "packet_errors": 0,
+    "sequence_anomalies": 1,
+    "restart_headers": 0,
+    "firmware_errors": 0
+  },
+  "events": {
+    "ENTER": 69,
+    "EXIT": 68
+  },
+  "max_host_complete_frame_gap_seconds": 0.20055642100123805,
+  "gap_review_threshold_seconds": 3,
+  "unfinished_tail_packet_not_scored": false,
+  "screen_user_report": "正常更新",
+  "interruption": null,
+  "uart_sha256": "d7d887957a5b7efa4020ba60c6745f482b3a46c3414354ca16d72c2d27d055bc",
+  "basic_checks_passed": false
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "fresh boot; complete packets and contiguous frame/capture sequences",
+  "started_utc": "2026-09-18T17:45:11.252655+00:00",
+  "host_seconds": 1807.749696537001,
+  "board_cycle_seconds": 1800.016,
+  "complete_frames": 18077,
+  "profile_rows": 18077,
+  "max_host_end_gap_seconds": 0.12876700900233118,
+  "events": {},
+  "error": null,
+  "screen_user_confirmed": true,
+  "basic_checks_passed": true,
+  "firmware_sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2",
+  "context_sha256": "cbb0e2ce18827516028eff93a29780d4ca467e7467fa3c638cd777d2a8574a2a",
+  "uart_sha256": "57804ecd67a98e0e08e5dad8ed2bd51137906320b59f957c9f1ce26bc6abfa37",
+  "stop_boundary_pending_bytes": 0
+}

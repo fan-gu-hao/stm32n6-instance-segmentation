@@ -1,0 +1,10 @@
+{
+  "fault_signed.bin": {
+    "bytes": 449152,
+    "sha256": "a1a5aa5713387717aa67109a203424fdc3b5f447c7cea379e0568697977c964a"
+  },
+  "restore_A1.bin": {
+    "bytes": 448992,
+    "sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2"
+  }
+}

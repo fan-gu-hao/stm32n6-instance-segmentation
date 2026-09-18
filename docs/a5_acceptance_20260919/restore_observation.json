@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-09-18T17:20:42.593426+00:00",
+  "firmware_sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2",
+  "readback_file": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/restore_readback.bin",
+  "flash_verified_at": "2026-09-19T01:05:47+08:00",
+  "application_readback_verified": true,
+  "screen_and_detection_normal": true,
+  "observation_method": "user_report; requested at least 15 seconds"
+}

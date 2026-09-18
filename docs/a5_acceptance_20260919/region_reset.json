@@ -1,0 +1,182 @@
+{
+  "scope": "manual reset, settling period, three scripted region entry/exit trials",
+  "prior_long_run_note": {
+    "review_file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a5_acceptance/run_20260918_232309/stability_20260918_233502/sequence_review_20260919_001155_722648.json",
+    "review_sha256": "5d522e3df11bcea56d27a43c906fea5b840828bbcd75c600babdba23d29030a0",
+    "continuous_profile_segment": {
+      "first_frame": 5463,
+      "last_frame": 23464,
+      "rows": 18002,
+      "covered_cycle_ms": 1791297,
+      "first_line": 213
+    },
+    "operator_intentionally_entered_and_exited": true,
+    "actual_entry_exit_counts_recorded": false,
+    "suspected_cause": "receive backlog splice at observation start",
+    "root_cause_confirmed": false,
+    "original_result_preserved": true
+  },
+  "created_utc": "2026-09-18T16:25:30.458356+00:00",
+  "context_sha256": "cbb0e2ce18827516028eff93a29780d4ca467e7467fa3c638cd777d2a8574a2a",
+  "reset_header_seen": true,
+  "reset_header_end_offset": 19002,
+  "first_end": 0,
+  "last_end": 1499,
+  "end_reports": 1500,
+  "sequence_anomalies": 0,
+  "observed_seconds_after_header": 160.45547100800104,
+  "phases": [
+    {
+      "phase": 0,
+      "label": "準備時間",
+      "expected": {
+        "ENTER": null,
+        "EXIT": null
+      },
+      "actual": {
+        "ENTER": 0,
+        "EXIT": 0
+      },
+      "matched": null
+    },
+    {
+      "phase": 1,
+      "label": "初始區域外",
+      "expected": {
+        "ENTER": 0,
+        "EXIT": 0
+      },
+      "actual": {
+        "ENTER": 0,
+        "EXIT": 0
+      },
+      "matched": true
+    },
+    {
+      "phase": 2,
+      "label": "第1次進入",
+      "expected": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "actual": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "matched": true
+    },
+    {
+      "phase": 3,
+      "label": "第1次離開",
+      "expected": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "actual": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "matched": true
+    },
+    {
+      "phase": 4,
+      "label": "第2次進入",
+      "expected": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "actual": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "matched": true
+    },
+    {
+      "phase": 5,
+      "label": "第2次離開",
+      "expected": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "actual": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "matched": true
+    },
+    {
+      "phase": 6,
+      "label": "第3次進入",
+      "expected": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "actual": {
+        "ENTER": 1,
+        "EXIT": 0
+      },
+      "matched": true
+    },
+    {
+      "phase": 7,
+      "label": "第3次離開",
+      "expected": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "actual": {
+        "ENTER": 0,
+        "EXIT": 1
+      },
+      "matched": true
+    }
+  ],
+  "events": [
+    {
+      "phase": 2,
+      "frame": 447,
+      "type": "ENTER",
+      "people": 1,
+      "host_seconds": 45.14470000399888
+    },
+    {
+      "phase": 3,
+      "frame": 595,
+      "type": "EXIT",
+      "people": 0,
+      "host_seconds": 64.65974664100213
+    },
+    {
+      "phase": 4,
+      "frame": 943,
+      "type": "ENTER",
+      "people": 1,
+      "host_seconds": 99.59700169200005
+    },
+    {
+      "phase": 5,
+      "frame": 982,
+      "type": "EXIT",
+      "people": 0,
+      "host_seconds": 104.70136061399899
+    },
+    {
+      "phase": 6,
+      "frame": 1202,
+      "type": "ENTER",
+      "people": 1,
+      "host_seconds": 126.79666513399934
+    },
+    {
+      "phase": 7,
+      "frame": 1329,
+      "type": "EXIT",
+      "people": 0,
+      "host_seconds": 143.22511651899913
+    }
+  ],
+  "user_confirmed_actions_and_live_screen": true,
+  "interruption": null,
+  "scripted_trials_passed": true,
+  "uart_sha256": "a9018d89fdb6285f087692c18e6bd70a70ab0ac840fe6af4515f3c3e4ac047ae"
+}

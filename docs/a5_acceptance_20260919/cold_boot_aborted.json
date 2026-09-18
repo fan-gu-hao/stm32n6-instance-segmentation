@@ -1,0 +1,14 @@
+{
+  "scope": "3 operator-confirmed cold boots; 30-second UART observation each",
+  "context_sha256": "cbb0e2ce18827516028eff93a29780d4ca467e7467fa3c638cd777d2a8574a2a",
+  "expected_trials": 3,
+  "trials": [
+    {
+      "trial": 1,
+      "capture_complete": false,
+      "basic_pass": false
+    }
+  ],
+  "interruption": "RuntimeError: 串列裝置仍存在，請確認 ST-LINK USB 線已拔掉。",
+  "all_basic_checks_passed": false
+}

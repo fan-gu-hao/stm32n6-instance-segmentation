@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-18T15:23:09.364383+00:00",
+  "git_head": "81c2c9490330e913410760cbe330fa4245e3363d",
+  "a1_commit": "81c2c94",
+  "expected_firmware_sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2",
+  "firmware_identity_basis": "A1 flash/readback record; no new live readback",
+  "flash_manifest": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a1_freeze/run_20260918_190900/rebuild_20260918_191804/flash_20260918_192610/manifest.json",
+  "flash_manifest_sha256": "df1ffe59f22f8caf6f64da3264cb72e031929c013da93ec161a2ef89accb0c17",
+  "boot1": "L",
+  "baudrate": 115200,
+  "serial_port": "/dev/serial/by-id/usb-STMicroelectronics_STLINK-V3_0051002A3234510137333934-if01"
+}

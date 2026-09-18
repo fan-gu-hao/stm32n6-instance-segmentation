@@ -1,0 +1,73 @@
+{
+  "context.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/context.json",
+    "sha256": "cbb0e2ce18827516028eff93a29780d4ca467e7467fa3c638cd777d2a8574a2a"
+  },
+  "cold_boots.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/cold_boots_20260918_232356/summary.json",
+    "sha256": "8b4cbc206520beb4c7c1f1a5dd6e6fea3c4c3186142256d357134681381ce7c2"
+  },
+  "cold_boot_aborted.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/cold_boots_20260918_232316/summary.json",
+    "sha256": "c3167eef4968a7b0d68361064d2792c7ba48b0f5966486ece0a64bcc56fcee27"
+  },
+  "region_reset.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/region_reset_20260919_002228/summary.json",
+    "sha256": "a7ec45606397237d8061461e623427c2fa9727aabf681af08dea73b80313cf2e"
+  },
+  "stability.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/stability_20260918_233502/summary.json",
+    "sha256": "889f5dce2dd479201eef67e81f7458b57759a9022fc2ac98b13d003296517d47"
+  },
+  "sequence_review.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/stability_20260918_233502/sequence_review_20260919_001155_722648.json",
+    "sha256": "5d522e3df11bcea56d27a43c906fea5b840828bbcd75c600babdba23d29030a0"
+  },
+  "capture_fault.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/observation_20260919_010457/summary.json",
+    "sha256": "bbdb20c94ec12d98467f7768c59ca4196bbd36716fdbafce712100582752b726"
+  },
+  "capture_uart.log": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/observation_20260919_010457/uart.log",
+    "sha256": "990a9f3821cf4ed4609d96fae7a1caf509e3670c4a8bf8833234d7913b6f3888"
+  },
+  "capture_fault.patch": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/injection.patch",
+    "sha256": "14163a5110c698152387862c48bd090ce558f9cce264c08ee63aa7c364abda75"
+  },
+  "fault_build.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/build.json",
+    "sha256": "0844d0b5f4fde2a59204d56f205df85bb7eb7f0c2405729ec30c030ebb7eba1e"
+  },
+  "fault_images.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/images.json",
+    "sha256": "57a40971c59a52761715a464cebde47ce370cd9e1838fbe58324d9a342581869"
+  },
+  "fault_programmer.log": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/fault_programmer.log",
+    "sha256": "01f423cdbe0cec660bdea90da7f01a552eff70bddd56304d03adecd55c125d00"
+  },
+  "restore_observation.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/restore_observation.json",
+    "sha256": "b545245fe713afac5ec6337f9774e0b5c0acda2f0166c54882358a714c05d168"
+  },
+  "restore_programmer.log": {
+    "source": "results/a5_acceptance/run_20260918_232309/capture_fault_20260919_004921/restore_programmer.log",
+    "sha256": "3c39054b07f928e3a5c87a6f264b69a60f137680302582f9de0e4db07281b453"
+  },
+  "external_stability_uart": {
+    "source": "results/a5_acceptance/run_20260918_232309/stability_20260918_233502/uart.log",
+    "sha256": "d7d887957a5b7efa4020ba60c6745f482b3a46c3414354ca16d72c2d27d055bc",
+    "bytes": 2030569
+  },
+  "stability_retest.json": {
+    "source": "results/a5_acceptance/run_20260918_232309/stability_retest_20260919_014504/summary.json",
+    "sha256": "97c57a755d1d1a86fdff21977cdf562d2fee370e69925d2368f7d2e5e119865f",
+    "bytes": 709
+  },
+  "external_stability_retest_uart": {
+    "source": "results/a5_acceptance/run_20260918_232309/stability_retest_20260919_014504/uart.log",
+    "sha256": "57804ecd67a98e0e08e5dad8ed2bd51137906320b59f957c9f1ce26bc6abfa37",
+    "bytes": 1562243
+  }
+}

@@ -1,0 +1,24 @@
+--- a/Application/STM32N6570-DK/Src/main.c
++++ b/Application/STM32N6570-DK/Src/main.c
+@@ -220,6 +220,12 @@
+     have_prev = 1;
+ 
+     CameraPipeline_IspUpdate();
++    const uint32_t a5_ignore_capture = (uart_frame_seq == 50U);
++    if (a5_ignore_capture) {
++      printf("TEST_INJECT,%lu,CAPTURE_TIMEOUT\r\n",
++          (unsigned long)uart_frame_seq);
++      fflush(stdout);
++    }
+     const uint32_t capture_start = HAL_GetTick();
+ 
+ #if DCMIPP_NN_NEEDS_CROP
+@@ -228,7 +234,7 @@
+     CameraPipeline_NNPipe_Start(nn_in, CMW_MODE_SNAPSHOT);
+ #endif
+ 
+-    while (cameraFrameReceived == 0)
++    while (cameraFrameReceived == 0 || a5_ignore_capture)
+     {
+       if ((uint32_t)(HAL_GetTick() - capture_start) >= REGION_CAPTURE_TIMEOUT_MS)
+         Region_Fault("CAPTURE_TIMEOUT");
