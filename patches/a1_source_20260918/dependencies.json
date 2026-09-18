@@ -1,0 +1,26 @@
+{
+  "scope": "STM32N6570-DK / ModelZoo",
+  "sdk_directory": "/home/fan/ST/STEdgeAI/4.0",
+  "runtime_sdk_file": "Middlewares/ST/AI/Lib/GCC/ARMCortexM55/NetworkRuntime1201_CM55_GCC.a",
+  "runtime_equal_sdk": true,
+  "binary_dependencies": {
+    "量化模型": {
+      "file_relative_to_project": "models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite",
+      "backup_relative_to_a1": "external_files/yolov8n_256_quant_pc_ii_seg_coco-st.tflite",
+      "bytes": 3709176,
+      "sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e"
+    },
+    "模型權重": {
+      "file_relative_to_project": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network_atonbuf.xSPI2.bin",
+      "backup_relative_to_a1": "external_files/network_atonbuf.xSPI2.bin",
+      "bytes": 3474865,
+      "sha256": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47"
+    },
+    "M55執行期函式庫": {
+      "file_relative_to_project": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1201_CM55_GCC.a",
+      "backup_relative_to_a1": "external_files/NetworkRuntime1201_CM55_GCC.a",
+      "bytes": 1287680,
+      "sha256": "0c6cff1b9ecc950d1d6cb9b7964519dff00b0f70f149d1de5481e02898bdb12e"
+    }
+  }
+}

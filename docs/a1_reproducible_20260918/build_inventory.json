@@ -1,0 +1,25 @@
+{
+  "project": "STM32N6570-DK_GettingStarted_InstanceSegmentation",
+  "configurations": [
+    "Debug",
+    "ModelZoo"
+  ],
+  "modelzoo_settings": [
+    "ECBLOB_CONST_SECTION=__attribute__((section(\".flash_blob\")))",
+    "POSTPROCESS_WRAPPER_SECTION=__attribute__((section(\".psram_bss\")))",
+    "../../../../Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55",
+    ":NetworkRuntime1201_CM55_GCC.a"
+  ],
+  "build_files": {
+    "makefile": true,
+    "sources.mk": true,
+    "objects.list": true
+  },
+  "runtime_libraries": [
+    {
+      "file": "Middlewares/stedgeai-lib/Lib/GCC/ARMCortexM55/NetworkRuntime1201_CM55_GCC.a",
+      "bytes": 1287680,
+      "sha256": "0c6cff1b9ecc950d1d6cb9b7964519dff00b0f70f149d1de5481e02898bdb12e"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+
+/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a1_freeze/run_20260918_190900/rebuild_20260918_191804/app.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   0000034c  34000400  34000400  00000400  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         00023160  34000750  34000750  00000750  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .gnu.sgstubs  00000020  340238c0  340238c0  000238c0  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .rodata       0003a4f0  340238e0  340238e0  000238e0  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .ARM.extab    00000000  3405ddd0  3405ddd0  000ff000  2**0
+                  CONTENTS
+  5 .ARM          00000008  3405ddd0  3405ddd0  0005ddd0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .preinit_array 00000000  3405ddd8  3405ddd8  000ff000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .init_array   00000004  3405ddd8  3405ddd8  0005ddd8  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .fini_array   00000004  3405dddc  3405dddc  0005dddc  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .data         0000fbec  3405dde0  3405dde0  0005dde0  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          000022fc  3406d9d0  3406d9d0  0006d9cc  2**3
+                  ALLOC
+ 11 ._user_heap_stack 00004204  3406fccc  3406fccc  0006d9cc  2**0
+                  ALLOC
+ 12 .flash_section 00091000  71380000  71380000  0006e000  2**6
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 13 .psram_section 0024b0a0  91000000  91000000  000ff000  2**5
+                  ALLOC
+ 14 .ARM.attributes 0000003a  00000000  00000000  000ff000  2**0
+                  CONTENTS, READONLY
+ 15 .debug_info   000b071f  00000000  00000000  000ff03a  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_abbrev 0000ea73  00000000  00000000  001af759  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_loclists 00043f89  00000000  00000000  001be1cc  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_aranges 00003e50  00000000  00000000  00202158  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_rnglists 00005c2d  00000000  00000000  00205fa8  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_macro  00093514  00000000  00000000  0020bbd5  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .debug_line   00073944  00000000  00000000  0029f0e9  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 22 .debug_str    00421e7b  00000000  00000000  00312a2d  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 23 .comment      00000086  00000000  00000000  007348a8  2**0
+                  CONTENTS, READONLY
+ 24 .debug_frame  0000d8b4  00000000  00000000  00734930  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 25 .debug_line_str 0000017c  00000000  00000000  007421e4  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS

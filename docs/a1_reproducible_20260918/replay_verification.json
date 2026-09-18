@@ -1,0 +1,21 @@
+{
+  "scope": "replay changed/new sources; verify binary dependencies; no build",
+  "source_lock_sha256": "4e51af07a0f2c906626b4d3ad9552f3d3fce228ff9541d111355c62ecc59e29b",
+  "dependencies_sha256": "9ad051d51da8bbb0aa9e6dc92fdf529b2b370f9a93c6d1c4af9b9eb1fee11e36",
+  "repositories": {
+    "model_zoo": {
+      "base_commit": "0f6210ed5156126b782e1c43249063a477484b20",
+      "patch_sha256": "c126b1a66f8b4737a44a92f8fda526076c8f39089ef1160b81b110b9428e61a0",
+      "verified_files": 2,
+      "all_equal": true
+    },
+    "n6": {
+      "base_commit": "b99b83fe4fcd66c9fa11b6f6528bf9215dc55ab2",
+      "patch_sha256": "b40da1367db2444c3e9f7adea5e3162651152f769cd62aab3223d016291d8271",
+      "verified_files": 98,
+      "all_equal": true
+    }
+  },
+  "verified_dependencies": 3,
+  "all_verified": true
+}

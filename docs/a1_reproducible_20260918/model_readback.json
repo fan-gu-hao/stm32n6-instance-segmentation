@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "matched_bytes": 3474865,
+    "reference_sha256": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47",
+    "readback_sha256": "3c9a0b8d94ea6de464867195dc021787cad847dc17c2c1044cd9555d9df9e719"
+  },
+  "ecblob": {
+    "matched_bytes": 593920,
+    "reference_sha256": "be17a2471e1648f61b3572e82027e9b1aa0867cb541e6272ff6a65a934358b1d",
+    "readback_sha256": "be17a2471e1648f61b3572e82027e9b1aa0867cb541e6272ff6a65a934358b1d"
+  }
+}

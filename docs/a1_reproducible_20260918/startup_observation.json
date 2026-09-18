@@ -1,0 +1,9 @@
+{
+  "firmware_sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2",
+  "flash_manifest": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a1_freeze/run_20260918_190900/rebuild_20260918_191804/flash_20260918_192610/manifest.json",
+  "verification_method": "user_report",
+  "basic_operation_after_power_cycle": true,
+  "rollback_executed": false,
+  "root_cause_identified": false,
+  "observation": "使用者確認重新拔插電源後正常運作；未執行後續故障檢查與復原指令。"
+}

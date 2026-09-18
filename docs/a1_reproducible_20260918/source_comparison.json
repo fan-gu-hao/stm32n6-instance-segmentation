@@ -1,0 +1,57 @@
+{
+  "baseline": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a3_baseline/no_person_20260914_212314_835679/context.json",
+  "baseline_sha256": "94ddc18fc5e1a9a15a52b70e52945f60bd7bd7f8a5b305a1b427f5ab1e4a664c",
+  "all_equal": true,
+  "files": {
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/main.c": {
+      "sha256": "ff1b96fbdd1cb4504d5653fc49ff11264ee29f7787a813f5611030a0ca0e659a",
+      "baseline_sha256": "ff1b96fbdd1cb4504d5653fc49ff11264ee29f7787a813f5611030a0ca0e659a",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/app_camerapipeline.c": {
+      "sha256": "dd51feecd4e83e11bad6261bb3232237532e5a9541ed7c8089466948f77b7d9a",
+      "baseline_sha256": "dd51feecd4e83e11bad6261bb3232237532e5a9541ed7c8089466948f77b7d9a",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/project_region_event.h": {
+      "sha256": "09ebd6c7f43003be7f0ce36ba72a88d9b3829aaff2b463bc3d984912097c68a2",
+      "baseline_sha256": "09ebd6c7f43003be7f0ce36ba72a88d9b3829aaff2b463bc3d984912097c68a2",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/app_config.h": {
+      "sha256": "8397283c4bf52a2cbbb61a892c09f5842085ee73391e32604ebcebbf6e142ed0",
+      "baseline_sha256": "8397283c4bf52a2cbbb61a892c09f5842085ee73391e32604ebcebbf6e142ed0",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project": {
+      "sha256": "c9d8babbd0de289e432d3f842b08521adbb8a3689938ba6db8ade22c3be104ea",
+      "baseline_sha256": "c9d8babbd0de289e432d3f842b08521adbb8a3689938ba6db8ade22c3be104ea",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.cproject": {
+      "sha256": "68094e268bf65a33891dadb3bb260fd5ad092e023b1c9495305f17576cbff33d",
+      "baseline_sha256": "68094e268bf65a33891dadb3bb260fd5ad092e023b1c9495305f17576cbff33d",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/STM32N657xx.ld": {
+      "sha256": "dc0959d50b4d06164ad7dafd1dadf6923e60d508eeee00f24612457e3744a1df",
+      "baseline_sha256": "dc0959d50b4d06164ad7dafd1dadf6923e60d508eeee00f24612457e3744a1df",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/stai_network.h": {
+      "sha256": "9158c62b742175c39161cda323f2baecb126305c2a30d9e88266baca09dece70",
+      "baseline_sha256": "9158c62b742175c39161cda323f2baecb126305c2a30d9e88266baca09dece70",
+      "equal": true
+    },
+    "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/STM32N6570-DK/network.c": {
+      "sha256": "b867f6720a3dbadd0af9fc59c2fbf815097e84d393493fa9f17704e91f58b0f7",
+      "baseline_sha256": "b867f6720a3dbadd0af9fc59c2fbf815097e84d393493fa9f17704e91f58b0f7",
+      "equal": true
+    },
+    "models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite": {
+      "sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+      "baseline_sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+      "equal": true
+    }
+  }
+}

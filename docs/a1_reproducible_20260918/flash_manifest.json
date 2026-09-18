@@ -1,0 +1,20 @@
+{
+  "elf_sha256": "c71450a1b849c1eb7425dc43050cd81c8de218eafe011aad77be719aefa754db",
+  "application_address": "0x70100000",
+  "files": {
+    "app_signed.bin": {
+      "bytes": 448992,
+      "sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2"
+    },
+    "weights_reference.bin": {
+      "bytes": 3474865,
+      "sha256": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47"
+    },
+    "ecblob_reference.bin": {
+      "bytes": 593920,
+      "sha256": "be17a2471e1648f61b3572e82027e9b1aa0867cb541e6272ff6a65a934358b1d"
+    }
+  },
+  "application_readback_verified": true,
+  "application_readback_sha256": "63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2"
+}
