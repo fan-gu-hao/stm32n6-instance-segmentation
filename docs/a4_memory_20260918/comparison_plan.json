@@ -1,0 +1,19 @@
+{
+  "model": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/models/st_quantized/yolov8n_256_quant_pc_ii_seg_coco-st.tflite",
+  "model_sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+  "changed_field": "memory.mempools[npuRAM6].size",
+  "configurations": [
+    {
+      "name": "A_current",
+      "npuRAM6_kib": 448,
+      "profile": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/A_current/profile.json",
+      "memory_pool": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/A_current/memory.mpool"
+    },
+    {
+      "name": "B_npuram6_320k",
+      "npuRAM6_kib": 320,
+      "profile": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/B_npuram6_320k/profile.json",
+      "memory_pool": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/B_npuram6_320k/memory.mpool"
+    }
+  ]
+}

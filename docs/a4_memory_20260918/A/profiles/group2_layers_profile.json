@@ -1,0 +1,3629 @@
+{
+  "info": {
+    "version": [
+      2,
+      0
+    ],
+    "name": "network",
+    "rt": "ST Neural ART (LL_ATON api)",
+    "compile_datetime": "Sep 18 2026 18:03:01",
+    "hash": "",
+    "n_init_time": 0.0024537499994039536,
+    "n_install_time": 0.0,
+    "n_nodes": 32,
+    "inputs": [
+      {
+        "name": "Input_4_out_0",
+        "shape": [
+          1,
+          256,
+          256,
+          3
+        ],
+        "type": "<class 'numpy.uint8'>",
+        "io_tensor": "IOTensor: Input_4_out_0, I.0, , 0x342e0000 uint8[1,256,256,3], 196608 Bytes, QLinear(0.003921569,0,uint8)",
+        "memory_pool": "in 'activations' buffer",
+        "scale": 0.003921568859368563,
+        "zero_point": 0
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Transpose_810_out_0",
+        "shape": [
+          1,
+          64,
+          64,
+          32
+        ],
+        "type": "<class 'numpy.int8'>",
+        "io_tensor": "IOTensor: Transpose_810_out_0, O.0, , 0x342b8000 int8[1,64,64,32], 131072 Bytes, QLinear(0.017772065,-112,int8)",
+        "memory_pool": "in 'activations' buffer",
+        "scale": 0.017772065475583076,
+        "zero_point": -112
+      },
+      {
+        "name": "Transpose_1466_out_0",
+        "shape": [
+          1,
+          116,
+          1344
+        ],
+        "type": "<class 'numpy.int8'>",
+        "io_tensor": "IOTensor: Transpose_1466_out_0, O.1, , 0x34306100 int8[1,116,1344], 155904 Bytes, QLinear(0.019118907,16,int8)",
+        "memory_pool": "in 'activations' buffer",
+        "scale": 0.019118906930088997,
+        "zero_point": 16
+      }
+    ],
+    "weights": null,
+    "activations": 2973760,
+    "mempools": {
+      "params": [
+        {
+          "name": "param_1",
+          "shape": [
+            0
+          ],
+          "type": "<class 'numpy.uint8'>",
+          "io_tensor": "IOTensor: param_1, W.0, uint8[0], 0 Bytes",
+          "memory_pool": "user",
+          "scale": 0.0,
+          "zero_point": 0
+        }
+      ],
+      "activations": [
+        {
+          "name": "act_1",
+          "shape": [
+            2973760
+          ],
+          "type": "<class 'numpy.uint8'>",
+          "io_tensor": "IOTensor: act_1, A.0, uint8[2973760], 2973760 Bytes",
+          "memory_pool": "user",
+          "scale": 0.0,
+          "zero_point": 0
+        }
+      ]
+    },
+    "macc": null,
+    "runtime": {
+      "protocol": "Proto-buffer driver v2.1 (msg v3.2) (Serial driver v1.0 - /dev/ttyACM1:921600)",
+      "name": "ST Neural ART (LL_ATON api)",
+      "rt_lib_desc": "atonn-v1.1.3-275-g6770925d (optimized SW lib v12.0.1-92efada9 GCC)",
+      "compiler": "GCC",
+      "version": [
+        12,
+        0,
+        1
+      ],
+      "capabilities": [
+        "IO_ONLY",
+        "PER_LAYER",
+        "PER_LAYER_WITH_DATA"
+      ],
+      "tools_version": [
+        1,
+        1,
+        3
+      ]
+    },
+    "device": {
+      "dev_type": "stm32",
+      "desc": "stm32 family - 0x486 - STM32N6xx @800/400MHz",
+      "dev_id": 1158,
+      "system": "bare-metal",
+      "sys_clock": 800000000,
+      "bus_clock": 400000000,
+      "attrs": [
+        "fpu",
+        "core_icache",
+        "core_dcache",
+        "npu_cache=1",
+        "mcu_freq=800MHz",
+        "noc_freq=400MHz",
+        "npu_freq=1000MHz",
+        "nic_freq=900MHz"
+      ],
+      "extra": [
+        "version:1.0",
+        "dev_id:0x486",
+        "mcu_freq:800000000",
+        "noc_freq:400000000",
+        "npu_freq:1000000000",
+        "nic_freq:900000000",
+        "npu_cache:1",
+        "dev_family:stm32",
+        "dev_desc:0x486 - STM32N6xx"
+      ]
+    }
+  },
+  "mode": "PER_LAYER",
+  "c_durations": [
+    48.630507045192644
+  ],
+  "c_nodes": [
+    {
+      "name": "EpochBlock_1 -> 193",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            45986,
+            14196269,
+            600
+          ]
+        ]
+      },
+      "c_durations": [
+        17.80356788635254
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.uint8'>",
+        "<class 'numpy.uint8'>"
+      ],
+      "shape": [
+        [
+          1,
+          256,
+          256,
+          3
+        ],
+        [
+          1,
+          256,
+          256,
+          3
+        ]
+      ],
+      "scale": [
+        0.003921568859368563,
+        0.003921568859368563
+      ],
+      "zero_point": [
+        0,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_5_out_0, E.1.0, , 0x342e0000 uint8[1,256,256,3], 196608 Bytes, QLinear(0.003921569,0,uint8)",
+        "IOTensor: Conv2D_12_zero_off_out_9, E.1.1, , 0x34270000 uint8[1,256,256,3], 196608 Bytes, QLinear(0.003921569,0,uint8)"
+      ],
+      "data": [
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:0:1:1:193:00000017:05000004:EC",
+          "evt_post_end:0:1:1:193:2",
+          "mcu_cycles:45986:14196269:600"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_194",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            82,
+            32,
+            36599
+          ]
+        ]
+      },
+      "c_durations": [
+        0.04589125141501427
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          256
+        ]
+      ],
+      "scale": [
+        0.02322489768266678
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Resize_579_resize_NN_expansion_concat_710_out_713, E.194.0, , 0x342f8000 int8[1,16,16,256], 65536 Bytes, QLinear(0.023224898,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:1:194:194:194:00000043:05000003:HYBRID",
+          "evt_post_end:1:194:194:194:1",
+          "mcu_cycles:82:32:36599"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_194 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1914,
+            53079,
+            1226
+          ]
+        ]
+      },
+      "c_durations": [
+        0.0702737495303154
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          256
+        ]
+      ],
+      "scale": [
+        0.02322489768266678
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Resize_579_resize_NN_expansion_concat_710_out_713, E.194.0, , 0x342f8000 int8[1,16,16,256], 65536 Bytes, QLinear(0.023224898,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:2:194:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:2:194:-7:-7:1",
+          "mcu_cycles:1914:53079:1226"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_195",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            45,
+            32,
+            53700
+          ]
+        ]
+      },
+      "c_durations": [
+        0.0672212466597557
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          384
+        ]
+      ],
+      "scale": [
+        0.02322489768266678
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_580_out_0, E.195.0, , 0x342e0000 int8[1,16,16,384], 98304 Bytes, QLinear(0.023224898,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:3:195:195:195:00000043:05000003:HYBRID",
+          "evt_post_end:3:195:195:195:1",
+          "mcu_cycles:45:32:53700"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_195 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2104,
+            53036,
+            1311
+          ]
+        ]
+      },
+      "c_durations": [
+        0.07056374847888947
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          384
+        ]
+      ],
+      "scale": [
+        0.02322489768266678
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_580_out_0, E.195.0, , 0x342e0000 int8[1,16,16,384], 98304 Bytes, QLinear(0.023224898,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:4:195:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:4:195:-3:-3:1",
+          "mcu_cycles:2104:53036:1311"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_195 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2032,
+            26857,
+            1188
+          ]
+        ]
+      },
+      "c_durations": [
+        0.03759625181555748
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          384
+        ]
+      ],
+      "scale": [
+        0.02322489768266678
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_580_out_0, E.195.0, , 0x342e0000 int8[1,16,16,384], 98304 Bytes, QLinear(0.023224898,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:5:195:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:5:195:-3:-3:1",
+          "mcu_cycles:2032:26857:1188"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_196 -> 222",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            41682,
+            961245,
+            520
+          ]
+        ]
+      },
+      "c_durations": [
+        1.2543087005615234
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ]
+      ],
+      "scale": [
+        0.0409739650785923,
+        0.04800654575228691,
+        0.0409739650785923,
+        0.00390625,
+        1.5318628356908448e-05
+      ],
+      "zero_point": [
+        21,
+        -1,
+        21,
+        -128,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Conv2D_581_off_bias_out_258, E.196.0, , 0x342f8000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.040973965,21,int8)",
+        "IOTensor: Mul_584_out_0_cp_in_2525_cp_in_2526_cp_in_2527, E.196.1, , 0x34300000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.048006546,-1,int8)",
+        "IOTensor: Mul_587_out_0_cp_in_2531_cp_in_2532_cp_in_2533, E.196.2, , 0x34310000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.040973965,21,int8)",
+        "IOTensor: Sigmoid_590_out_0, E.196.3, , 0x342f0000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.003906250,-128,int8)",
+        "IOTensor: Mul_591_out_0, E.196.4, , 0x342e0000 int16[1,8,16,16,16], 65536 Bytes, QLinear(0.000015319,0,int16)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:6:196:196:222:00000017:05000004:EC",
+          "evt_post_end:6:196:196:222:5",
+          "mcu_cycles:41682:961245:520"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_223",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            47,
+            32,
+            69360
+          ]
+        ]
+      },
+      "c_durations": [
+        0.08679874986410141
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          128
+        ]
+      ],
+      "scale": [
+        0.022558089345693588
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Resize_666_resize_NN_expansion_concat_714_out_717, E.223.0, , 0x34310000 int8[1,32,32,128], 131072 Bytes, QLinear(0.022558089,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:7:223:223:223:00000043:05000003:HYBRID",
+          "evt_post_end:7:223:223:223:1",
+          "mcu_cycles:47:32:69360"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_223 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1922,
+            105503,
+            1122
+          ]
+        ]
+      },
+      "c_durations": [
+        0.13568374514579773
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          128
+        ]
+      ],
+      "scale": [
+        0.022558089345693588
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Resize_666_resize_NN_expansion_concat_714_out_717, E.223.0, , 0x34310000 int8[1,32,32,128], 131072 Bytes, QLinear(0.022558089,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:8:223:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:8:223:-7:-7:1",
+          "mcu_cycles:1922:105503:1122"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_224",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            84,
+            32,
+            102737
+          ]
+        ]
+      },
+      "c_durations": [
+        0.12856625020503998
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          192
+        ]
+      ],
+      "scale": [
+        0.022558089345693588
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_667_out_0, E.224.0, , 0x342e0000 int8[1,32,32,192], 196608 Bytes, QLinear(0.022558089,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:9:224:224:224:00000043:05000003:HYBRID",
+          "evt_post_end:9:224:224:224:1",
+          "mcu_cycles:84:32:102737"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_224 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2136,
+            105460,
+            1233
+          ]
+        ]
+      },
+      "c_durations": [
+        0.1360362470149994
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          192
+        ]
+      ],
+      "scale": [
+        0.022558089345693588
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_667_out_0, E.224.0, , 0x342e0000 int8[1,32,32,192], 196608 Bytes, QLinear(0.022558089,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:10:224:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:10:224:-3:-3:1",
+          "mcu_cycles:2136:105460:1233"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_224 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2104,
+            53073,
+            1148
+          ]
+        ]
+      },
+      "c_durations": [
+        0.07040625065565109
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          192
+        ]
+      ],
+      "scale": [
+        0.022558089345693588
+      ],
+      "zero_point": [
+        -116
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_667_out_0, E.224.0, , 0x342e0000 int8[1,32,32,192], 196608 Bytes, QLinear(0.022558089,-116,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:11:224:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:11:224:-3:-3:1",
+          "mcu_cycles:2104:53073:1148"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_225 -> 264",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            4738,
+            2913829,
+            442
+          ]
+        ]
+      },
+      "c_durations": [
+        3.64876127243042
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          4,
+          32,
+          32,
+          16
+        ],
+        [
+          1,
+          4,
+          32,
+          32,
+          16
+        ],
+        [
+          1,
+          4,
+          32,
+          32,
+          16
+        ],
+        [
+          1,
+          4,
+          32,
+          32,
+          16
+        ],
+        [
+          1,
+          4,
+          32,
+          32,
+          16
+        ]
+      ],
+      "scale": [
+        0.03649721294641495,
+        0.04030314087867737,
+        0.03649721294641495,
+        0.00390625,
+        1.5318628356908448e-05
+      ],
+      "zero_point": [
+        13,
+        -1,
+        13,
+        -128,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Conv2D_668_off_bias_out_294, E.225.0, , 0x34310000 int8[1,4,32,32,16], 65536 Bytes, QLinear(0.036497213,13,int8)",
+        "IOTensor: Mul_671_out_0_cp_in_2591_cp_in_2592_cp_in_2593, E.225.1, , 0x34320000 int8[1,4,32,32,16], 65536 Bytes, QLinear(0.040303141,-1,int8)",
+        "IOTensor: Mul_674_out_0_cp_in_2597_cp_in_2598_cp_in_2599, E.225.2, , 0x34270000 int8[1,4,32,32,16], 65536 Bytes, QLinear(0.036497213,13,int8)",
+        "IOTensor: Sigmoid_677_out_0, E.225.3, , 0x34300000 int8[1,4,32,32,16], 65536 Bytes, QLinear(0.003906250,-128,int8)",
+        "IOTensor: Mul_678_out_0, E.225.4, , 0x342e0000 int16[1,4,32,32,16], 131072 Bytes, QLinear(0.000015319,0,int16)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:12:225:225:264:00000017:05000004:EC",
+          "evt_post_end:12:225:225:264:5",
+          "mcu_cycles:4738:2913829:442"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_265",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            84,
+            32,
+            29045
+          ]
+        ]
+      },
+      "c_durations": [
+        0.036451250314712524
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          192
+        ]
+      ],
+      "scale": [
+        0.024607306346297264
+      ],
+      "zero_point": [
+        -117
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_969_out_0, E.265.0, , 0x342e0000 int8[1,16,16,192], 49152 Bytes, QLinear(0.024607306,-117,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:13:265:265:265:00000043:05000003:HYBRID",
+          "evt_post_end:13:265:265:265:1",
+          "mcu_cycles:84:32:29045"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_265 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2104,
+            13753,
+            1269
+          ]
+        ]
+      },
+      "c_durations": [
+        0.02140749990940094
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          192
+        ]
+      ],
+      "scale": [
+        0.024607306346297264
+      ],
+      "zero_point": [
+        -117
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_969_out_0, E.265.0, , 0x342e0000 int8[1,16,16,192], 49152 Bytes, QLinear(0.024607306,-117,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:14:265:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:14:265:-3:-3:1",
+          "mcu_cycles:2104:13753:1269"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_265 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2024,
+            26820,
+            1182
+          ]
+        ]
+      },
+      "c_durations": [
+        0.0375325009226799
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          192
+        ]
+      ],
+      "scale": [
+        0.024607306346297264
+      ],
+      "zero_point": [
+        -117
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_969_out_0, E.265.0, , 0x342e0000 int8[1,16,16,192], 49152 Bytes, QLinear(0.024607306,-117,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:15:265:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:15:265:-3:-3:1",
+          "mcu_cycles:2024:26820:1182"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_266 -> 269",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            17026,
+            259325,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        0.3460412323474884
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          32,
+          32,
+          4
+        ]
+      ],
+      "scale": [
+        0.05288239195942879,
+        0.061501968652009964,
+        0.05288239195942879,
+        0.00390625,
+        1.5318628356908448e-05,
+        0.00013712003419641405
+      ],
+      "zero_point": [
+        20,
+        0,
+        20,
+        -128,
+        0,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Conv2D_970_off_bias_out_456, E.266.0, , 0x34320000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.052882392,20,int8)",
+        "IOTensor: Mul_973_out_0_cp_in_2767_cp_in_2768_cp_in_2769, E.266.1, , 0x34328000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.061501969,0,int8)",
+        "IOTensor: Mul_976_out_0_cp_in_2787, E.266.2, , 0x34370000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.052882392,20,int8)",
+        "IOTensor: Sigmoid_979_out_0, E.266.3, , 0x34340000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.003906250,-128,int8)",
+        "IOTensor: Mul_980_out_0, E.266.4, , 0x34310000 int16[1,8,16,16,16], 65536 Bytes, QLinear(0.000015319,0,int16)",
+        "IOTensor: Mul_766_out_0, E.266.5, , 0x342e0000 int16[1,16,32,32,4], 131072 Bytes, QLinear(0.000137120,0,int16)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:16:266:266:269:00000017:05000004:EC",
+          "evt_post_end:16:266:266:269:6",
+          "mcu_cycles:17026:259325:482"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_270",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            82,
+            32,
+            136461
+          ]
+        ]
+      },
+      "c_durations": [
+        0.17071875929832458
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          256
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.270.0, , 0x342e0000 int8[1,32,32,256], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:17:270:270:270:00000043:05000003:HYBRID",
+          "evt_post_end:17:270:270:270:1",
+          "mcu_cycles:82:32:136461"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_270 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2136,
+            53073,
+            1193
+          ]
+        ]
+      },
+      "c_durations": [
+        0.07050249725580215
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          256
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.270.0, , 0x342e0000 int8[1,32,32,256], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:18:270:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:18:270:-3:-3:1",
+          "mcu_cycles:2136:53073:1193"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_270 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2032,
+            131868,
+            1193
+          ]
+        ]
+      },
+      "c_durations": [
+        0.16886624693870544
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          256
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.270.0, , 0x342e0000 int8[1,32,32,256], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:19:270:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:19:270:-3:-3:1",
+          "mcu_cycles:2032:131868:1193"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_270 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2000,
+            131905,
+            1156
+          ]
+        ]
+      },
+      "c_durations": [
+        0.16882623732089996
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          256
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.270.0, , 0x342e0000 int8[1,32,32,256], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:20:270:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:20:270:-3:-3:1",
+          "mcu_cycles:2000:131905:1156"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_270 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1992,
+            131868,
+            1124
+          ]
+        ]
+      },
+      "c_durations": [
+        0.1687300056219101
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          256
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.270.0, , 0x342e0000 int8[1,32,32,256], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:21:270:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:21:270:-3:-3:1",
+          "mcu_cycles:1992:131868:1124"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_271",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            45,
+            32,
+            134904
+          ]
+        ]
+      },
+      "c_durations": [
+        0.16872623562812805
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          64,
+          64,
+          64
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.271.0, , 0x34270000 int8[1,64,64,64], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:22:271:271:271:00000043:05000003:HYBRID",
+          "evt_post_end:22:271:271:271:1",
+          "mcu_cycles:45:32:134904"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_271 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1922,
+            210367,
+            1192
+          ]
+        ]
+      },
+      "c_durations": [
+        0.2668512463569641
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          64,
+          64,
+          64
+        ]
+      ],
+      "scale": [
+        0.016211101785302162
+      ],
+      "zero_point": [
+        -111
+      ],
+      "io_tensors": [
+        "IOTensor: ConvTranspose_769_expanded_resize_0_resize_NN_expansion_concat_, E.271.0, , 0x34270000 int8[1,64,64,64], 262144 Bytes, QLinear(0.016211102,-111,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:23:271:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:23:271:-7:-7:1",
+          "mcu_cycles:1922:210367:1192"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_272 -> 331",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            44882,
+            7778069,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        9.779291152954102
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        [
+          1,
+          63,
+          63,
+          64
+        ],
+        [
+          1,
+          8,
+          32,
+          32,
+          4
+        ],
+        [
+          1,
+          64,
+          64,
+          64
+        ],
+        [
+          1,
+          8,
+          32,
+          32,
+          4
+        ]
+      ],
+      "scale": [
+        0.0039077335968613625,
+        0.0,
+        1.5318628356908448e-05,
+        0.003013546811416745,
+        0.03934447467327118
+      ],
+      "zero_point": [
+        -128,
+        0,
+        16256,
+        6,
+        35
+      ],
+      "io_tensors": [
+        "IOTensor: Mul_983_out_0_cp_in_2798_cp_in_2799_cp_in_2800, E.272.0, , 0x34340000 int8[1,8,16,16,16], 32768 Bytes, QLinear(0.003907734,-128,int8)",
+        "IOTensor: Resize_Zeros_Crop_Pad_724_out, E.272.1, , 0x34200000 int8[1,63,63,64], 254016 Bytes, FixedPoint(1.000000000,0,int8,Q7.0)",
+        "IOTensor: Mul_822_out_0_cp_in_2693_cp_in_2694, E.272.2, , 0x34350000 int16[1,8,32,32,4], 65536 Bytes, QLinear(0.000015319,16256,int16)",
+        "IOTensor: ConvTranspose_769_expanded_conv_6_off_bias_out_339, E.272.3, , 0x342e0000 int8[1,64,64,64], 262144 Bytes, QLinear(0.003013547,6,int8)",
+        "IOTensor: Mul_818_out_0_cp_in_2706_cp_in_2707_cp_in_2708, E.272.4, , 0x90010000 int8[1,8,32,32,4], 32768 Bytes, QLinear(0.039344475,35,int8)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:24:272:272:331:00000017:05000004:EC",
+          "evt_post_end:24:272:272:331:5",
+          "mcu_cycles:44882:7778069:482"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_332",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            47,
+            32,
+            22910
+          ]
+        ]
+      },
+      "c_durations": [
+        0.02873625047504902
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1184_out_0, E.332.0, , 0x34340000 int8[1,16,16,144], 36864 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:25:332:332:332:00000043:05000003:HYBRID",
+          "evt_post_end:25:332:332:332:1",
+          "mcu_cycles:47:32:22910"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_332 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2136,
+            13753,
+            1229
+          ]
+        ]
+      },
+      "c_durations": [
+        0.02139749936759472
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1184_out_0, E.332.0, , 0x34340000 int8[1,16,16,144], 36864 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:26:332:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:26:332:-3:-3:1",
+          "mcu_cycles:2136:13753:1229"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_332 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2032,
+            17025,
+            1110
+          ]
+        ]
+      },
+      "c_durations": [
+        0.02520875073969364
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1184_out_0, E.332.0, , 0x34340000 int8[1,16,16,144], 36864 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:27:332:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:27:332:-3:-3:1",
+          "mcu_cycles:2032:17025:1110"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_333 -> 336",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            10922,
+            296325,
+            520
+          ]
+        ]
+      },
+      "c_durations": [
+        0.3847087621688843
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          16,
+          144
+        ],
+        [
+          1,
+          256,
+          1,
+          144
+        ],
+        [
+          1,
+          256,
+          1,
+          144
+        ],
+        [
+          1,
+          256,
+          144
+        ],
+        [
+          1,
+          32,
+          8,
+          8,
+          4
+        ],
+        [
+          1,
+          8,
+          32,
+          32,
+          4
+        ],
+        [
+          1,
+          20,
+          32,
+          32,
+          4
+        ],
+        [
+          1,
+          32,
+          8,
+          8,
+          4
+        ],
+        [
+          1,
+          8,
+          32,
+          32,
+          4
+        ],
+        [
+          1,
+          20,
+          32,
+          32,
+          4
+        ]
+      ],
+      "scale": [
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.003918451722711325,
+        0.0001776750577846542,
+        3.0394954592338763e-05,
+        0.0002512996143195778,
+        0.0001776750577846542,
+        0.003875356400385499
+      ],
+      "zero_point": [
+        24,
+        24,
+        24,
+        24,
+        -128,
+        0,
+        127,
+        0,
+        384,
+        -128
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_1186_out_0, E.333.0, , 0x34340000 int8[1,16,16,144], 36864 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Reshape_1187_out_0_inserted_out7056, E.333.1, , 0x34340000 int8[1,256,1,144], 36864 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_1188_out_0, E.333.2, , 0x34340000 int8[1,256,1,144], 36864 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_1188_out_0_cp_in_3040, E.333.3, , 0x34340000 int8[1,256,144], 36864 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Mul_1203_out_0_cp_in_2931, E.333.4, , 0x3434b400 int8[1,32,8,8,4], 8192 Bytes, QLinear(0.003918452,-128,int8)",
+        "IOTensor: Mul_848_out_0, E.333.5, , 0x34200000 int16[1,8,32,32,4], 65536 Bytes, QLinear(0.000177675,0,int16)",
+        "IOTensor: Mul_915_out_0_cp_in_2715_cp_in_2716, E.333.6, , 0x342e0000 int16[1,20,32,32,4], 163840 Bytes, QLinear(0.000030395,127,int16)",
+        "IOTensor: Mul_1206_out_0, E.333.7, , 0x342d8000 int16[1,32,8,8,4], 16384 Bytes, QLinear(0.000251300,0,int16)",
+        "IOTensor: Mul_848_out_0_cp_in_2801_cp_in_2802, E.333.8, , 0x34200000 int16[1,8,32,32,4], 65536 Bytes, QLinear(0.000177675,384,int16)",
+        "IOTensor: Mul_915_out_0_cp_in_2715_cp_in_2716_cp_in_2717, E.333.9, , 0x34298000 int8[1,20,32,32,4], 81920 Bytes, QLinear(0.003875356,-128,int8)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:28:333:333:336:00000017:05000004:EC",
+          "evt_post_end:28:333:333:336:10",
+          "mcu_cycles:10922:296325:520"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_337",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            47,
+            32,
+            16794
+          ]
+        ]
+      },
+      "c_durations": [
+        0.021091250702738762
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          384
+        ]
+      ],
+      "scale": [
+        0.029056701809167862
+      ],
+      "zero_point": [
+        -118
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1209_out_0, E.337.0, , 0x342e0000 int8[1,8,8,384], 24576 Bytes, QLinear(0.029056702,-118,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:29:337:337:337:00000043:05000003:HYBRID",
+          "evt_post_end:29:337:337:337:1",
+          "mcu_cycles:47:32:16794"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_337 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2104,
+            7120,
+            1191
+          ]
+        ]
+      },
+      "c_durations": [
+        0.01301874965429306
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          384
+        ]
+      ],
+      "scale": [
+        0.029056701809167862
+      ],
+      "zero_point": [
+        -118
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1209_out_0, E.337.0, , 0x342e0000 int8[1,8,8,384], 24576 Bytes, QLinear(0.029056702,-118,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:30:337:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:30:337:-3:-3:1",
+          "mcu_cycles:2104:7120:1191"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_337 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2064,
+            21577,
+            1110
+          ]
+        ]
+      },
+      "c_durations": [
+        0.030938750132918358
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          384
+        ]
+      ],
+      "scale": [
+        0.029056701809167862
+      ],
+      "zero_point": [
+        -118
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1209_out_0, E.337.0, , 0x342e0000 int8[1,8,8,384], 24576 Bytes, QLinear(0.029056702,-118,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:31:337:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:31:337:-3:-3:1",
+          "mcu_cycles:2064:21577:1110"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_338 -> 368",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            37586,
+            3204997,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        4.053831577301025
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          8,
+          8,
+          16
+        ],
+        [
+          1,
+          16,
+          8,
+          8,
+          16
+        ],
+        [
+          1,
+          16,
+          8,
+          8,
+          16
+        ],
+        [
+          1,
+          16,
+          8,
+          8,
+          16
+        ],
+        [
+          1,
+          16,
+          8,
+          8,
+          16
+        ],
+        [
+          1,
+          20,
+          32,
+          32,
+          4
+        ]
+      ],
+      "scale": [
+        0.06001981720328331,
+        0.0651746541261673,
+        0.06001981720328331,
+        0.00390625,
+        1.5318628356908448e-05,
+        0.0002789808204397559
+      ],
+      "zero_point": [
+        10,
+        0,
+        10,
+        -128,
+        0,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Conv2D_1210_off_bias_out_582, E.338.0, , 0x342e6000 int8[1,16,8,8,16], 16384 Bytes, QLinear(0.060019817,10,int8)",
+        "IOTensor: Mul_1213_out_0_cp_in_2965_cp_in_2966_cp_in_2967, E.338.1, , 0x3434b400 int8[1,16,8,8,16], 16384 Bytes, QLinear(0.065174654,0,int8)",
+        "IOTensor: Mul_1216_out_0_cp_in_2983, E.338.2, , 0x342b4000 int8[1,16,8,8,16], 16384 Bytes, QLinear(0.060019817,10,int8)",
+        "IOTensor: Sigmoid_1219_out_0, E.338.3, , 0x34310000 int8[1,16,8,8,16], 16384 Bytes, QLinear(0.003906250,-128,int8)",
+        "IOTensor: Mul_1220_out_0, E.338.4, , 0x342ac000 int16[1,16,8,8,16], 32768 Bytes, QLinear(0.000015319,0,int16)",
+        "IOTensor: Mul_908_out_0, E.338.5, , 0x34270000 int16[1,20,32,32,4], 163840 Bytes, QLinear(0.000278981,0,int16)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:32:338:338:368:00000017:05000004:EC",
+          "evt_post_end:32:338:338:368:6",
+          "mcu_cycles:37586:3204997:482"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_369",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            47,
+            32,
+            78204
+          ]
+        ]
+      },
+      "c_durations": [
+        0.09785374999046326
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_944_out_0, E.369.0, , 0x3431c000 int8[1,32,32,144], 147456 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:33:369:369:369:00000043:05000003:HYBRID",
+          "evt_post_end:33:369:369:369:1",
+          "mcu_cycles:47:32:78204"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_369 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2104,
+            53073,
+            1229
+          ]
+        ]
+      },
+      "c_durations": [
+        0.07050749659538269
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_944_out_0, E.369.0, , 0x3431c000 int8[1,32,32,144], 147456 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:34:369:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:34:369:-3:-3:1",
+          "mcu_cycles:2104:53073:1229"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_369 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2032,
+            66177,
+            1224
+          ]
+        ]
+      },
+      "c_durations": [
+        0.08679124712944031
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_944_out_0, E.369.0, , 0x3431c000 int8[1,32,32,144], 147456 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:35:369:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:35:369:-3:-3:1",
+          "mcu_cycles:2032:66177:1224"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_370 -> 400",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            3618,
+            1291897,
+            438
+          ]
+        ]
+      },
+      "c_durations": [
+        1.619941234588623
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          32,
+          32,
+          144
+        ],
+        [
+          1,
+          1024,
+          1,
+          144
+        ],
+        [
+          1,
+          1024,
+          1,
+          144
+        ],
+        [
+          1,
+          1024,
+          144
+        ],
+        [
+          1,
+          8,
+          8,
+          256
+        ],
+        [
+          1,
+          8,
+          8,
+          8,
+          4
+        ],
+        [
+          1,
+          8,
+          8,
+          8,
+          4
+        ],
+        [
+          1,
+          16,
+          8,
+          8,
+          4
+        ]
+      ],
+      "scale": [
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.03565363585948944,
+        0.04833568260073662,
+        0.05086896941065788,
+        0.0
+      ],
+      "zero_point": [
+        24,
+        24,
+        24,
+        24,
+        -120,
+        -7,
+        -1,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_946_out_0, E.370.0, , 0x3431c000 int8[1,32,32,144], 147456 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Reshape_947_out_0_inserted_out6168, E.370.1, , 0x3431c000 int8[1,1024,1,144], 147456 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_948_out_0, E.370.2, , 0x3431c000 int8[1,1024,1,144], 147456 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_948_out_0_cp_in_2835, E.370.3, , 0x3431c000 int8[1,1024,144], 147456 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Mul_1288_out_0_cp_in_3072_cp_in_3073_cp_in_3074, E.370.4, , 0x3434b400 int8[1,8,8,256], 16384 Bytes, QLinear(0.035653636,-120,int8)",
+        "IOTensor: Conv2D_1292_off_bias_out_618, E.370.5, , 0x342e2000 int8[1,8,8,8,4], 2048 Bytes, QLinear(0.048335683,-7,int8)",
+        "IOTensor: Mul_1295_out_0_cp_in_3081_cp_in_3082_cp_in_3083, E.370.6, , 0x342e2800 int8[1,8,8,8,4], 2048 Bytes, QLinear(0.050868969,-1,int8)",
+        "IOTensor: Conv2D_1340_out_0, E.370.7, , 0x342e0000 int16[1,16,8,8,4], 8192 Bytes, FixedPoint(64.000000000,0,int16,Q21.-6)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:36:370:370:400:00000017:05000004:EC",
+          "evt_post_end:36:370:370:400:8",
+          "mcu_cycles:3618:1291897:438"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_401",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            47,
+            32,
+            9076
+          ]
+        ]
+      },
+      "c_durations": [
+        0.011443750001490116
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1425_out_0, E.401.0, , 0x34349000 int8[1,8,8,144], 9216 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:37:401:401:401:00000043:05000003:HYBRID",
+          "evt_post_end:37:401:401:401:1",
+          "mcu_cycles:47:32:9076"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_401 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2136,
+            3884,
+            1234
+          ]
+        ]
+      },
+      "c_durations": [
+        0.00906750001013279
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1425_out_0, E.401.0, , 0x34349000 int8[1,8,8,144], 9216 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:38:401:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:38:401:-3:-3:1",
+          "mcu_cycles:2136:3884:1234"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_401 (3)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2032,
+            4700,
+            1148
+          ]
+        ]
+      },
+      "c_durations": [
+        0.009850000031292439
+      ],
+      "m_id": "-",
+      "layer_type": 49,
+      "layer_desc": "epoch (extra HW.3)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1425_out_0, E.401.0, , 0x34349000 int8[1,8,8,144], 9216 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:39:401:-3:-3:00000080:05000031:EXTRA",
+          "evt_post_end:39:401:-3:-3:1",
+          "mcu_cycles:2032:4700:1148"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_402 -> 403",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            506,
+            767,
+            480
+          ]
+        ]
+      },
+      "c_durations": [
+        0.002191249979659915
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          8,
+          8,
+          144
+        ],
+        [
+          1,
+          64,
+          1,
+          144
+        ],
+        [
+          1,
+          64,
+          1,
+          144
+        ],
+        [
+          1,
+          64,
+          144
+        ],
+        [
+          1,
+          1344,
+          144
+        ]
+      ],
+      "scale": [
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434,
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_1427_out_0, E.402.0, , 0x34349000 int8[1,8,8,144], 9216 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Reshape_1428_out_0_inserted_out7606, E.402.1, , 0x34349000 int8[1,64,1,144], 9216 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_1429_out_0, E.402.2, , 0x34349000 int8[1,64,1,144], 9216 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Transpose_1429_out_0_cp_in_3161, E.402.3, , 0x34349000 int8[1,64,144], 9216 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Concat_1430_out_0, E.402.4, , 0x3431c000 int8[1,1344,144], 193536 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:40:402:402:403:00000017:05000004:EC",
+          "evt_post_end:40:402:402:403:5",
+          "mcu_cycles:506:767:480"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_404",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            45,
+            32,
+            56885
+          ]
+        ]
+      },
+      "c_durations": [
+        0.07120250165462494
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          80
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1431_out_0, E.404.0, , 0x342e0000 int8[1,1344,80], 107520 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:41:404:404:404:00000043:05000003:HYBRID",
+          "evt_post_end:41:404:404:404:1",
+          "mcu_cycles:45:32:56885"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_404 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1850,
+            121135,
+            1192
+          ]
+        ]
+      },
+      "c_durations": [
+        0.15522125363349915
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          80
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1431_out_0, E.404.0, , 0x342e0000 int8[1,1344,80], 107520 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:42:404:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:42:404:-7:-7:1",
+          "mcu_cycles:1850:121135:1192"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_405",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            84,
+            32,
+            46097
+          ]
+        ]
+      },
+      "c_durations": [
+        0.057766251266002655
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          64
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1437_out_0, E.405.0, , 0x34270000 int8[1,1344,64], 86016 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:43:405:405:405:00000043:05000003:HYBRID",
+          "evt_post_end:43:405:405:405:1",
+          "mcu_cycles:84:32:46097"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_405 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1810,
+            104367,
+            1192
+          ]
+        ]
+      },
+      "c_durations": [
+        0.13421125710010529
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          64
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1437_out_0, E.405.0, , 0x34270000 int8[1,1344,64], 86016 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:44:405:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:44:405:-7:-7:1",
+          "mcu_cycles:1810:104367:1192"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_406",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            27482,
+            88349,
+            442
+          ]
+        ]
+      },
+      "c_durations": [
+        0.14534124732017517
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          4,
+          16
+        ],
+        [
+          1,
+          1344,
+          80
+        ]
+      ],
+      "scale": [
+        0.22665953636169434,
+        0.019118906930088997
+      ],
+      "zero_point": [
+        24,
+        16
+      ],
+      "io_tensors": [
+        "IOTensor: Reshape_1438_out_0, E.406.0, , 0x34270000 int8[1,1344,4,16], 86016 Bytes, QLinear(0.226659536,24,int8)",
+        "IOTensor: Quantize_1435_out_0, E.406.1, , 0x34306100 int8[1,1344,80], 107520 Bytes, QLinear(0.019118907,16,int8)"
+      ],
+      "data": [
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:45:406:406:406:00000017:05000004:EC",
+          "evt_post_end:45:406:406:406:2",
+          "mcu_cycles:27482:88349:442"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_407",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            82,
+            32,
+            46261
+          ]
+        ]
+      },
+      "c_durations": [
+        0.05796875059604645
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          4,
+          1344
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_1439_out_0, E.407.0, , 0x342e0000 int8[1,16,4,1344], 86016 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:46:407:407:407:00000043:05000003:HYBRID",
+          "evt_post_end:46:407:407:407:1",
+          "mcu_cycles:82:32:46261"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_407 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1922,
+            104935,
+            1154
+          ]
+        ]
+      },
+      "c_durations": [
+        0.13501374423503876
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          16,
+          4,
+          1344
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_1439_out_0, E.407.0, , 0x342e0000 int8[1,16,4,1344], 86016 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:47:407:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:47:407:-7:-7:1",
+          "mcu_cycles:1922:104935:1154"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_408",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            22213,
+            82365,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        0.13132500648498535
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          4,
+          1344,
+          16
+        ]
+      ],
+      "scale": [
+        0.22665953636169434
+      ],
+      "zero_point": [
+        24
+      ],
+      "io_tensors": [
+        "IOTensor: Transpose_1439_out_0_inserted_out7612, E.408.0, , 0x34320500 int8[1,4,1344,16], 86016 Bytes, QLinear(0.226659536,24,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:48:408:408:408:00000017:05000004:EC",
+          "evt_post_end:48:408:408:408:1",
+          "mcu_cycles:22213:82365:482"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_409",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            82,
+            32,
+            3247343
+          ]
+        ]
+      },
+      "c_durations": [
+        4.059321403503418
+      ],
+      "m_id": "-",
+      "layer_type": 2,
+      "layer_desc": "epoch (SW)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int32'>"
+      ],
+      "shape": [
+        [
+          1,
+          4,
+          1344,
+          16
+        ],
+        [
+          1,
+          1,
+          1,
+          125
+        ]
+      ],
+      "scale": [
+        0.00390625,
+        0.0
+      ],
+      "zero_point": [
+        -128,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Softmax_1440_out_0, E.409.0, , 0x342e0000 int8[1,4,1344,16], 86016 Bytes, QLinear(0.003906250,-128,int8)",
+        "IOTensor: SCRATCH_Softmax_1440_PORT_OUT, E.409.1, , 0x342f8f00 int32[1,1,1,125], 500 Bytes, FixedPoint(1.000000000,0,int32,Q31.0)"
+      ],
+      "data": [
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:49:409:409:409:00000023:05000002:SW",
+          "evt_post_end:49:409:409:409:2",
+          "mcu_cycles:82:32:3247343"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_410 -> 413",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2117,
+            135493,
+            562
+          ]
+        ]
+      },
+      "c_durations": [
+        0.1727149933576584
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>"
+      ],
+      "shape": [
+        [
+          1,
+          1,
+          4,
+          1344
+        ],
+        [
+          1,
+          4,
+          1344,
+          1
+        ],
+        [
+          1,
+          1,
+          4,
+          1344
+        ],
+        [
+          1,
+          1,
+          4,
+          1344
+        ],
+        [
+          1,
+          1,
+          4,
+          1344
+        ]
+      ],
+      "scale": [
+        0.04327402263879776,
+        0.04327402263879776,
+        0.04327402263879776,
+        0.04327402263879776,
+        2.1212757928879e-05
+      ],
+      "zero_point": [
+        -128,
+        -128,
+        -128,
+        -128,
+        0
+      ],
+      "io_tensors": [
+        "IOTensor: Conv2D_1441_off_bias_out_699, E.410.0, , 0x342f7a00 int8[1,1,4,1344], 5376 Bytes, QLinear(0.043274023,-128,int8)",
+        "IOTensor: Transpose_1444_out_0, E.410.1, , 0x342f7a00 int8[1,4,1344,1], 5376 Bytes, QLinear(0.043274023,-128,int8)",
+        "IOTensor: Reshape_1445_out_0, E.410.2, , 0x342f7a00 int8[1,1,4,1344], 5376 Bytes, QLinear(0.043274023,-128,int8)",
+        "IOTensor: Transpose_1446_out_0, E.410.3, , 0x342f7a00 int8[1,1,4,1344], 5376 Bytes, QLinear(0.043274023,-128,int8)",
+        "IOTensor: Mul_1447_out_0, E.410.4, , 0x342f5000 int16[1,1,4,1344], 10752 Bytes, QLinear(0.000021213,0,int16)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:50:410:410:413:00000017:05000004:EC",
+          "evt_post_end:50:410:410:413:5",
+          "mcu_cycles:2117:135493:562"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_414",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            84,
+            32,
+            4449
+          ]
+        ]
+      },
+      "c_durations": [
+        0.005706250201910734
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          2
+        ]
+      ],
+      "scale": [
+        0.0032205823808908463
+      ],
+      "zero_point": [
+        -128
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1451_out_0, E.414.0, , 0x342e1500 int8[1,1344,2], 2688 Bytes, QLinear(0.003220582,-128,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:51:414:414:414:00000043:05000003:HYBRID",
+          "evt_post_end:51:414:414:414:1",
+          "mcu_cycles:84:32:4449"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_414 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1973,
+            37663,
+            1264
+          ]
+        ]
+      },
+      "c_durations": [
+        0.05112500116229057
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          2
+        ]
+      ],
+      "scale": [
+        0.0032205823808908463
+      ],
+      "zero_point": [
+        -128
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1451_out_0, E.414.0, , 0x342e1500 int8[1,1344,2], 2688 Bytes, QLinear(0.003220582,-128,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:52:414:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:52:414:-7:-7:1",
+          "mcu_cycles:1973:37663:1264"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_415",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            85,
+            32,
+            4409
+          ]
+        ]
+      },
+      "c_durations": [
+        0.005657500121742487
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          2
+        ]
+      ],
+      "scale": [
+        0.0032205823808908463
+      ],
+      "zero_point": [
+        -128
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1455_out_0, E.415.0, , 0x342e3480 int8[1,1344,2], 2688 Bytes, QLinear(0.003220582,-128,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:53:415:415:415:00000043:05000003:HYBRID",
+          "evt_post_end:53:415:415:415:1",
+          "mcu_cycles:85:32:4409"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_415 (7)",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            1885,
+            37679,
+            1192
+          ]
+        ]
+      },
+      "c_durations": [
+        0.05094499886035919
+      ],
+      "m_id": "-",
+      "layer_type": 113,
+      "layer_desc": "epoch (extra HW.7)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          2
+        ]
+      ],
+      "scale": [
+        0.0032205823808908463
+      ],
+      "zero_point": [
+        -128
+      ],
+      "io_tensors": [
+        "IOTensor: Slice_1455_out_0, E.415.0, , 0x342e3480 int8[1,1344,2], 2688 Bytes, QLinear(0.003220582,-128,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:54:415:-7:-7:00000080:05000071:EXTRA",
+          "evt_post_end:54:415:-7:-7:1",
+          "mcu_cycles:1885:37679:1192"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_416 -> 418",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            2133,
+            22405,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        0.03127500042319298
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int16'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          2
+        ],
+        [
+          1,
+          1344,
+          2
+        ],
+        [
+          1,
+          1344,
+          2
+        ],
+        [
+          1,
+          1344,
+          2
+        ],
+        [
+          1,
+          1344,
+          2
+        ]
+      ],
+      "scale": [
+        0.004951258189976215,
+        0.0045933956280350685,
+        0.0077628786675632,
+        1.5221331523207482e-05,
+        0.019118906930088997
+      ],
+      "zero_point": [
+        -128,
+        -86,
+        -128,
+        0,
+        16
+      ],
+      "io_tensors": [
+        "IOTensor: Add_1452_out_0, E.416.0, , 0x342e1f80 int8[1,1344,2], 2688 Bytes, QLinear(0.004951258,-128,int8)",
+        "IOTensor: Sub_1456_out_0, E.416.1, , 0x342e2a00 int8[1,1344,2], 2688 Bytes, QLinear(0.004593396,-86,int8)",
+        "IOTensor: Add_1458_out_0, E.416.2, , 0x342e1500 int8[1,1344,2], 2688 Bytes, QLinear(0.007762879,-128,int8)",
+        "IOTensor: Mul_1461_out_0, E.416.3, , 0x342e0000 int16[1,1344,2], 5376 Bytes, QLinear(0.000015221,0,int16)",
+        "IOTensor: Sub_1457_out_0, E.416.4, , 0x34320500 int8[1,1344,2], 2688 Bytes, QLinear(0.019118907,16,int8)"
+      ],
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:55:416:416:418:00000017:05000004:EC",
+          "evt_post_end:55:416:416:418:5",
+          "mcu_cycles:2133:22405:482"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_419",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            45,
+            32,
+            1322949
+          ]
+        ]
+      },
+      "c_durations": [
+        1.653782606124878
+      ],
+      "m_id": "-",
+      "layer_type": 3,
+      "layer_desc": "epoch (HYBRID)",
+      "type": [
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          116
+        ]
+      ],
+      "scale": [
+        0.019118906930088997
+      ],
+      "zero_point": [
+        16
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1464_out_0, E.419.0, , 0x342e0000 int8[1,1344,116], 155904 Bytes, QLinear(0.019118907,16,int8)"
+      ],
+      "data": [
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:56:419:419:419:00000043:05000003:HYBRID",
+          "evt_post_end:56:419:419:419:1",
+          "mcu_cycles:45:32:1322949"
+        ]
+      ]
+    },
+    {
+      "name": "EpochBlock_420 -> 422",
+      "counters": {
+        "type": "CPU cycles",
+        "values": [
+          [
+            39810,
+            172293,
+            482
+          ]
+        ]
+      },
+      "c_durations": [
+        0.26573124527931213
+      ],
+      "m_id": "-",
+      "layer_type": 4,
+      "layer_desc": "epoch (EC)",
+      "type": [
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>",
+        "<class 'numpy.int8'>"
+      ],
+      "shape": [
+        [
+          1,
+          1344,
+          116,
+          1
+        ],
+        [
+          1,
+          116,
+          1,
+          1344
+        ],
+        [
+          1,
+          116,
+          1,
+          1344
+        ]
+      ],
+      "scale": [
+        0.019118906930088997,
+        0.019118906930088997,
+        0.019118906930088997
+      ],
+      "zero_point": [
+        16,
+        16,
+        16
+      ],
+      "io_tensors": [
+        "IOTensor: Concat_1464_out_0_inserted_out7642, E.420.0, , 0x342e0000 int8[1,1344,116,1], 155904 Bytes, QLinear(0.019118907,16,int8)",
+        "IOTensor: Concat_1464_out_0_inserted_out7642_inserted_out7646, E.420.1, , 0x34306100 int8[1,116,1,1344], 155904 Bytes, QLinear(0.019118907,16,int8)",
+        "IOTensor: Transpose_1466_out_0_cp_in_3168, E.420.2, , 0x34306100 int8[1,116,1,1344], 155904 Bytes, QLinear(0.019118907,16,int8)"
+      ],
+      "data": [
+        [],
+        [],
+        []
+      ],
+      "extra": [
+        [
+          "evt_pre_start:57:420:420:422:00000017:05000004:EC",
+          "evt_post_end:57:420:420:422:3",
+          "mcu_cycles:39810:172293:482"
+        ]
+      ]
+    }
+  ],
+  "debug": {
+    "exec_times": [
+      48.651222229003906
+    ],
+    "host_duration": 7337.522154999988,
+    "counters": {
+      "type": "CPU cycles",
+      "values": [
+        [
+          354367,
+          33093954,
+          5456085,
+          38920980,
+          0
+        ]
+      ]
+    },
+    "stack_usage": -1,
+    "heap_usage": -1
+  }
+}

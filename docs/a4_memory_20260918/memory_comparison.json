@@ -1,0 +1,158 @@
+{
+  "scope": "generated memory allocation; runtime validation pending",
+  "a_matches_original_pool_sizes_and_usage": true,
+  "sources": {
+    "original": {
+      "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/baseline_generation/network_c_info.json",
+      "sha256": "606df09a1ed817403d54e612ac7f9f8504ec5770d401e9076d2980e07c866124"
+    },
+    "A": {
+      "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/generation_20260918_040449/A_current/output/network_c_info.json",
+      "sha256": "9701314c44315363666ed837d8941d309fa395b2eb9c14f733a8f1314417c60f"
+    },
+    "B": {
+      "file": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/generation_20260918_040449/B_npuram6_320k/output/network_c_info.json",
+      "sha256": "3fdfe7f316944ee7a2f0e25699627a49693abc029da1c1996d8405646d682e17"
+    }
+  },
+  "physical_pools": {
+    "original": {
+      "npuRAM6": {
+        "size_bytes": 458752,
+        "used_size_bytes": 442368
+      },
+      "npuRAM5": {
+        "size_bytes": 458752,
+        "used_size_bytes": 458752
+      },
+      "npuRAM4": {
+        "size_bytes": 458752,
+        "used_size_bytes": 458752
+      },
+      "npuRAM3": {
+        "size_bytes": 458752,
+        "used_size_bytes": 450624
+      },
+      "cpuRAM2": {
+        "size_bytes": 1048576,
+        "used_size_bytes": 1048576
+      },
+      "cpuRAM1": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "flexMEM": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "hyperRAM": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 114688
+      },
+      "octoFlash": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 3474865
+      }
+    },
+    "A": {
+      "npuRAM6": {
+        "size_bytes": 458752,
+        "used_size_bytes": 442368
+      },
+      "npuRAM5": {
+        "size_bytes": 458752,
+        "used_size_bytes": 458752
+      },
+      "npuRAM4": {
+        "size_bytes": 458752,
+        "used_size_bytes": 458752
+      },
+      "npuRAM3": {
+        "size_bytes": 458752,
+        "used_size_bytes": 450624
+      },
+      "cpuRAM2": {
+        "size_bytes": 1048576,
+        "used_size_bytes": 1048576
+      },
+      "cpuRAM1": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "flexMEM": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "hyperRAM": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 114688
+      },
+      "octoFlash": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 3474865
+      }
+    },
+    "B": {
+      "npuRAM6": {
+        "size_bytes": 327680,
+        "used_size_bytes": 311296
+      },
+      "npuRAM5": {
+        "size_bytes": 458752,
+        "used_size_bytes": 456192
+      },
+      "npuRAM4": {
+        "size_bytes": 458752,
+        "used_size_bytes": 450560
+      },
+      "npuRAM3": {
+        "size_bytes": 458752,
+        "used_size_bytes": 458752
+      },
+      "cpuRAM2": {
+        "size_bytes": 1048576,
+        "used_size_bytes": 1048576
+      },
+      "cpuRAM1": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "flexMEM": {
+        "size_bytes": 0,
+        "used_size_bytes": 0
+      },
+      "hyperRAM": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 81920
+      },
+      "octoFlash": {
+        "size_bytes": 16777216,
+        "used_size_bytes": 3474865
+      }
+    }
+  },
+  "artifacts": {
+    "A": [
+      "A_current/output/network.c",
+      "A_current/output/network_atonbuf.xSPI2.raw",
+      "A_current/output/network_ecblobs.h",
+      "A_current/output/neural_art__network/network.c",
+      "A_current/output/neural_art__network/network_ecblobs.h",
+      "A_current/output/neural_art__network/stai_network.c",
+      "A_current/output/neural_art__network/stai_network.h",
+      "A_current/output/stai_network.c",
+      "A_current/output/stai_network.h"
+    ],
+    "B": [
+      "B_npuram6_320k/output/network.c",
+      "B_npuram6_320k/output/network_atonbuf.xSPI2.raw",
+      "B_npuram6_320k/output/network_ecblobs.h",
+      "B_npuram6_320k/output/neural_art__network/network.c",
+      "B_npuram6_320k/output/neural_art__network/network_ecblobs.h",
+      "B_npuram6_320k/output/neural_art__network/stai_network.c",
+      "B_npuram6_320k/output/neural_art__network/stai_network.h",
+      "B_npuram6_320k/output/stai_network.c",
+      "B_npuram6_320k/output/stai_network.h"
+    ]
+  }
+}

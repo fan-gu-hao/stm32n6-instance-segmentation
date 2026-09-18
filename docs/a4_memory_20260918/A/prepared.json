@@ -1,0 +1,16 @@
+{
+  "case": "A_current",
+  "validation_project": "/home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation",
+  "weights_match_baseline": {
+    "A_current": true,
+    "B_npuram6_320k": true
+  },
+  "baseline_weights_sha256": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47",
+  "model_files_sha256": {
+    "network.c": "7316a281529010f00fbb14f4ef3bdf4744462bfea63906131ef75cb5eb34d8dc",
+    "network_ecblobs.h": "9a246c6c2dc85d20aab3f7aaff14cc10001bf060a8716624dbb5b319b89016e7",
+    "stai_network.c": "ccc0ab24bf919c8a67184fc0303f8bbbaecde5d9e2248a3f0d41cdb246ac03e6",
+    "stai_network.h": "9158c62b742175c39161cda323f2baecb126305c2a30d9e88266baca09dece70",
+    "network_atonbuf.xSPI2.raw": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47"
+  }
+}

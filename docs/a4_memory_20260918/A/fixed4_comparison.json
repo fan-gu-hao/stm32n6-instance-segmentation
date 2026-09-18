@@ -1,0 +1,24 @@
+{
+  "case": "A_current",
+  "all_equal_a2": true,
+  "input_tensor_sha256": "1d6c33f80265662a59e764a0da425444b7985f0a4adf80598338dd418f75c911",
+  "elf_sha256": "bb5a8a970481d54316882303639b614b5b2e662e3c16192f2fa731cc836c5871",
+  "comparisons": {
+    "mask": {
+      "equal": true,
+      "max_lsb": 0,
+      "reference_sha256": "222d30aca9e87a8a8d1345b1d72a04ef22f9279080fc147de4b0c5196bc9fb13"
+    },
+    "detections": {
+      "equal": true,
+      "max_lsb": 0,
+      "reference_sha256": "b3bbd595b5bac62c1913d060b5afa3ef3dc00161a817602c1cb3075a24471dde"
+    }
+  },
+  "c_durations_ms": [
+    48.633056640625,
+    48.609710693359375,
+    48.57918930053711,
+    48.556129455566406
+  ]
+}

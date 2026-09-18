@@ -1,0 +1,18 @@
+{
+  "case": "B_npuram6_320k",
+  "A_test": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/generation_20260918_040449/A_current/test_20260918_180242",
+  "A_repeat": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/generation_20260918_040449/A_current/test_20260918_180242/repeat_20260918_181023",
+  "A_summary_sha256": "8272839aea44a600450f7f9b76854849e20b1ab4155e571c55e7e0a30a00ccc0",
+  "weights_match_A": true,
+  "validation_sources_sha256": {
+    "/home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation/Core/Inc/app_config.h": "aa2643ed89d65bec71c108b4d6b19a256bee81ad95292c80643c8d05cb1c9923",
+    "/home/fan/ST/STEdgeAI/4.0/Middlewares/ST/AI/Validation/Src/aiValidation_ATON.c": "31b4792cc2871b2a30567e766728da77e5fa653325635a69120dd707d8bbc814"
+  },
+  "model_files_sha256": {
+    "network.c": "57d4400666c15cad50f47926f6e048fc7f9f1297c0692297ad6cd603c33ab329",
+    "network_ecblobs.h": "ec84c47de714307bf9c9bdccbc533a0ac8f3f575744e8f55281b46fab904fc22",
+    "stai_network.c": "6ca38c66a9968eedca991d9da62134786dd2f04fd08843cb85a0b64f13a8df0f",
+    "stai_network.h": "9158c62b742175c39161cda323f2baecb126305c2a30d9e88266baca09dece70",
+    "network_atonbuf.xSPI2.raw": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47"
+  }
+}

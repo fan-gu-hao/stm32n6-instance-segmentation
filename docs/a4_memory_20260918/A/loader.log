@@ -1,0 +1,9 @@
+09/18/2026 06:02:49 PM  __main__ -- Preparing compiler GCC
+09/18/2026 06:02:49 PM  __main__ -- Setting a breakpoint in main.c at line 137 (before the infinite loop)
+09/18/2026 06:02:49 PM  __main__ -- Copying network.c to project: -> /home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation/X-CUBE-AI/App/network.c
+09/18/2026 06:02:49 PM  __main__ -- Copying network_ecblobs.h to project: /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/generation_20260918_040449/A_current/test_20260918_180242/model/network_ecblobs.h -> /home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation/X-CUBE-AI/App
+09/18/2026 06:02:49 PM  __main__ -- Resetting the board...
+09/18/2026 06:02:50 PM  __main__ -- Skipping flashing memory xSPI2 -- 3,474.865 kB
+09/18/2026 06:02:50 PM  __main__ -- Cleaning and Building project (conf= N6-DK)
+09/18/2026 06:03:04 PM  __main__ -- Loading internal memories & Running the program
+09/18/2026 06:03:11 PM  __main__ -- Start operation achieved successfully
