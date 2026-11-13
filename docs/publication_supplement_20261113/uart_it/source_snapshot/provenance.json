@@ -1,0 +1,56 @@
+{
+  "review_date": "2026-11-13",
+  "input_report_sha256": "9f295a730d8e19abd33546d796a38ba154220153327a444c7989512f3be0c2dd",
+  "entries": [
+    {
+      "source": "course14_yolov8n_seg_n6/results/uart_it/install_20260914_055728_067784/before/scripts/install_uart_it_v1.py",
+      "source_bytes": 35439,
+      "source_sha256": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
+      "received_content_sha256": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
+      "public_path": "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_initial.py",
+      "public_bytes": 35439,
+      "public_sha256": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
+      "transformations": []
+    },
+    {
+      "source": "course14_yolov8n_seg_n6/results/uart_it/rollback_20260914_061621_901943/before/scripts/install_uart_it_v1.py",
+      "source_bytes": 43571,
+      "source_sha256": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
+      "received_content_sha256": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
+      "public_path": "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_hal_fix1.py",
+      "public_bytes": 43571,
+      "public_sha256": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
+      "transformations": []
+    },
+    {
+      "source": "course14_yolov8n_seg_n6/results/uart_it/rollback_20260914_061621_901943/before/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/project_uart_it.h",
+      "source_bytes": 1051,
+      "source_sha256": "b93d1386b841bb4f36b2b94f3913db125d633cf1071224465644e1564f49ce5d",
+      "received_content_sha256": "b93d1386b841bb4f36b2b94f3913db125d633cf1071224465644e1564f49ce5d",
+      "public_path": "docs/publication_supplement_20261113/uart_it/source_snapshot/Inc/project_uart_it.h",
+      "public_bytes": 1051,
+      "public_sha256": "b93d1386b841bb4f36b2b94f3913db125d633cf1071224465644e1564f49ce5d",
+      "transformations": []
+    },
+    {
+      "source": "course14_yolov8n_seg_n6/results/uart_it/rollback_20260914_061621_901943/before/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/main.c",
+      "source_bytes": 30751,
+      "source_sha256": "e579c62d8c64f1582c7b131b19ed5fcb613c7deb6bf9b208e7753b68adf87164",
+      "received_content_sha256": "e579c62d8c64f1582c7b131b19ed5fcb613c7deb6bf9b208e7753b68adf87164",
+      "public_path": "docs/publication_supplement_20261113/uart_it/source_snapshot/Src/main.c",
+      "public_bytes": 30751,
+      "public_sha256": "e579c62d8c64f1582c7b131b19ed5fcb613c7deb6bf9b208e7753b68adf87164",
+      "transformations": []
+    },
+    {
+      "source": "course14_yolov8n_seg_n6/results/uart_it/rollback_20260914_061621_901943/before/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/project_uart_it.c",
+      "source_bytes": 7708,
+      "source_sha256": "9078af44a22b7b490c88f6867e9839ed71e9442f64b1e387f82e5faa0573ab1c",
+      "received_content_sha256": "9078af44a22b7b490c88f6867e9839ed71e9442f64b1e387f82e5faa0573ab1c",
+      "public_path": "docs/publication_supplement_20261113/uart_it/source_snapshot/Src/project_uart_it.c",
+      "public_bytes": 7708,
+      "public_sha256": "9078af44a22b7b490c88f6867e9839ed71e9442f64b1e387f82e5faa0573ab1c",
+      "transformations": []
+    }
+  ]
+}
