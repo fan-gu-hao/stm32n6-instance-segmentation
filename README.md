@@ -7,13 +7,18 @@
 
 ## 本專案實作範圍
 
-沿用官方模型、驅動、推論執行期與後處理，主要工作包括：
+本作品完成從預訓練模型匯出、量化、後處理適配到 N6 應用與工程驗證的流程：
 
-- 整合攝影機、模型推論、顯示與串列通訊（UART）。
-- 輸出 FRAME、DET、END、EVENT、ERROR 與 PROFILE 紀錄。
-- 整合人物區域事件，以及擷取逾時時的失效處理。
-- 建立固定輸入比對、分階段計時、記憶體配置實驗與板端驗收。
-- 保存來源修改、相依檔案雜湊與可追溯的測試證據。
+- 原始 PyTorch 模型 → ONNX → onnx2tf／TensorFlow SavedModel → ST 逐通道 INT8 TFLite；保存實際匯出、量化與介面檢查紀錄。
+- 使用同一組影像比較原始模型、浮點 TFLite 與量化 TFLite，並完成電腦攝影機驗證。
+- 修改 ST 模型庫（Model Zoo）的輸出解析與標頭產生器，依張量形狀對應偵測與遮罩輸出；修補本機 Neural-ART 產碼參數與映像對齊。
+- 整合攝影機、LCD、模型推論、串列通訊（UART）、人物進出區域與擷取逾時失效處理。
+- 建立固定輸入回歸、分段與逐區塊計時、記憶體配置對照、來源重建與板端驗收。
+- 保存修改補丁、環境、相依檔案雜湊、結果圖及測試證據。
+
+完整步驟與對應程式見 **[工程流程與實作證據](docs/engineering-workflow.md)**。其中 ONNX 匯出、量化和模型庫修改均有已公開的日誌或補丁。
+
+模型架構、預訓練權重、HAL／BSP、推論執行環境及 NMS／遮罩重建演算法保留上游來源；模型轉換、介面適配、系統整合、除錯與驗證工作在導覽中逐項說明。
 
 ## 驗證成果
 
@@ -45,7 +50,10 @@ B 組保留為經過驗證的配置實驗。
 | [app_camerapipeline.c](firmware/Application/STM32N6570-DK/Src/app_camerapipeline.c) | 攝影機擷取流程 |
 | [project_region_event.h](firmware/Application/STM32N6570-DK/Inc/project_region_event.h) | 區域事件邏輯 |
 | [app_config.h](firmware/Application/STM32N6570-DK/Inc/app_config.h) | 應用程式設定 |
-| [Model Zoo 修改](tools/model_zoo_overrides/) | 部署與產生設定檔的相關修改 |
+| [量化設定](configs/yolov8n_seg_int8_int8.yaml) | SavedModel 來源、校正資料、逐通道與 INT8 介面設定 |
+| [三模型比較腳本](scripts/check_seg_models_pc.sh) | 原始模型、浮點 TFLite 與 ST INT8 的共同圖片比較 |
+| [Model Zoo 修改](tools/model_zoo_overrides/) | 本機產碼與偵測／遮罩輸出對應修補 |
+| [部署腳本](scripts/deploy_n6_seg.sh) | 工具與模型檢查、ST-LINK 識別、產碼／建置／封裝／燒錄 |
 | [來源對照](docs/PUBLIC_SOURCE_MAP.md) | 發佈副本與原始專案檔案的對應關係 |
 
 firmware/ 是核心程式碼副本。編譯時需搭配固定版本的官方專案、
@@ -71,6 +79,10 @@ SDK 與 A1 所列的相依檔案。
 - 首次長測的一次序號不連續仍保留在 A5 紀錄中，原因未確定；
   後續從新開機同步的 30 分鐘重測通過。
 - 擷取逾時驗證使用軟體故障注入，測試失效提示、清除舊框與停止發布結果。
+
+## 後續雙模型作品
+
+[STM32N6 雙模型語音找物](https://github.com/fan-gu-hao/stm32n6-voice-object-finder)延續本作品的模型部署與視覺整合經驗，增加板上收音、客製 KWS 訓練、INT8 部署、Python／C 比對、快取一致性與 FreeRTOS 雙模型協作。兩個作品的開發流程相互連結，各自保存實際模型版本與驗證結果。
 
 ## 第三方來源與授權
 
