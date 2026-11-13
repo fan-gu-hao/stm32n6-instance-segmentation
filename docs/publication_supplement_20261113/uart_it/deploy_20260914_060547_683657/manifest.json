@@ -1,0 +1,20 @@
+{
+  "status": "application_verified",
+  "elf_sha256": "15e3e1369e5adc6716aec29deaa97d7a41488d7186a4dce8364d902dd7ef9f1e",
+  "baseline_elf_sha256": "8b56f5d914d15901e7abd9fe0ef7f8d576363a5dc6277e5075dc16149cca1b99",
+  "stlink_serial": "0051002A3234510137333934",
+  "application_address": "0x70100000",
+  "weights_address": "0x70380000",
+  "ecblob_address": "0x71380000",
+  "ecblob_section": ".flash_section",
+  "model_readback_verified": true,
+  "application_write_started": true,
+  "application_flash_verified": true,
+  "hardware_runtime_verified": false,
+  "application_size": 452224,
+  "application_sha256": "c3886b9597d5e78e9ceb1ba4f3c1276ccf3a68e6e3de43d357909f17fa304f2c",
+  "weights_size": 3474865,
+  "weights_sha256": "68de048d5dfaddcce4b3e52f7b95cf04a542e3f601135a447be5328080cbab47",
+  "ecblob_size": 593920,
+  "ecblob_sha256": "be17a2471e1648f61b3572e82027e9b1aa0867cb541e6272ff6a65a934358b1d"
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "file": "experiments/mlruns/952905676529528472/e7d17088ecea49948ceee4b72fb30b01/artifacts/run_20260909_020310_zj69FR/generated/network_generate_report.txt",
+    "same_network_c": true
+  },
+  {
+    "file": "results/n6_deployment/run_20260909_020310_zj69FR/generated/network_generate_report.txt",
+    "same_network_c": true
+  },
+  {
+    "file": "experiments/mlruns/384525262834806713/4b44cadd7b584d5da00529cd1fb8d243/artifacts/run_20260909_012357_bvINEg/stm32ai_files/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "experiments/mlruns/384525262834806713/4b44cadd7b584d5da00529cd1fb8d243/artifacts/run_20260909_012357_bvINEg/stm32ai_files/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "experiments/mlruns/952905676529528472/e7d17088ecea49948ceee4b72fb30b01/artifacts/run_20260909_020310_zj69FR/network_c_info.json",
+    "same_network_c": null
+  },
+  {
+    "file": "results/checkpoints/2026-09-09/n6_analysis/run_20260909_012357_bvINEg/stm32ai_files/network_c_info.json",
+    "same_network_c": null
+  },
+  {
+    "file": "results/checkpoints/2026-09-09/n6_analysis/run_20260909_012357_bvINEg/stm32ai_files/network_generate_report.txt",
+    "same_network_c": null
+  },
+  {
+    "file": "results/checkpoints/2026-09-09/n6_deployment/run_20260909_020310_zj69FR/generated/network_generate_report.txt",
+    "same_network_c": null
+  },
+  {
+    "file": "results/checkpoints/2026-09-09/n6_deployment/run_20260909_020310_zj69FR/network_c_info.json",
+    "same_network_c": null
+  },
+  {
+    "file": "results/n6_analysis/run_20260909_012357_bvINEg/stm32ai_files/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "results/n6_analysis/run_20260909_012357_bvINEg/stm32ai_files/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "results/n6_deployment/run_20260909_020310_zj69FR/network_c_info.json",
+    "same_network_c": null
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/ST_Edge_AI/App/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/ST_Edge_AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/HAR/3.1.0_NO_HSP/ST_Edge_AI/App/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/HAR/3.1.0_NO_HSP/ST_Edge_AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/IGN 24 WL/10.0.0 - ST_API/Projects/Common/X-CUBE-AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/IGN 24 WL/3.1.0/ST_Edge_AI/App/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/IGN 24 WL/3.1.0/ST_Edge_AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/Yamnet -256 AED/10.0.0 - ST_API/Projects/Common/X-CUBE-AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/Yamnet -256 AED/3_1_0_5_classes_NO_HSP/ST_Edge_AI/App/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/Yamnet -256 AED/3_1_0_5_classes_NO_HSP/ST_Edge_AI/App/network_generate_report.txt",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/Yamnet -256 AED/3_1_0_NO_HSP/ST_Edge_AI/App/network_c_info.json",
+    "same_network_c": false
+  },
+  {
+    "file": "stm32ai-modelzoo-services/application_code/sensing/STM32U5/Utils/Deploy/Yamnet -256 AED/3_1_0_NO_HSP/ST_Edge_AI/App/network_generate_report.txt",
+    "same_network_c": false
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "camera": {
+    "source": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/region_event/deploy_20260913_184832_166479/app.elf",
+    "snapshot": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/firmware/camera.elf",
+    "sha256": "8b56f5d914d15901e7abd9fe0ef7f8d576363a5dc6277e5075dc16149cca1b99"
+  },
+  "validation": {
+    "source": "/home/fan/ST/STEdgeAI/4.0/Projects/STM32N6570-DK/Applications/NPU_Validation/armgcc/build/N6-DK/Project.elf",
+    "snapshot": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/a4_memory/run_20260918_035202/firmware/validation.elf",
+    "sha256": "b073b50ce2c13f565e754d50172c051a09b0962e503dbbc2928eab4c24b2653a"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "elf": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/ModelZoo/STM32N6570-DK_GettingStarted_InstanceSegmentation.elf",
+  "elf_sha256": "15e3e1369e5adc6716aec29deaa97d7a41488d7186a4dce8364d902dd7ef9f1e",
+  "log": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/logs/build_uart_it_20260914_055728_082621.log",
+  "uart_ring_address": "0x3406ea6c",
+  "uart_ring_bytes": 4096,
+  "strong_irq_and_callbacks": true,
+  "hal_irq_dependencies_verified": true,
+  "installer_revision": "uart_it_v1_hal_fix1",
+  "flashed": false
+}

@@ -1,0 +1,246 @@
+
+$ /opt/st/stm32cubeide_2.2.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.linux64_1.0.100.202602081740/tools/bin/arm-none-eabi-objdump -h /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app.elf
+
+/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   0000034c  34000400  34000400  00000400  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         00023c50  34000750  34000750  00000750  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .gnu.sgstubs  00000020  340243a0  340243a0  000243a0  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .rodata       0003a6c0  340243c0  340243c0  000243c0  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .ARM.extab    00000000  3405ea80  3405ea80  00100000  2**0
+                  CONTENTS
+  5 .ARM          00000008  3405ea80  3405ea80  0005ea80  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .preinit_array 00000000  3405ea88  3405ea88  00100000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .init_array   00000004  3405ea88  3405ea88  0005ea88  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .fini_array   00000004  3405ea8c  3405ea8c  0005ea8c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .data         0000fbec  3405ea90  3405ea90  0005ea90  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          00003554  3406e680  3406e680  0006e67c  2**3
+                  ALLOC
+ 11 ._user_heap_stack 00004204  34071bd4  34071bd4  0006e67c  2**0
+                  ALLOC
+ 12 .flash_section 00091000  71380000  71380000  0006f000  2**6
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 13 .psram_section 0024b0a0  91000000  91000000  00100000  2**5
+                  ALLOC
+ 14 .ARM.attributes 0000003a  00000000  00000000  00100000  2**0
+                  CONTENTS, READONLY
+ 15 .debug_info   000b6102  00000000  00000000  0010003a  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_abbrev 0000f53c  00000000  00000000  001b613c  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_loclists 000453ef  00000000  00000000  001c5678  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_aranges 00004020  00000000  00000000  0020aa68  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_rnglists 00005e22  00000000  00000000  0020ea88  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_macro  00093f16  00000000  00000000  002148aa  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .debug_line   000783dd  00000000  00000000  002a87c0  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 22 .debug_str    00422929  00000000  00000000  00320b9d  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 23 .comment      00000086  00000000  00000000  007434c6  2**0
+                  CONTENTS, READONLY
+ 24 .debug_frame  0000ded0  00000000  00000000  0074354c  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 25 .debug_line_str 0000017c  00000000  00000000  0075141c  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+
+$ /opt/st/stm32cubeide_2.2.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.linux64_1.0.100.202602081740/tools/bin/arm-none-eabi-objcopy -O binary --remove-section=.flash_section /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app.elf /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app_noecblob.bin
+
+$ /opt/st/stm32cubeide_2.2.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.linux64_1.0.100.202602081740/tools/bin/arm-none-eabi-objcopy -O binary --only-section=.flash_section /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app.elf /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/ecblob_reference.bin
+
+$ /opt/st/stm32cubeide_2.2.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.linux64_1.0.100.202602081740/tools/bin/arm-none-eabi-objcopy -O binary --only-section=.flash_section /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/baseline_app.elf /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/baseline_ecblob.bin
+
+$ /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_SigningTool_CLI -s -bin /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app_noecblob.bin -nk -of 0x80000000 -t ssbl -hv 2.3 -align -o /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app_signed.bin
+[36m     [01m  -------------------------------------------------------------------
+[0m[39;49m[36m                       STM32 Signing Tool v2.23.0                     
+[0m[39;49m[36m     [01m  -------------------------------------------------------------------
+
+[0m[39;49m[00;35m[Header v2.3] Align the payload to the 0x400 offset by adding padding bytes at the beginning of the payload.
+[0m[39;49m[0m[39;49mAdding head padding bytes for payload with header v2.3
+[0m[39;49m[36m Header version 2.3 preparation... 
+[0m[39;49m[0m[39;49mExtracting Entry point value from the input file...
+[0m[39;49m[0m[39;49mEntry point value : 0x3401d3b1
+[0m[39;49m[00;32m The headred image file generated successfully: [0m[39;49m[49m /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app_signed.bin
+[0m[39;49m
+$ /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI -c port=SWD mode=HOTPLUG sn=0051002A3234510137333934 -el /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MX66UW1G45G_STM32N6570-DK.stldr --upload 0x70380000 0x3505b4 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/weights_readback.bin
+[36m[01m      -------------------------------------------------------------------
+[39;49m[0m[36m[01m                        STM32CubeProgrammer v2.23.0                  
+[39;49m[0m[36m[01m      -------------------------------------------------------------------
+
+[39;49m[0m[39;49m[0m[90mST-LINK SN  : 0051002A3234510137333934
+[39;49m[0m[90mST-LINK FW  : V3J17M10
+[39;49m[0m[90mBoard       : STM32N6570-DK
+[39;49m[0m[90mVoltage     : 3.29V
+[39;49m[0m[90mSWD freq    : 8000 KHz
+[39;49m[0m[90mConnect mode: Hot Plug
+[39;49m[0m[90mReset mode  : Software reset
+[39;49m[0m[90mDevice ID   : 0x486
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[90mRevision ID : Rev B
+[39;49m[0m[39;49m[0m[39;49mDevice name : ST32N657
+[39;49m[0m[39;49mDevice type : MCU
+[39;49m[0m[39;49mDevice CPU  : Cortex-M55
+[39;49m[0m[39;49mBL Version  : --
+[39;49m[0m[39;49m
+[39;49m[0m[39;49m
+UPLOADING ...
+[39;49m[0m[39;49m  File          : /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/weights_readback.bin
+[39;49m[0m[39;49m  Size          : 3474868 Bytes
+[39;49m[0m[39;49m  Address:      : 0x70380000
+[39;49m[0m[39;49mRead progress:
+[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[======                                            ]  13% 
+[39;49m[39;49m[0m[00;32m[=========                                         ]  19% 
+[39;49m[39;49m[0m[00;32m[=============                                     ]  26% 
+[39;49m[39;49m[0m[00;32m[================                                  ]  33% 
+[39;49m[39;49m[0m[00;32m[===================                               ]  39% 
+[39;49m[39;49m[0m[00;32m[=======================                           ]  46% 
+[39;49m[39;49m[0m[00;32m[==========================                        ]  53% 
+[39;49m[39;49m[0m[00;32m[=============================                     ]  59% 
+[39;49m[39;49m[0m[00;32m[=================================                 ]  66% 
+[39;49m[39;49m[0m[00;32m[====================================              ]  72% 
+[39;49m[39;49m[0m[00;32m[=======================================           ]  79% 
+[39;49m[39;49m[0m[00;32m[===========================================       ]  86% 
+[39;49m[39;49m[0m[00;32m[==============================================    ]  92% 
+[39;49m[39;49m[0m[00;32m[================================================= ]  99% 
+[39;49m[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m
+
+[39;49m[39;49m[0mData read successfully
+[00;32m[39;49m[0mTime elapsed during read operation is: 00:00:07.751
+[39;49m[39;49m[0m[39;49m[0m
+$ /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI -c port=SWD mode=HOTPLUG sn=0051002A3234510137333934 -el /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MX66UW1G45G_STM32N6570-DK.stldr --upload 0x71380000 0x91000 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/ecblob_readback.bin
+[36m[01m      -------------------------------------------------------------------
+[39;49m[0m[36m[01m                        STM32CubeProgrammer v2.23.0                  
+[39;49m[0m[36m[01m      -------------------------------------------------------------------
+
+[39;49m[0m[39;49m[0m[90mST-LINK SN  : 0051002A3234510137333934
+[39;49m[0m[90mST-LINK FW  : V3J17M10
+[39;49m[0m[90mBoard       : STM32N6570-DK
+[39;49m[0m[90mVoltage     : 3.29V
+[39;49m[0m[90mSWD freq    : 8000 KHz
+[39;49m[0m[90mConnect mode: Hot Plug
+[39;49m[0m[90mReset mode  : Software reset
+[39;49m[0m[90mDevice ID   : 0x486
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[90mRevision ID : Rev B
+[39;49m[0m[39;49m[0m[39;49mDevice name : ST32N657
+[39;49m[0m[39;49mDevice type : MCU
+[39;49m[0m[39;49mDevice CPU  : Cortex-M55
+[39;49m[0m[39;49mBL Version  : --
+[39;49m[0m[39;49m
+[39;49m[0m[39;49m
+UPLOADING ...
+[39;49m[0m[39;49m  File          : /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/ecblob_readback.bin
+[39;49m[0m[39;49m  Size          : 593920 Bytes
+[39;49m[0m[39;49m  Address:      : 0x71380000
+[39;49m[0m[39;49mRead progress:
+[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[======================================            ]  77% 
+[39;49m[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m
+
+[39;49m[39;49m[0mData read successfully
+[00;32m[39;49m[0mTime elapsed during read operation is: 00:00:01.431
+[39;49m[39;49m[0m[39;49m[0m
+$ /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI -c port=SWD mode=HOTPLUG sn=0051002A3234510137333934 -el /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MX66UW1G45G_STM32N6570-DK.stldr -w /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/app_signed.bin 0x70100000 -v
+[36m[01m      -------------------------------------------------------------------
+[39;49m[0m[36m[01m                        STM32CubeProgrammer v2.23.0                  
+[39;49m[0m[36m[01m      -------------------------------------------------------------------
+
+[39;49m[0m[39;49m[0m[90mST-LINK SN  : 0051002A3234510137333934
+[39;49m[0m[90mST-LINK FW  : V3J17M10
+[39;49m[0m[90mBoard       : STM32N6570-DK
+[39;49m[0m[90mVoltage     : 3.29V
+[39;49m[0m[90mSWD freq    : 8000 KHz
+[39;49m[0m[90mConnect mode: Hot Plug
+[39;49m[0m[90mReset mode  : Software reset
+[39;49m[0m[90mDevice ID   : 0x486
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[90mRevision ID : Rev B
+[39;49m[0m[39;49m[0m[39;49mDevice name : ST32N657
+[39;49m[0m[39;49mDevice type : MCU
+[39;49m[0m[39;49mDevice CPU  : Cortex-M55
+[39;49m[0m[39;49mBL Version  : --
+[39;49m[0m[39;49m
+[39;49m[0m[39;49m
+
+[39;49m[0m[39;49mOpening and parsing file: app_signed.bin
+[39;49m[0m[39;49m
+
+[39;49m[0m[39;49mMemory Programming ...
+[39;49m[0m[39;49m  File          : app_signed.bin
+[39;49m[0m[39;49m  Size          : 441.63 KB 
+[39;49m[0m[39;49m  Address       : 0x70100000
+[39;49m[0m[39;49m
+
+[39;49m[0m[39;49m[0m[39;49mErasing memory corresponding to segment 0:
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49mErasing external memory sectors [16 22]
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49mDownload in Progress:
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[=========================                         ]  50% 
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m
+
+[39;49m[39;49m[0mFile download complete
+[00;32m[39;49m[0mTime elapsed during download operation: 00:00:02.932
+[39;49m[39;49m[0m
+
+
+[39;49m[39;49m[0mVerifying...
+[39;49m[39;49m[0m
+
+[39;49m[39;49m[0mRead progress:
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[=========================                         ]  50% 
+[39;49m[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m
+
+[39;49m[39;49m[0mTime elapsed during verifying operation: 00:00:01.221
+[39;49m[39;49m[0m
+
+[39;49m[39;49m[0mDownload verified successfully
+[00;32m[39;49m[0m
+
+[39;49m[39;49m[0m[39;49m[0m
+$ /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI -c port=SWD mode=HOTPLUG sn=0051002A3234510137333934 -el /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MX66UW1G45G_STM32N6570-DK.stldr --upload 0x70100000 0x6e680 /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/application_readback.bin
+[36m[01m      -------------------------------------------------------------------
+[39;49m[0m[36m[01m                        STM32CubeProgrammer v2.23.0                  
+[39;49m[0m[36m[01m      -------------------------------------------------------------------
+
+[39;49m[0m[39;49m[0m[90mST-LINK SN  : 0051002A3234510137333934
+[39;49m[0m[90mST-LINK FW  : V3J17M10
+[39;49m[0m[90mBoard       : STM32N6570-DK
+[39;49m[0m[90mVoltage     : 3.29V
+[39;49m[0m[90mSWD freq    : 8000 KHz
+[39;49m[0m[90mConnect mode: Hot Plug
+[39;49m[0m[90mReset mode  : Software reset
+[39;49m[0m[90mDevice ID   : 0x486
+[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[90mRevision ID : Rev B
+[39;49m[0m[39;49m[0m[39;49mDevice name : ST32N657
+[39;49m[0m[39;49mDevice type : MCU
+[39;49m[0m[39;49mDevice CPU  : Cortex-M55
+[39;49m[0m[39;49mBL Version  : --
+[39;49m[0m[39;49m
+[39;49m[0m[39;49m
+UPLOADING ...
+[39;49m[0m[39;49m  File          : /home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/deploy_20260914_060547_683657/application_readback.bin
+[39;49m[0m[39;49m  Size          : 452224 Bytes
+[39;49m[0m[39;49m  Address:      : 0x70100000
+[39;49m[0m[39;49mRead progress:
+[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[39;49m[0m[00;32m[==================================================] 100% 
+[39;49m
+
+[39;49m[39;49m[0mData read successfully
+[00;32m[39;49m[0mTime elapsed during read operation is: 00:00:01.124
+[39;49m[39;49m[0m[39;49m[0m

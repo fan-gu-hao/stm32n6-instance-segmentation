@@ -1,0 +1,37 @@
+{
+  "status": "baseline_restored",
+  "files": [
+    {
+      "path": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/main.c",
+      "before_sha256": "e579c62d8c64f1582c7b131b19ed5fcb613c7deb6bf9b208e7753b68adf87164",
+      "restored_sha256": "ff1b96fbdd1cb4504d5653fc49ff11264ee29f7787a813f5611030a0ca0e659a"
+    },
+    {
+      "path": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Inc/project_uart_it.h",
+      "before_sha256": "b93d1386b841bb4f36b2b94f3913db125d633cf1071224465644e1564f49ce5d",
+      "restored_sha256": null
+    },
+    {
+      "path": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/Src/project_uart_it.c",
+      "before_sha256": "9078af44a22b7b490c88f6867e9839ed71e9442f64b1e387f82e5faa0573ab1c",
+      "restored_sha256": null
+    },
+    {
+      "path": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project",
+      "before_sha256": "85938a0c13495f8542df3cc90927dd4ad4953de3a55d75ffcd966c25ff620138",
+      "restored_sha256": "c9d8babbd0de289e432d3f842b08521adbb8a3689938ba6db8ade22c3be104ea"
+    },
+    {
+      "path": "scripts/install_uart_it_v1.py",
+      "before_sha256": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
+      "restored_sha256": null
+    }
+  ],
+  "sources_restored": true,
+  "application_address": "0x70100000",
+  "application_sha256": "6ab43d7adadc9b57bd3de5cb531591dfb139c2322cba4ed2d83896361b66491f",
+  "application_write_started": true,
+  "application_readback_verified": true,
+  "hardware_runtime_verified": false,
+  "archived_build": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/results/uart_it/rollback_20260914_061621_901943/interrupt_build_ModelZoo"
+}

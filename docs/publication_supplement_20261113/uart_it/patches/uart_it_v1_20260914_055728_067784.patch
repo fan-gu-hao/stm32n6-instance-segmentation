@@ -1,0 +1,18 @@
+--- a/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project
++++ b/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project
+@@ -421,5 +421,15 @@
+ 			<type>1</type>
+ 			<locationURI>PARENT-1-PROJECT_LOC/Src/project_uart_it.c</locationURI>
+ 		</link>
++		<link>
++			<name>Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_dma.c</name>
++			<type>1</type>
++			<locationURI>PARENT-3-PROJECT_LOC/STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_dma.c</locationURI>
++		</link>
++		<link>
++			<name>Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_uart_ex.c</name>
++			<type>1</type>
++			<locationURI>PARENT-3-PROJECT_LOC/STM32Cube_FW_N6/Drivers/STM32N6xx_HAL_Driver/Src/stm32n6xx_hal_uart_ex.c</locationURI>
++		</link>
+ 	</linkedResources>
+ </projectDescription>

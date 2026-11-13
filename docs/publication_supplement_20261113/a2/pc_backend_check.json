@@ -1,0 +1,81 @@
+{
+  "tensorflow": "2.18.0",
+  "resolver": "BUILTIN_WITHOUT_DEFAULT_DELEGATES",
+  "num_threads": 1,
+  "model_sha256": "312ea45821140094d6a637d11f2e7daf1c8eb3e9ad5f93b8ed6c595128eaec2e",
+  "input_tensor_sha256": "c09ce89c6d37119bf9e6aa7e679fa1c66ecdd4af4c1a573ab53a1c08b2cc60c5",
+  "comparisons": [
+    {
+      "image_id": 9,
+      "output": "mask",
+      "pc_exact": false,
+      "pc_changed_elements": 95323,
+      "pc_max_lsb": 47,
+      "n6_mae_lsb": 3.1467742919921875,
+      "n6_max_lsb": 42
+    },
+    {
+      "image_id": 25,
+      "output": "mask",
+      "pc_exact": false,
+      "pc_changed_elements": 98385,
+      "pc_max_lsb": 33,
+      "n6_mae_lsb": 2.6109161376953125,
+      "n6_max_lsb": 31
+    },
+    {
+      "image_id": 30,
+      "output": "mask",
+      "pc_exact": false,
+      "pc_changed_elements": 96534,
+      "pc_max_lsb": 41,
+      "n6_mae_lsb": 2.937225341796875,
+      "n6_max_lsb": 38
+    },
+    {
+      "image_id": 34,
+      "output": "mask",
+      "pc_exact": false,
+      "pc_changed_elements": 92191,
+      "pc_max_lsb": 28,
+      "n6_mae_lsb": 2.3025970458984375,
+      "n6_max_lsb": 35
+    },
+    {
+      "image_id": 9,
+      "output": "detections",
+      "pc_exact": false,
+      "pc_changed_elements": 32621,
+      "pc_max_lsb": 22,
+      "n6_mae_lsb": 0.4367367097701149,
+      "n6_max_lsb": 16
+    },
+    {
+      "image_id": 25,
+      "output": "detections",
+      "pc_exact": false,
+      "pc_changed_elements": 33103,
+      "pc_max_lsb": 23,
+      "n6_mae_lsb": 0.39639136904761907,
+      "n6_max_lsb": 19
+    },
+    {
+      "image_id": 30,
+      "output": "detections",
+      "pc_exact": false,
+      "pc_changed_elements": 32326,
+      "pc_max_lsb": 14,
+      "n6_mae_lsb": 0.3786240250410509,
+      "n6_max_lsb": 14
+    },
+    {
+      "image_id": 34,
+      "output": "detections",
+      "pc_exact": false,
+      "pc_changed_elements": 30211,
+      "pc_max_lsb": 10,
+      "n6_mae_lsb": 0.3091517857142857,
+      "n6_max_lsb": 13
+    }
+  ]
+}

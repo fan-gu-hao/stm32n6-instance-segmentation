@@ -1,0 +1,20 @@
+{
+  "version": "uart_it_v1_hal_fix1",
+  "repo": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6",
+  "files": [
+    {
+      "path": "stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Application/STM32N6570-DK/STM32CubeIDE/.project",
+      "before_sha256": "343030909c513a3b5374486ddbed83f325188fb22bac8eb11e11e8259b514334",
+      "after_sha256": "85938a0c13495f8542df3cc90927dd4ad4953de3a55d75ffcd966c25ff620138",
+      "created": false
+    },
+    {
+      "path": "scripts/install_uart_it_v1.py",
+      "before_sha256": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
+      "after_sha256": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
+      "created": false
+    }
+  ],
+  "patch": "patches/uart_it_v1_20260914_055728_067784.patch",
+  "status": "applied"
+}

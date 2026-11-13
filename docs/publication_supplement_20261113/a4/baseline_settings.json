@@ -1,0 +1,10 @@
+{
+  "profile": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/user_neuralart_STM32N6570-DK.json",
+  "profile_sha256": "59692268b1e3e5aeb0d3c26765b23ee646c86a01e747b5b5278c0427e55e328a",
+  "memory_pool": "/home/fan/STM32N6ai/course14_yolov8n_seg_n6/stm32ai-modelzoo-services/application_code/instance_segmentation/STM32N6/Model/my_mpools/stm32n6-app2_STM32N6570-DK.mpool",
+  "memory_pool_sha256": "c603833d3b62c042eaf18b294e9f85b6b476b1739da95078e46141f71eef49d8",
+  "validated_model_sha256": {
+    "network.c": "b867f6720a3dbadd0af9fc59c2fbf815097e84d393493fa9f17704e91f58b0f7",
+    "network_ecblobs.h": "9a246c6c2dc85d20aab3f7aaff14cc10001bf060a8716624dbb5b319b89016e7"
+  }
+}
