@@ -2,7 +2,7 @@
   "base_commit": "259bd0b2a3f5cbe4260509b0786d39806ff80c50",
   "work_items": 34,
   "files": {
-    "README.md": "04c9c0155026ec69f936d3f801c6199edf6c4bfcaf1797244da4cfb6f54bc07e",
+    "README.md": "2e90e7f236e4e7e150a9ed12639dc620a2fee2a195c6976d96ef0128701012bb",
     "docs/WORK_IMPLEMENTATION_INDEX.md": "8e6da6f8a6c88db8a2847000a4ec51d9ed8946a12db8713134d3d3d2d8456b78",
     "docs/publication_supplement_20261113/README.md": "b89ea83178f6bd7cd6822a61099368f6a8967a152d790a9303f08707f63b46ff",
     "docs/pc_baseline.md": "7a019ade1bbfe41bc4ade998c8dccbc54ce4b4dad9fabb689a2cce2dde956a52",
@@ -41,6 +41,12 @@
     "docs/publication_supplement_20261113/uart_it/rollback_20260914_061621_901943/manifest.json": "261044f59df4ca4c521a3aeaac5526c2e35b52d4d7e7b932dd523950c3c5ea91",
     "docs/publication_supplement_20261113/uart_it/rollback_20260914_061621_901943/restore_before_uart_it.py": "e70a5daf20ce28f0d1a11cfd05df51055159fbe1d13776334953d7813d874c0f",
     "docs/publication_supplement_20261113/uart_it/patches/uart_it_v1_20260914_054405_207092.patch": "353a52fab1bf5a341860b318e085ffd328017b62fdffae1b579659f348c24bf1",
-    "docs/publication_supplement_20261113/uart_it/patches/uart_it_v1_20260914_055728_067784.patch": "7b012f2ce672526d67ae9231dc4ca28b64d2fcb6b432aa89dfdc54ec6f45099d"
+    "docs/publication_supplement_20261113/uart_it/patches/uart_it_v1_20260914_055728_067784.patch": "7b012f2ce672526d67ae9231dc4ca28b64d2fcb6b432aa89dfdc54ec6f45099d",
+    "docs/engineering-workflow.md": "fdc439b3c0d8cc9984d17644013d20e53590014312bcbb01d3803e15c6bd424c"
+  },
+  "integration": {
+    "local_commit": "b519fe744fcbb8b46c6cea7f6b0a5cc4cd68b5e5",
+    "remote_commit": "78bea714686f22e2543b54885e8ac99dd27194f9",
+    "method": "merge; preserve both documentation sets"
   }
 }

@@ -29,6 +29,8 @@ ST 編譯階段另會產生內部 ONNX 與量化資訊；正式量化模型與�
 本次補充的歷史程式與原始證據見 [補檔索引](docs/publication_supplement_20261113/README.md)。
 已完成的測試與尚未整理成套的操作腳本分別標示；示範影片待補。
 
+流程總覽、模型轉換與介面說明見[工程流程與實作證據](docs/engineering-workflow.md)。
+
 ## 驗證成果
 
 | 階段 | 主要結果 | 完整紀錄 |
@@ -59,7 +61,10 @@ B 組保留為經過驗證的配置實驗。
 | [app_camerapipeline.c](firmware/Application/STM32N6570-DK/Src/app_camerapipeline.c) | 攝影機擷取流程 |
 | [project_region_event.h](firmware/Application/STM32N6570-DK/Inc/project_region_event.h) | 區域事件邏輯 |
 | [app_config.h](firmware/Application/STM32N6570-DK/Inc/app_config.h) | 應用程式設定 |
-| [Model Zoo 修改](tools/model_zoo_overrides/) | 部署與產生設定檔的相關修改 |
+| [量化設定](configs/yolov8n_seg_int8_int8.yaml) | SavedModel 來源、校正資料、逐通道與 INT8 介面設定 |
+| [三模型比較腳本](scripts/check_seg_models_pc.sh) | 原始模型、浮點 TFLite 與 ST INT8 的共同圖片比較 |
+| [Model Zoo 修改](tools/model_zoo_overrides/) | 本機產碼與偵測／遮罩輸出對應修補 |
+| [部署腳本](scripts/deploy_n6_seg.sh) | 工具與模型檢查、ST-LINK 識別、產碼／建置／封裝／燒錄 |
 | [來源對照](docs/PUBLIC_SOURCE_MAP.md) | 發佈副本與原始專案檔案的對應關係 |
 
 firmware/ 是核心程式碼副本。編譯時需搭配固定版本的官方專案、
@@ -85,6 +90,10 @@ SDK 與 A1 所列的相依檔案。
 - 首次長測的一次序號不連續仍保留在 A5 紀錄中，原因未確定；
   後續從新開機同步的 30 分鐘重測通過。
 - 擷取逾時驗證使用軟體故障注入，測試失效提示、清除舊框與停止發布結果。
+
+## 後續雙模型作品
+
+[STM32N6 雙模型語音找物](https://github.com/fan-gu-hao/stm32n6-voice-object-finder)延續本作品的模型部署與視覺整合經驗，增加板上收音、客製 KWS 訓練、INT8 部署、Python／C 比對、快取一致性與 FreeRTOS 雙模型協作。兩個作品的開發流程相互連結，各自保存實際模型版本與驗證結果。
 
 ## 第三方來源與授權
 
