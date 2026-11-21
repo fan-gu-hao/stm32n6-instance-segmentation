@@ -1,12 +1,14 @@
-# STM32N6 即時實例分割｜模型轉換、INT8 量化與 NPU 部署
+# STM32N6 微控制器級邊緣人工智慧｜NPU 加速即時實例分割
 
 **繁體中文** | [English](README.en.md)
 
-**技術關鍵字：** 嵌入式人工智慧（Embedded AI）・STM32N6570-DK・Arm Cortex-M55・神經網路處理器（NPU）・YOLOv8n-seg・ONNX・TensorFlow SavedModel・逐通道 INT8 量化・ST Edge AI／Neural-ART・C 韌體・攝影機擷取（DCMIPP）・後處理介面適配・記憶體配置・快取維護・串列通訊（UART）・獨立開機。
+這是一套**微控制器級的邊緣人工智慧（MCU-class Edge AI）系統**。預訓練 YOLOv8n-seg 經模型匯出、ST 逐通道 INT8 量化與 Neural-ART 編譯後，部署於 STM32N6，由晶片內建的神經網路處理器（NPU）加速推論，協同 Cortex-M55 完成影像處理與應用控制。
 
-從預訓練 YOLOv8n-seg 出發，完成**模型匯出、ST 逐通道 INT8 量化、後處理輸出對應修正、NPU 產碼、執行期整合與實板部署**，在 STM32N6570-DK 上運作即時實例分割與人物區域事件。
+**燒錄完成後，系統從外部快閃記憶體獨立啟動；攝影機擷取、模型推論、分割後處理與螢幕顯示都在板上完成，不依賴雲端服務或電腦代算。** 電腦用於模型處理、開發與燒錄；需要記錄結果時，可透過串列通訊接收板端資料。
 
-本作品的主軸是把電腦上的模型接入微控制器的攝影機、記憶體、推論執行期與顯示系統；首頁以八個階段串起開發與 A1～A5 驗證，詳細量測結果放在頁面最後。
+**技術關鍵字：** 邊緣運算（Edge Computing）・微控制器級人工智慧（MCU-class AI）・嵌入式人工智慧（Embedded AI）・STM32N6570-DK・Arm Cortex-M55・神經網路處理器（NPU）・YOLOv8n-seg・ONNX・TensorFlow SavedModel・逐通道 INT8 量化・ST Edge AI／Neural-ART・C 韌體・攝影機擷取（DCMIPP）・後處理介面適配・記憶體配置・快取維護・串列通訊（UART）・獨立開機。
+
+專案完成**模型流程、後處理輸出對應修正、NPU 產碼、執行期整合與實板部署**，並整合結構化串列資料與人物區域事件。首頁以八個階段串起開發與 A1～A5 驗證，詳細量測結果放在頁面最後。
 
 ## 專案目標與完成條件
 

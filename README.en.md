@@ -1,10 +1,14 @@
-# STM32N6 Real-Time Instance Segmentation: Model Conversion, INT8 Quantization and NPU Deployment
+# STM32N6 MCU-Class Edge AI: NPU-Accelerated Real-Time Instance Segmentation
 
 [繁體中文](README.md) | **English**
 
-**Technical focus:** STM32N6570-DK · Cortex-M55 · Neural-ART NPU · YOLOv8n-seg · PyTorch · ONNX · onnx2tf · TensorFlow SavedModel · TFLite · Per-channel INT8 quantization · ST Model Zoo adaptation · C firmware · Camera / LCD · UART · Linker sections · External memory · Flash boot
+This is an **MCU-class edge AI system**. A pretrained YOLOv8n-seg model is exported, quantized to per-channel INT8 using ST tools, and compiled with Neural-ART for deployment on STM32N6. The on-chip NPU accelerates inference, working with the Cortex-M55 CPU to handle image processing and application control.
 
-This project takes a pretrained YOLOv8n-seg model through export, quantization, interface adaptation, NPU compilation, firmware integration and deployment on the STM32N6570-DK. The development work includes corrections to Model Zoo code generation, detection/mask output mapping, runtime and linker configuration, and boot-image packaging.
+**After flashing, the system boots independently from external flash. Camera capture, model inference, segmentation postprocessing and LCD output all run on the board, without cloud services or a host computer performing inference.** The computer is used for model preparation, development and programming; a serial connection can optionally receive the board's results for logging.
+
+**Technical focus:** Edge Computing · MCU-Class AI · Embedded AI · STM32N6570-DK · Cortex-M55 · Neural-ART NPU · YOLOv8n-seg · PyTorch · ONNX · onnx2tf · TensorFlow SavedModel · TFLite · Per-channel INT8 quantization · ST Model Zoo adaptation · C firmware · Camera / LCD · UART · Linker sections · External memory · Flash boot
+
+The implementation covers the model workflow, Model Zoo code-generation corrections, detection/mask output mapping, NPU compilation, runtime and linker configuration, boot-image packaging and board deployment, together with structured UART output and person-region events.
 
 ## Project Goal and Deliverables
 
