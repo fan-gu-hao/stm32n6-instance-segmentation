@@ -6,7 +6,7 @@
 
 從預訓練 YOLOv8n-seg 出發，完成**模型匯出、ST 逐通道 INT8 量化、後處理輸出對應修正、NPU 產碼、執行期整合與實板部署**，在 STM32N6570-DK 上運作即時實例分割與人物區域事件。
 
-本作品的主軸是把電腦上的模型接入微控制器的攝影機、記憶體、推論執行期與顯示系統；完整開發流程列於前段，模型比較、效能量測與板端驗收統一放在頁面最後。
+本作品的主軸是把電腦上的模型接入微控制器的攝影機、記憶體、推論執行期與顯示系統；首頁以八個階段串起開發與 A1～A5 驗證，詳細量測結果放在頁面最後。
 
 ## 專案目標與完成條件
 
@@ -16,27 +16,20 @@
 - 完成模型正確性、完整處理週期、記憶體配置、來源重建與板端穩定性檢查。
 - 保存操作方法、程式修改、工具版本、模型雜湊、實驗結果與失敗紀錄，形成可追溯的公開專案。
 
-## 從環境準備到實板部署：17 個重點步驟
+## 從環境建立到板端驗收：8 個重點階段
 
-| 步驟 | 實際工作與技術內容 | 程式與閱讀入口 |
+以下涵蓋開發、部署及 A1～A5 測試。細部的 17 項開發步驟保留在[完整工作與程式索引](docs/WORK_IMPLEMENTATION_INDEX.md)，各項量測數據與測試範圍列於本頁末段。
+
+| 階段 | 工作內容 | 程式與紀錄 |
 | --- | --- | --- |
-| **1．確立專案目標與完成條件** | 定義板上即時實例分割、80 類物件、框與遮罩顯示、結構化串列、人物區域事件，以及重建與驗收範圍。 | [完整工作與程式索引](docs/WORK_IMPLEMENTATION_INDEX.md) |
-| **2．準備電腦、開發板與周邊** | 準備 Ubuntu、STM32N6570-DK、攝影機與 LCD；區分供電、ST-LINK 除錯與虛擬串列；確認唯一裝置序號、啟動模式與重設操作。 | [部署腳本](scripts/deploy_n6_seg.sh)、[交付索引](docs/a5_acceptance_20260919/DELIVERY.md) |
-| **3．準備並固定開發工具** | 固定 STM32CubeIDE、Arm GCC、STM32CubeProgrammer、外部記憶體載入器、映像處理工具、ST Edge AI／Neural-ART 與官方驗證工具的使用版本。 | [工具與來源版本](results/checkpoints/2026-09-09/source_versions.json)、[建置版本紀錄](docs/a1_reproducible_20260918/README.md) |
-| **4．建立模型處理與部署環境** | 以微型環境管理工具（micromamba）沿用並區分前期專案的匯出環境與模型工具庫環境；保存 PyTorch、Ultralytics、TensorFlow、ONNX 等套件版本。 | [匯出環境](requirements/env_export_packages.txt)、[模型工具庫環境](requirements/env_mz_packages_20260909.txt) |
-| **5．取得官方來源並整理結構** | 取得 ST 模型工具庫與 N6 實例分割應用，固定兩層官方基底；區分上游、新增來源、修補與產物，建立獨立實驗目錄與 SHA-256 追溯。 | [來源對照](docs/PUBLIC_SOURCE_MAP.md)、[來源鎖定](patches/a1_source_20260918/source_lock.json) |
-| **6．建立原始模型的電腦端基準** | 確認預訓練 YOLOv8n-seg 的分割任務與 80 類輸出；完成靜態圖片及電腦攝影機功能檢查，保存框、信心與遮罩。 | [電腦端基準](docs/pc_baseline.md)、[攝影機腳本](scripts/pc_webcam.sh) |
-| **7．匯出原始模型與第一段 ONNX 轉換** | 固定 256 × 256 輸入，將原始 `.pt` 匯出 ONNX，經 onnx2tf 轉成 SavedModel，並保存浮點及其他量化 TFLite 產物與匯出日誌。 | [匯出日誌](results/checkpoints/2026-09-09/logs/03_export_seg.log) |
-| **8．檢查浮點模型介面** | 核對浮點 RGB 輸入、`1 × 116 × 1344` 偵測資料與 `1 × 64 × 64 × 32` 遮罩原型；拆解框、類別分數與係數，分別讀取各格式的輸出資訊。 | [浮點介面紀錄](docs/pc_baseline.md) |
-| **9．建立 ST 逐通道 INT8 量化** | 從 SavedModel 使用四張 COCO8-seg 校正影像執行 ST 逐通道量化，固定前處理與 INT8 輸入／輸出，保存正式模型及雜湊。 | [量化設定](configs/yolov8n_seg_int8_int8.yaml)、[量化日誌](results/checkpoints/2026-09-09/logs/04_st_quantization_seg.log) |
-| **10．核對量化介面與像素轉換** | 核對張量形狀、型別、尺度、零點與逐通道參數；區分 TFLite 的 INT8 輸入與 N6 產碼的 UINT8／通道置後（NHWC）入口。 | [介面檢查](results/quantization/interface_check.txt)、[模型雜湊](results/quantization/model.sha256) |
-| **11．比較三種模型的電腦端功能** | 以相同圖片與推論參數比較原始模型、浮點 TFLite、ST INT8；保存物件數、類別、框與遮罩差異，並確認 INT8 電腦攝影機功能。 | [三模型比較](scripts/check_seg_models_pc.sh)、[歷史功能紀錄](docs/session_2026-09-09.md) |
-| **12．修改後處理介面產生流程** | 修改模型工具庫產生器，以三維／四維形狀辨識偵測與遮罩輸出；修正尺度、零點與設定對應，檢查型別、類別、係數及官方大小排序要求。 | [產生器修改](tools/model_zoo_overrides/instance_segmentation/tf/src/utils/gen_h_file.py)、[對應修補](patches/modelzoo_seg_output_mapping.patch) |
-| **13．建立部署前自動檢查** | 自動檢查 80 類、1344 個候選、32 個遮罩係數、64 × 64 原型與量化零點，核對模型雜湊；不符時停止部署。 | [標頭檢查程式](scripts/check_n6_seg_header.py) |
-| **14．修正本機產碼參數** | 修改模型工具庫的本機產碼流程，傳遞指定 Neural-ART 配置與記憶體池，明確設定輸入／輸出型別及通道排列，處理命令參數引號。 | [產碼流程修改](tools/model_zoo_overrides/common/benchmarking/common_benchmark.py)、[本機產碼腳本](scripts/n6_benchmark_local.sh) |
-| **15．執行第二段 ONNX 轉換與 N6 編譯** | ST Edge AI 接收正式 INT8 TFLite，產生內部 ONNX 與量化描述，再由 Neural-ART 產生模型程式、介面、權重及執行命令，分析硬體／混合／軟體階段與記憶體配置。 | [Neural-ART 設定](configs/n6_neuralart_baseline.json)、[產碼報告](results/checkpoints/2026-09-09/n6_deployment/run_20260909_020310_zj69FR/generated/network_generate_report.txt) |
-| **16．整合執行期與韌體建置** | 對齊 Cortex-M55 執行期函式庫與標頭；調整 ModelZoo 組態、包含及連結路徑，配置模型命令與後處理工作區，核對 RAM 與快閃記憶體布局。 | [建置組態](firmware/Application/STM32N6570-DK/STM32CubeIDE/.cproject)、[連結腳本](firmware/Application/STM32N6570-DK/STM32CubeIDE/STM32N657xx.ld)、[相依檔案](patches/a1_source_20260918/dependencies.json) |
-| **17．修正映像封裝並完成實板部署** | 建置可執行檔與配置檔，修正映像標頭／對齊；核對啟動程式、應用、權重與命令資料位置，透過指定 ST-LINK 與外部載入器燒錄，確認獨立開機、攝影機與分割顯示。 | [部署設定](configs/deployment_n6_seg_local.yaml)、[部署腳本](scripts/deploy_n6_seg.sh)、[映像對齊修補](patches/instance_segmentation_signing_alignment.patch) |
+| **1．開發平台、工具環境與官方來源** | 準備 Ubuntu、STM32N6570-DK、攝影機、LCD 與 ST-LINK；區分供電、除錯、串列及啟動模式，固定開發工具、兩套 Python 環境與官方來源版本。 | [工具版本](results/checkpoints/2026-09-09/source_versions.json)、[環境清單](requirements/)、[來源對照](docs/PUBLIC_SOURCE_MAP.md) |
+| **2．原始模型匯出與 ST INT8 量化** | 建立 YOLOv8n-seg 圖片／攝影機基準，完成 **PyTorch → 第一段 ONNX → SavedModel → ST 逐通道 INT8 TFLite**。以四張 COCO8-seg 影像校正，核對 256 × 256 輸入、80 類、張量形狀及量化參數，比較原始、浮點與量化模型。 | [電腦基準](docs/pc_baseline.md)、[匯出日誌](results/checkpoints/2026-09-09/logs/03_export_seg.log)、[量化設定](configs/yolov8n_seg_int8_int8.yaml)、[量化日誌](results/checkpoints/2026-09-09/logs/04_st_quantization_seg.log)、[模型比較](scripts/check_seg_models_pc.sh) |
+| **3．後處理介面適配與部署前檢查** | 修改模型工具庫產生器，依形狀辨識偵測／遮罩原型，正確配對尺度與零點；檢查 80 類、1344 候選、32 個係數及 64 × 64 原型，整合官方 NMS 與遮罩重建核心。 | [產生器修改](tools/model_zoo_overrides/instance_segmentation/tf/src/utils/gen_h_file.py)、[標頭檢查](scripts/check_n6_seg_header.py) |
+| **4．Neural-ART 編譯與 NPU 模型產碼** | 修正產碼參數與記憶體池傳遞，以 UINT8／NHWC 銜接攝影機。完成 **ST INT8 TFLite → ST 內部 ONNX／量化描述 → Neural-ART → 模型程式、權重與執行命令資料**，保存排程與記憶體報告。 | [產碼流程修改](tools/model_zoo_overrides/common/benchmarking/common_benchmark.py)、[產碼腳本](scripts/n6_benchmark_local.sh)、[Neural-ART 設定](configs/n6_neuralart_baseline.json) |
+| **5．執行期、記憶體配置與韌體燒錄** | 對齊 Cortex-M55 執行期與標頭，配置模型命令及後處理工作區；修正映像標頭／對齊，完成啟動程式、應用、權重與命令資料燒錄，以及獨立開機。 | [建置組態](firmware/Application/STM32N6570-DK/STM32CubeIDE/.cproject)、[連結腳本](firmware/Application/STM32N6570-DK/STM32CubeIDE/STM32N657xx.ld)、[映像修補](patches/instance_segmentation_signing_alignment.patch)、[部署腳本](scripts/deploy_n6_seg.sh) |
+| **6．攝影機、串列通訊與人物區域事件** | 整合影像擷取、快取維護、推論、分割顯示、結構化 UART 與人物進出事件；加入分段計時及失效處理，保存串列中斷傳送的歷史實驗與還原紀錄。 | [主程式](firmware/Application/STM32N6570-DK/Src/main.c)、[攝影機流程](firmware/Application/STM32N6570-DK/Src/app_camerapipeline.c)、[區域事件](firmware/Application/STM32N6570-DK/Inc/project_region_event.h)、[串列實驗](docs/publication_supplement_20261113/uart_it/source_snapshot/README.md) |
+| **7．A2～A4：模型正確性、效能與記憶體驗證** | **A2**：四張固定輸入、三組模型輸出與 50 張回歸比較；**A3**：攝影機分段計時、重複推論及逐區塊瓶頸分析；**A4**：縮減 NPU RAM 可分配容量，對照記憶體、時間與輸出一致性。 | [A2 正確性](docs/a2_validation_20260918/README.md)、[A3 效能](docs/a3_performance_20260918/README.md)、[A4 記憶體](docs/a4_memory_20260918/README.md) |
+| **8．A1、A5：來源重建與板端運作驗收** | **A1**：固定來源、修補與相依檔，完成還原核對、既有環境乾淨重建及燒錄讀回；**A5**：三次冷啟動、人物進出、30 分鐘長測重測、模擬擷取逾時與正式韌體恢復，保存失敗紀錄及交付索引。 | [A1 重建](docs/a1_reproducible_20260918/README.md)、[A5 驗收](docs/a5_acceptance_20260919/README.md)、[交付索引](docs/a5_acceptance_20260919/DELIVERY.md) |
 
 ## 模型轉換與產碼路線
 

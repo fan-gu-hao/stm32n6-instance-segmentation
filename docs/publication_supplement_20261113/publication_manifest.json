@@ -2,7 +2,7 @@
   "base_commit": "259bd0b2a3f5cbe4260509b0786d39806ff80c50",
   "work_items": 38,
   "files": {
-    "README.md": "3eb288da2ad9f6ebf095c2491dbb7c7240e6590a2bd69520c37b749dc598792e",
+    "README.md": "cb6adcb16f599f3cbce9ac03f205d5b012d758ab67c22b5e61f8451124a151a9",
     "docs/WORK_IMPLEMENTATION_INDEX.md": "b5ddd5d5e5d98f2e86f6fb9749982b95c2056e8faa4cb4abce5f0aa7002356a4",
     "docs/publication_supplement_20261113/README.md": "579a1fe6b3c4ac89eadb2e9e1731d624b9d3bd22506b3a5735a5ac9e2319d363",
     "docs/pc_baseline.md": "7a019ade1bbfe41bc4ade998c8dccbc54ce4b4dad9fabb689a2cce2dde956a52",
@@ -50,7 +50,7 @@
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_hal_fix1.py": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_initial.py": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/provenance.json": "4740be73bca03c2a299bdd49d2f6188e65825a463e50ac962e7efecd18f8efea",
-    "README.en.md": "0317ca6165034e40e332883826cb38005386561ace4d57dc9be98eaf1976ecad"
+    "README.en.md": "26586cf863b4009a48f1e264f867a541344b988836f0bf3dabf7961c31bda016"
   },
   "integration": {
     "local_commit": "b519fe744fcbb8b46c6cea7f6b0a5cc4cd68b5e5",
@@ -71,5 +71,18 @@
     "development_steps": 17,
     "scope": "Lead the Chinese and English homepages with model conversion, ST quantization, interface adaptation, NPU compilation and board deployment; place verification last; rename the complete work and code index.",
     "hardware_tests_rerun": false
+  },
+  "homepage_overview_update": {
+    "base_commit": "1d1e0572c83a292038181dce017b5c83a4f54b4a",
+    "date": "2026-11-21",
+    "overview_stages": 8,
+    "includes_tests": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5"
+    ],
+    "scope": "Condense both homepages into eight implementation and validation stages; retain the detailed 17-step development index and all later results."
   }
 }
