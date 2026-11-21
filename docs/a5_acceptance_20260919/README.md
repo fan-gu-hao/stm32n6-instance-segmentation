@@ -1,6 +1,6 @@
 # A5：獨立開機、穩定性與故障處理驗收
 
-板端驗收與交付索引已整理，已公開至 GitHub；示範影片待補。
+板端驗收與交付索引已整理，已公開至 GitHub；成果以[實板照片](../../assets/demo/stm32n6-instance-segmentation.jpg)展示。
 
 正式韌體使用 A1 重建版本，SHA-256：
 63d5086cdbe8637e7470cc294252f3218d7784e2a56e6e92aafba4c8e9dc55a2
@@ -48,7 +48,7 @@ A4 的 B 記憶體配置保留為實驗結果，正式攝影機版本沿用 A1�
 各份證據的原始路徑與雜湊見 evidence_sources.json。
 長時間原始串列日誌保留於 results，未複製進本文件資料夾。
 
-交付索引見 [DELIVERY.md](DELIVERY.md)；示範影片待補。
+交付索引見 [DELIVERY.md](DELIVERY.md)；[實板成果照](../../assets/demo/stm32n6-instance-segmentation.jpg)已放在專案首頁。
 
 
 ## 從本次開機開始的長測複驗

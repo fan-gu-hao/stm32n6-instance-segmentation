@@ -2,6 +2,10 @@
 
 [繁體中文](README.md) | **English**
 
+![STM32N6570-DK demonstration showing person, laptop, cup and bottle detections with instance masks](assets/demo/stm32n6-instance-segmentation.jpg)
+
+**On-board demonstration:** person, laptop, cup and bottle detections with bounding boxes and colored instance masks rendered on the board's display. The person-region status shows **ROI: OCCUPIED**.
+
 This is an **MCU-class edge AI system**. A pretrained YOLOv8n-seg model is exported, quantized to per-channel INT8 using ST tools, and compiled with Neural-ART for deployment on STM32N6. The on-chip NPU accelerates inference, working with the Cortex-M55 CPU to handle image processing and application control.
 
 **After flashing, the system boots independently from external flash. Camera capture, model inference, segmentation postprocessing and LCD output all run on the board, without cloud services or a host computer performing inference.** The computer is used for model preparation, development and programming; a serial connection can optionally receive the board's results for logging.
@@ -116,7 +120,7 @@ The UART `mask_pixels` field is a nonzero count from a 64 × 64 mask, not transm
 | [Public source map](docs/PUBLIC_SOURCE_MAP.md) | Mapping from the original project to the published source copies |
 | [Firmware delivery index](docs/a5_acceptance_20260919/DELIVERY.md) | Production image identifiers, component locations and flash addresses |
 
-The `firmware/` directory contains the core application source copies. Building uses the pinned official application, SDK and dependencies described in [A1](docs/a1_reproducible_20260918/README.md). Full models, raw tensors, SDK/runtime binaries and flashable images are traced through their original locations and hashes; this repository is not a complete offline build bundle. The original temporary terminal programs have not all been preserved as a complete rerunnable test suite. A demonstration video is pending.
+The `firmware/` directory contains the core application source copies. Building uses the pinned official application, SDK and dependencies described in [A1](docs/a1_reproducible_20260918/README.md). Full models, raw tensors, SDK/runtime binaries and flashable images are traced through their original locations and hashes; this repository is not a complete offline build bundle. The original temporary terminal programs have not all been preserved as a complete rerunnable test suite.
 
 ## Upstream Sources and Related Work
 

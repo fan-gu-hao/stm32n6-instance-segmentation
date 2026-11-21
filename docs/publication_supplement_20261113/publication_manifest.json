@@ -2,7 +2,7 @@
   "base_commit": "259bd0b2a3f5cbe4260509b0786d39806ff80c50",
   "work_items": 38,
   "files": {
-    "README.md": "5ed47e4303600f530867a12c82cc10f0e19f50755dad1c51ad6edc0d5fd3da40",
+    "README.md": "d4a0f145bf6a4d3aad47fa885b49e9d1286f0ea5f64900085da53b4d76de8b98",
     "docs/WORK_IMPLEMENTATION_INDEX.md": "b5ddd5d5e5d98f2e86f6fb9749982b95c2056e8faa4cb4abce5f0aa7002356a4",
     "docs/publication_supplement_20261113/README.md": "579a1fe6b3c4ac89eadb2e9e1731d624b9d3bd22506b3a5735a5ac9e2319d363",
     "docs/pc_baseline.md": "7a019ade1bbfe41bc4ade998c8dccbc54ce4b4dad9fabb689a2cce2dde956a52",
@@ -50,7 +50,11 @@
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_hal_fix1.py": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_initial.py": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/provenance.json": "4740be73bca03c2a299bdd49d2f6188e65825a463e50ac962e7efecd18f8efea",
-    "README.en.md": "a39750a4d1c13c49532aa598f4b95710d5724e059a1fbb59820affc6abcef55a"
+    "README.en.md": "aa4583d2d58ae2c440071a1f3f1cd406501cdcf86665ba508db93a40cb84ec6f",
+    "docs/a5_acceptance_20260919/README.md": "2c5fe2aa87b35d717cfe20b469f9133cab6004abcb94bfc7d0c7c3c3d87262ec",
+    "docs/a5_acceptance_20260919/DELIVERY.md": "48d61ca4daede7d0d551189a53419d00ea07f645c736e79abff1cf9f69ea3df0",
+    "docs/a5_acceptance_20260919/SHA256SUMS": "a41fa79c53f30e8e421f833d5a5e3e3f271318404710905c69c52ad9612fcb03",
+    "assets/demo/stm32n6-instance-segmentation.jpg": "abffcd025f2606068c7b16118409f351de0168ce689ce20e8f070a03a86c9631"
   },
   "integration": {
     "local_commit": "b519fe744fcbb8b46c6cea7f6b0a5cc4cd68b5e5",
@@ -89,5 +93,21 @@
     "base_commit": "35b367b625670d51dc3c0a343970df50bd39f505",
     "date": "2026-11-21",
     "scope": "Identify MCU-class edge AI in both homepage titles and introductions; explain on-chip NPU acceleration, Cortex-M55 cooperation, and standalone operation without cloud or host inference."
+  },
+  "demonstration_update": {
+    "base_commit": "99e3f2abd724018b7bcdd106dd07df7d4ebad60c",
+    "date": "2026-11-21",
+    "format": "photo",
+    "file": "assets/demo/stm32n6-instance-segmentation.jpg",
+    "source_filename": "106403.jpg",
+    "sha256": "abffcd025f2606068c7b16118409f351de0168ce689ce20e8f070a03a86c9631",
+    "image_modified": false,
+    "classes": [
+      "person",
+      "laptop",
+      "cup",
+      "bottle"
+    ],
+    "scope": "Display the user-provided hardware photo at the top of both homepages and update the acceptance and delivery documentation to photo-based demonstration."
   }
 }
