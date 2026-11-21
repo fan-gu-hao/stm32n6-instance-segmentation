@@ -1,9 +1,9 @@
 {
   "base_commit": "259bd0b2a3f5cbe4260509b0786d39806ff80c50",
-  "work_items": 34,
+  "work_items": 38,
   "files": {
-    "README.md": "add67541f70aee8180bd97cb7079e77643df5507770f6d8b7afb47aa19908669",
-    "docs/WORK_IMPLEMENTATION_INDEX.md": "8e6da6f8a6c88db8a2847000a4ec51d9ed8946a12db8713134d3d3d2d8456b78",
+    "README.md": "3eb288da2ad9f6ebf095c2491dbb7c7240e6590a2bd69520c37b749dc598792e",
+    "docs/WORK_IMPLEMENTATION_INDEX.md": "b5ddd5d5e5d98f2e86f6fb9749982b95c2056e8faa4cb4abce5f0aa7002356a4",
     "docs/publication_supplement_20261113/README.md": "579a1fe6b3c4ac89eadb2e9e1731d624b9d3bd22506b3a5735a5ac9e2319d363",
     "docs/pc_baseline.md": "7a019ade1bbfe41bc4ade998c8dccbc54ce4b4dad9fabb689a2cce2dde956a52",
     "docs/session_2026-09-09.md": "cb55aa391aab2c628d929031d3afbe68951e6afe5441e8cb9d0aade6dab1548e",
@@ -42,7 +42,7 @@
     "docs/publication_supplement_20261113/uart_it/rollback_20260914_061621_901943/restore_before_uart_it.py": "e70a5daf20ce28f0d1a11cfd05df51055159fbe1d13776334953d7813d874c0f",
     "docs/publication_supplement_20261113/uart_it/patches/uart_it_v1_20260914_054405_207092.patch": "353a52fab1bf5a341860b318e085ffd328017b62fdffae1b579659f348c24bf1",
     "docs/publication_supplement_20261113/uart_it/patches/uart_it_v1_20260914_055728_067784.patch": "7b012f2ce672526d67ae9231dc4ca28b64d2fcb6b432aa89dfdc54ec6f45099d",
-    "docs/engineering-workflow.md": "fdc439b3c0d8cc9984d17644013d20e53590014312bcbb01d3803e15c6bd424c",
+    "docs/engineering-workflow.md": "dd117648f5edf4b26fe6f7dbe6c9b81167134c3b1b39f6ea9c3a723f2a3a48ee",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/Inc/project_uart_it.h": "b93d1386b841bb4f36b2b94f3913db125d633cf1071224465644e1564f49ce5d",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/README.md": "eb5eb6f7cfdb6976c78bab5d6888976b7e3f17a8fb40fe8c4542c5917ebfc852",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/Src/main.c": "e579c62d8c64f1582c7b131b19ed5fcb613c7deb6bf9b208e7753b68adf87164",
@@ -50,7 +50,7 @@
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_hal_fix1.py": "b956e48e165b58406ff301ebd6099c2ec1095ad4441770b53d4123c4f9ae8b97",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/install_uart_it_v1_initial.py": "00d5731c56ae11678facc41c5203c24b039996d697d8899d7f24ac9388924e46",
     "docs/publication_supplement_20261113/uart_it/source_snapshot/provenance.json": "4740be73bca03c2a299bdd49d2f6188e65825a463e50ac962e7efecd18f8efea",
-    "README.en.md": "c20ff8773b70d3eda32ebc5d0550d2f47eff2ec952e419f7bebea1753d4f86ac"
+    "README.en.md": "0317ca6165034e40e332883826cb38005386561ace4d57dc9be98eaf1976ecad"
   },
   "integration": {
     "local_commit": "b519fe744fcbb8b46c6cea7f6b0a5cc4cd68b5e5",
@@ -64,5 +64,12 @@
   "homepage_update": {
     "base_commit": "069d9a111eb78ab09530f0a037e0d51e69f3aa42",
     "scope": "Add language navigation and English homepage; include the existing UART source snapshot in integrity records."
+  },
+  "documentation_reorganization": {
+    "base_commit": "a427ca1b8ba5914a3c5c760ddd22c77899c1fd51",
+    "date": "2026-11-21",
+    "development_steps": 17,
+    "scope": "Lead the Chinese and English homepages with model conversion, ST quantization, interface adaptation, NPU compilation and board deployment; place verification last; rename the complete work and code index.",
+    "hardware_tests_rerun": false
   }
 }
